@@ -1,0 +1,164 @@
+\doxysection{value\+\_\+type\+\_\+helpers.\+h}
+\hypertarget{value__type__helpers_8h_source}{}\label{value__type__helpers_8h_source}\index{src/common/serialization/value\_type\_helpers.h@{src/common/serialization/value\_type\_helpers.h}}
+\mbox{\hyperlink{value__type__helpers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 09.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Helper\ functions\ for\ serializing\ and\ deserializing\ instances\ of\ serializable\_value.}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_VALUE\_TYPE\_HELPERS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FRANTIC\_VALUE\_TYPE\_HELPERS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacevalue__type__helpers}{value\_type\_helpers}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7}{ValueType}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a14e5cbc94f0b6c3b259ce706b05a4950}{intType}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7ab3b3b8703425181c806eb8b07c39e8ba}{uintType}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a2e8b9dabb5b3bc7261d9fbaf344f009c}{boolType}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a62dfebcea72ad0fcb73fcd2281677751}{floatType}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a7911a984e4b5b8d00c2bf83d6e8263aa}{doubleType}},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7aa15fe326ca40640dbcf32732b40456ff}{stringType}},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a8a118ab1e8e3a4c093b6760f67ebb07c}{int64tType}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a97fce78cf1ec0a7eec338e3cccf09cc0}{uint64tType}}}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ for\ deserialization}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ ValueType>\ \mbox{\hyperlink{namespacevalue__type__helpers_ae62000bb4ccd99ef393416bd25021c5b}{\_string\_to\_value\_type}}\ =\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}int"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a14e5cbc94f0b6c3b259ce706b05a4950}{ValueType::intType}}\ \},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}uint"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7ab3b3b8703425181c806eb8b07c39e8ba}{ValueType::uintType}}\},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}bool"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a2e8b9dabb5b3bc7261d9fbaf344f009c}{ValueType::boolType}}\},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}float"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a62dfebcea72ad0fcb73fcd2281677751}{ValueType::floatType}}\},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}double"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a7911a984e4b5b8d00c2bf83d6e8263aa}{ValueType::doubleType}}\},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}int64t"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a8a118ab1e8e3a4c093b6760f67ebb07c}{ValueType::int64tType}}\},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}uint64t"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a97fce78cf1ec0a7eec338e3cccf09cc0}{ValueType::uint64tType}}\},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}string"{}},\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7aa15fe326ca40640dbcf32732b40456ff}{ValueType::stringType}}\}}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ for\ serialization}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<ValueType,\ std::string>\ \mbox{\hyperlink{namespacevalue__type__helpers_a3f91e930d13df2be52884d6626b4321e}{\_value\_type\_to\_string}}\ =\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a14e5cbc94f0b6c3b259ce706b05a4950}{ValueType::intType}},\ \ \ \ \ \textcolor{stringliteral}{"{}int"{}}\ \},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7ab3b3b8703425181c806eb8b07c39e8ba}{ValueType::uintType}},\ \ \ \ \textcolor{stringliteral}{"{}uint"{}}\},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a2e8b9dabb5b3bc7261d9fbaf344f009c}{ValueType::boolType}},\ \ \ \ \textcolor{stringliteral}{"{}bool"{}}\},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a62dfebcea72ad0fcb73fcd2281677751}{ValueType::floatType}},\ \ \ \textcolor{stringliteral}{"{}float"{}}\},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a7911a984e4b5b8d00c2bf83d6e8263aa}{ValueType::doubleType}},\ \ \textcolor{stringliteral}{"{}double"{}}\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a8a118ab1e8e3a4c093b6760f67ebb07c}{ValueType::int64tType}},\ \ \textcolor{stringliteral}{"{}int64t"{}}\},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a97fce78cf1ec0a7eec338e3cccf09cc0}{ValueType::uint64tType}},\ \textcolor{stringliteral}{"{}uint64t"{}}\},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7aa15fe326ca40640dbcf32732b40456ff}{ValueType::stringType}},\ \ \textcolor{stringliteral}{"{}string"{}}\},}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ rapidjson::Value\ get\_json\_value(T\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ rapidjson::Value\ get\_json\_value\_type(T\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00057\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a0efd2f19016d221bbdb9ab0600af8f47}{get\_json\_value<bool>}}(\textcolor{keywordtype}{bool}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00063\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_acf244418fda9a3ebc755bfcb5c97a040}{get\_json\_value<int>}}(\textcolor{keywordtype}{int}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00069\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a0efa9b8a42fafdaef1c58689163c99da}{get\_json\_value<float>}}(\textcolor{keywordtype}{float}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00075\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9e3343548492718e1dcba99e1933c1d9}{get\_json\_value<double>}}(\textcolor{keywordtype}{double}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00081\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a02140594c9cdce63785f21ef3ab67f5a}{get\_json\_value<unsigned\ int>}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00087\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_ac60f85cfc20bfee97dffbd15222a28ec}{get\_json\_value<int64\_t>}}(int64\_t\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00093\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a9c5fd5ac43763beccc1de4857c553f83}{get\_json\_value<uint64\_t>}}(uint64\_t\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(val);}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00099\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a0920b103571cd6ddecc4417e7f818a90}{get\_json\_value<std::string>}}(std::string\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ rapidjson::Value\ json\_val;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ json\_val.SetString(val.c\_str(),\ allocator);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ json\_val;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00108\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_ac5e6af4074cb8c558e40a6f1ad8e564c}{get\_json\_value\_type<bool>}}(\textcolor{keywordtype}{bool}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}bool"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00114\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a3cc0249ee4244157d6912ca3d2ee6c81}{get\_json\_value\_type<int>}}(\textcolor{keywordtype}{int}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}int"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00120\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a0b95002b43e9b65b93bbb76f2b9858a2}{get\_json\_value\_type<float>}}(\textcolor{keywordtype}{float}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}float"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00126\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a89cc431768fba7cb7c30b04a92546df9}{get\_json\_value\_type<double>}}(\textcolor{keywordtype}{double}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}double"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00132\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a04e0533da8b52f1c2455b9adda7cd84c}{get\_json\_value\_type<unsigned\ int>}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}unsigned\ int"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00138\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a2c0d45fbe0549e23d04e7d70f8207742}{get\_json\_value\_type<int64\_t>}}(int64\_t\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}int64\_t"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00144\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_a30d0f72bbe5887a889c88f3dab9b1387}{get\_json\_value\_type<uint64\_t>}}(uint64\_t\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}int64\_t"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00150\ \ \ \ \ rapidjson::Value}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{namespacevalue__type__helpers_ab780c82713fcaab6e1f726f550425148}{get\_json\_value\_type<std::string>}}(std::string\ val,\ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rapidjson::Value(std::string(\textcolor{stringliteral}{"{}string"{}}).c\_str(),\ allocator);}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_VALUE\_TYPE\_HELPERS\_H}}
+
+\end{DoxyCode}

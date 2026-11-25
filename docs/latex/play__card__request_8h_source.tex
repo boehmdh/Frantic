@@ -1,0 +1,52 @@
+\doxysection{play\+\_\+card\+\_\+request.\+h}
+\hypertarget{play__card__request_8h_source}{}\label{play__card__request_8h_source}\index{src/common/network/requests/play\_card\_request.h@{src/common/network/requests/play\_card\_request.h}}
+\mbox{\hyperlink{play__card__request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 28.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_PLAY\_CARD\_REQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_PLAY\_CARD\_REQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{client\_request.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }play\_card\_request\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \_card\_id;}
+\DoxyCodeLine{00016\ \ \ \ \ uint\ \_wish;}
+\DoxyCodeLine{00017\ \ \ \ \ uint\ \_ff\_target;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{00020\ \ \ \ \ play\_card\_request(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}}\ props,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ card\_id,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint\ wish,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint\ ff\_target);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ public\ constructor\ used\ by\ client}}
+\DoxyCodeLine{00028\ \ \ \ \ play\_card\_request(std::string\ game\_id,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ player\_id,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ card\_id,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint\ wish,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint\ ff\_target);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ uint\ \mbox{\hyperlink{classplay__card__request_a750892b5a6b32971d402e0302e7b7216}{get\_fantastic\_four\_target}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ff\_target;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{classplay__card__request_a587db921fc5a6a522c274dac134b77f5}{get\_card\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_card\_id;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ uint\ \mbox{\hyperlink{classplay__card__request_a63ea79a7dbbdfcd50e933c349c795fcd}{get\_wish}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_wish;\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplay__card__request_a0eb0a555a17b069119682dcf21de925c}{write\_into\_json}}(rapidjson::Value\&\ json,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classplay__card__request}{play\_card\_request}}*\ \mbox{\hyperlink{classplay__card__request_a25accc5649830884e0cc971e20d385dc}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+
+\end{DoxyCode}

@@ -1,0 +1,171 @@
+\doxysection{hand Class Reference}
+\hypertarget{classhand}{}\label{classhand}\index{hand@{hand}}
+
+
+{\ttfamily \#include $<$hand.\+h$>$}
+
+
+
+Inheritance diagram for hand\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classhand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hand\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classhand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhand_ae8d7de2589266f57271ac191dab8cd64}{hand}} ()
+\item 
+\mbox{\hyperlink{classhand_ae60a8ef2a1097b53723e094f1944832a}{\texorpdfstring{$\sim$}{\string~}hand}} ()
+\item 
+virtual void \mbox{\hyperlink{classhand_a505a82447d0ae305dadcc9c4aa54071e}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\item 
+int \mbox{\hyperlink{classhand_a995bef7782a03ff0cd14931ce84106a7}{get\+\_\+nof\+\_\+cards}} () const
+\item 
+uint \mbox{\hyperlink{classhand_a89029f49c26199eb23e08d2afeeedb85}{get\+\_\+score}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classhand_a1b5b959ed23a620f9a4f8a5795f264e9}{get\+\_\+cards}} () const
+\item 
+bool \mbox{\hyperlink{classhand_a0a50cbbb167e6a1d633dd48bc4b695fe}{try\+\_\+get\+\_\+card}} (const std\+::string \&card\+\_\+id, \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&hand\+\_\+card) const
+\item 
+void \mbox{\hyperlink{classhand_a29d594ca40cf701145ad9c9293eb800d}{setup\+\_\+round}} (std\+::string \&err)
+\item 
+void \mbox{\hyperlink{classhand_a4c551bb8a3216245b3af025605b144c3}{add\+\_\+card}} (\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcard}{card}})
+\item 
+bool \mbox{\hyperlink{classhand_ae4203ef4ca99af21b726d68579b70e95}{remove\+\_\+card}} (std\+::string card\+\_\+id, \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&played\+\_\+card, std\+::string \&err)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$\+::iterator \mbox{\hyperlink{classhand_adae2057cfa5ea715e824ba13eebe561d}{get\+\_\+card\+\_\+iterator}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classhand}{hand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classhand_aa9cffdf932d80c7304a335074403e785}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classhand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhand_ae8d7de2589266f57271ac191dab8cd64}\index{hand@{hand}!hand@{hand}}
+\index{hand@{hand}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{hand()}{hand()}}
+{\footnotesize\ttfamily \label{classhand_ae8d7de2589266f57271ac191dab8cd64} 
+hand\+::hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classhand_ae60a8ef2a1097b53723e094f1944832a}\index{hand@{hand}!````~hand@{\texorpdfstring{$\sim$}{\string~}hand}}
+\index{````~hand@{\texorpdfstring{$\sim$}{\string~}hand}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}hand()}{\string~hand()}}
+{\footnotesize\ttfamily \label{classhand_ae60a8ef2a1097b53723e094f1944832a} 
+hand\+::\texorpdfstring{$\sim$}{\string~}hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classhand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhand_a4c551bb8a3216245b3af025605b144c3}\index{hand@{hand}!add\_card@{add\_card}}
+\index{add\_card@{add\_card}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{add\_card()}{add\_card()}}
+{\footnotesize\ttfamily \label{classhand_a4c551bb8a3216245b3af025605b144c3} 
+void hand\+::add\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{card}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classhand_aa9cffdf932d80c7304a335074403e785}\index{hand@{hand}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classhand_aa9cffdf932d80c7304a335074403e785} 
+\mbox{\hyperlink{classhand}{hand}} \texorpdfstring{$\ast$}{*} hand\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classhand_adae2057cfa5ea715e824ba13eebe561d}\index{hand@{hand}!get\_card\_iterator@{get\_card\_iterator}}
+\index{get\_card\_iterator@{get\_card\_iterator}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{get\_card\_iterator()}{get\_card\_iterator()}}
+{\footnotesize\ttfamily \label{classhand_adae2057cfa5ea715e824ba13eebe561d} 
+std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$\+::iterator hand\+::get\+\_\+card\+\_\+iterator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classhand_a1b5b959ed23a620f9a4f8a5795f264e9}\index{hand@{hand}!get\_cards@{get\_cards}}
+\index{get\_cards@{get\_cards}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{get\_cards()}{get\_cards()}}
+{\footnotesize\ttfamily \label{classhand_a1b5b959ed23a620f9a4f8a5795f264e9} 
+const std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ hand\+::get\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classhand_a995bef7782a03ff0cd14931ce84106a7}\index{hand@{hand}!get\_nof\_cards@{get\_nof\_cards}}
+\index{get\_nof\_cards@{get\_nof\_cards}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{get\_nof\_cards()}{get\_nof\_cards()}}
+{\footnotesize\ttfamily \label{classhand_a995bef7782a03ff0cd14931ce84106a7} 
+int hand\+::get\+\_\+nof\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classhand_a89029f49c26199eb23e08d2afeeedb85}\index{hand@{hand}!get\_score@{get\_score}}
+\index{get\_score@{get\_score}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{get\_score()}{get\_score()}}
+{\footnotesize\ttfamily \label{classhand_a89029f49c26199eb23e08d2afeeedb85} 
+uint hand\+::get\+\_\+score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classhand_ae4203ef4ca99af21b726d68579b70e95}\index{hand@{hand}!remove\_card@{remove\_card}}
+\index{remove\_card@{remove\_card}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{remove\_card()}{remove\_card()}}
+{\footnotesize\ttfamily \label{classhand_ae4203ef4ca99af21b726d68579b70e95} 
+bool hand\+::remove\+\_\+card (\begin{DoxyParamCaption}\item[{std\+::string}]{card\+\_\+id}{, }\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&}]{played\+\_\+card}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classhand_a29d594ca40cf701145ad9c9293eb800d}\index{hand@{hand}!setup\_round@{setup\_round}}
+\index{setup\_round@{setup\_round}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{setup\_round()}{setup\_round()}}
+{\footnotesize\ttfamily \label{classhand_a29d594ca40cf701145ad9c9293eb800d} 
+void hand\+::setup\+\_\+round (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classhand_a0a50cbbb167e6a1d633dd48bc4b695fe}\index{hand@{hand}!try\_get\_card@{try\_get\_card}}
+\index{try\_get\_card@{try\_get\_card}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{try\_get\_card()}{try\_get\_card()}}
+{\footnotesize\ttfamily \label{classhand_a0a50cbbb167e6a1d633dd48bc4b695fe} 
+bool hand\+::try\+\_\+get\+\_\+card (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{card\+\_\+id}{, }\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&}]{hand\+\_\+card}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classhand_a505a82447d0ae305dadcc9c4aa54071e}\index{hand@{hand}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!hand@{hand}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classhand_a505a82447d0ae305dadcc9c4aa54071e} 
+void hand\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/player/\mbox{\hyperlink{hand_8h}{hand.\+h}}\item 
+src/common/game\+\_\+state/player/\mbox{\hyperlink{hand_8cpp}{hand.\+cpp}}\end{DoxyCompactItemize}

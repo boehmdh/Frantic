@@ -1,0 +1,79 @@
+\doxysection{src/common/serialization/value\+\_\+type\+\_\+helpers.h File Reference}
+\hypertarget{value__type__helpers_8h}{}\label{value__type__helpers_8h}\index{src/common/serialization/value\_type\_helpers.h@{src/common/serialization/value\_type\_helpers.h}}
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+Include dependency graph for value\+\_\+type\+\_\+helpers.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{value__type__helpers_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{value__type__helpers_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacevalue__type__helpers}{value\+\_\+type\+\_\+helpers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7}{value\+\_\+type\+\_\+helpers\+::\+Value\+Type}} \{ \newline
+\mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a14e5cbc94f0b6c3b259ce706b05a4950}{value\+\_\+type\+\_\+helpers\+::int\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7ab3b3b8703425181c806eb8b07c39e8ba}{value\+\_\+type\+\_\+helpers\+::uint\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a2e8b9dabb5b3bc7261d9fbaf344f009c}{value\+\_\+type\+\_\+helpers\+::bool\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a62dfebcea72ad0fcb73fcd2281677751}{value\+\_\+type\+\_\+helpers\+::float\+Type}}
+, \newline
+\mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a7911a984e4b5b8d00c2bf83d6e8263aa}{value\+\_\+type\+\_\+helpers\+::double\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7aa15fe326ca40640dbcf32732b40456ff}{value\+\_\+type\+\_\+helpers\+::string\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a8a118ab1e8e3a4c093b6760f67ebb07c}{value\+\_\+type\+\_\+helpers\+::int64t\+Type}}
+, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7a97fce78cf1ec0a7eec338e3cccf09cc0}{value\+\_\+type\+\_\+helpers\+::uint64t\+Type}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a0efd2f19016d221bbdb9ab0600af8f47}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ bool $>$}} (bool val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_acf244418fda9a3ebc755bfcb5c97a040}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ int $>$}} (int val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a0efa9b8a42fafdaef1c58689163c99da}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ float $>$}} (float val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a9e3343548492718e1dcba99e1933c1d9}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ double $>$}} (double val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a02140594c9cdce63785f21ef3ab67f5a}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ unsigned int $>$}} (unsigned int val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_ac60f85cfc20bfee97dffbd15222a28ec}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ int64\+\_\+t $>$}} (int64\+\_\+t val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a9c5fd5ac43763beccc1de4857c553f83}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ uint64\+\_\+t $>$}} (uint64\+\_\+t val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a0920b103571cd6ddecc4417e7f818a90}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value$<$ std\+::string $>$}} (std\+::string val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_ac5e6af4074cb8c558e40a6f1ad8e564c}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ bool $>$}} (bool val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a3cc0249ee4244157d6912ca3d2ee6c81}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ int $>$}} (int val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a0b95002b43e9b65b93bbb76f2b9858a2}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ float $>$}} (float val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a89cc431768fba7cb7c30b04a92546df9}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ double $>$}} (double val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a04e0533da8b52f1c2455b9adda7cd84c}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ unsigned int $>$}} (unsigned int val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a2c0d45fbe0549e23d04e7d70f8207742}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ int64\+\_\+t $>$}} (int64\+\_\+t val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_a30d0f72bbe5887a889c88f3dab9b1387}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ uint64\+\_\+t $>$}} (uint64\+\_\+t val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\item 
+template$<$$>$ rapidjson\+::\+Value \mbox{\hyperlink{namespacevalue__type__helpers_ab780c82713fcaab6e1f726f550425148}{value\+\_\+type\+\_\+helpers\+::get\+\_\+json\+\_\+value\+\_\+type$<$ std\+::string $>$}} (std\+::string val, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7}{Value\+Type}} $>$ \mbox{\hyperlink{namespacevalue__type__helpers_ae62000bb4ccd99ef393416bd25021c5b}{value\+\_\+type\+\_\+helpers\+::\+\_\+string\+\_\+to\+\_\+value\+\_\+type}}
+\item 
+const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespacevalue__type__helpers_a9c190f827cd3e8051ac12234d8f03cf7}{Value\+Type}}, std\+::string $>$ \mbox{\hyperlink{namespacevalue__type__helpers_a3f91e930d13df2be52884d6626b4321e}{value\+\_\+type\+\_\+helpers\+::\+\_\+value\+\_\+type\+\_\+to\+\_\+string}}
+\end{DoxyCompactItemize}

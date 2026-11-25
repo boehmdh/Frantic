@@ -1,0 +1,34 @@
+\doxysection{fold\+\_\+request.\+h}
+\hypertarget{fold__request_8h_source}{}\label{fold__request_8h_source}\index{src/common/network/requests/fold\_request.h@{src/common/network/requests/fold\_request.h}}
+\mbox{\hyperlink{fold__request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 29.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_FOLD\_REQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_FOLD\_REQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{client\_request.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }fold\_request\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}\{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ \ *\ Private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ fold\_request(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ fold\_request(std::string\ game\_id,\ std::string\ player\_id);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfold__request_a6d016d6138d13f0590cd242d51858a67}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ fold\_request*\ \mbox{\hyperlink{classfold__request_a7d257c8fd44aae3d2a22741808c4e587}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_FOLD\_REQUEST\_H}}
+
+\end{DoxyCode}

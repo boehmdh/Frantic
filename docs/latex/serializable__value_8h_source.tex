@@ -1,0 +1,67 @@
+\doxysection{serializable\+\_\+value.\+h}
+\hypertarget{serializable__value_8h_source}{}\label{serializable__value_8h_source}\index{src/common/serialization/serializable\_value.h@{src/common/serialization/serializable\_value.h}}
+\mbox{\hyperlink{serializable__value_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 04.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ A\ serializable\ value.\ Supported\ value\ types\ are:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ bool}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ int}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ unsigned\ int}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ int64\_t}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ uint64\_t}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ float}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ double}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ string}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_SERIALIZABLE\_VALUE\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ FRANTIC\_SERIALIZABLE\_VALUE\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{value__type__helpers_8h}{value\_type\_helpers.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}{serializable\_value}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserializable}{serializable}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ T\ \_value;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}{serializable\_value}}(T\ val)\ :\ \mbox{\hyperlink{classserializable}{serializable}}(),\ \_value(val)\ \{\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ T\ \mbox{\hyperlink{classserializable__value_a64a9827204b46e3917ab1e3841d82cdf}{get\_value}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_value;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserializable__value_a09ede91b2214289d1e3e8ff717e153bb}{set\_value}}(T\ val)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\_value\ !=\ val)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\_value\ =\ val;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ serializable\ interface}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserializable__value_a1450a89851dd11689fa5b7156ae91bdb}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}value"{}},\ value\_type\_helpers::get\_json\_value<\textcolor{keyword}{decltype}(\_value)>(\_value,\ allocator),\ allocator);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}{serializable\_value<T>}}*\ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (json.HasMember(\textcolor{stringliteral}{"{}value"{}}))\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ T\ val\ =\ json[\textcolor{stringliteral}{"{}value"{}}].Get<T>();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}{serializable\_value<T>}}(val);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_SERIALIZABLE\_VALUE\_H}}
+
+\end{DoxyCode}

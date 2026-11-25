@@ -1,0 +1,41 @@
+\doxysection{request\+\_\+response.\+h}
+\hypertarget{request__response_8h_source}{}\label{request__response_8h_source}\index{src/common/network/responses/request\_response.h@{src/common/network/responses/request\_response.h}}
+\mbox{\hyperlink{request__response_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 15.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_REQUEST\_RESPONSE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_REQUEST\_RESPONSE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server__response_8h}{server\_response.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }request\_response\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\_response}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_success;}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \_err;}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \_req\_id;}
+\DoxyCodeLine{00017\ \ \ \ \ rapidjson::Value*\ \_state\_json\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ request\_response(\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}}\ props,\ std::string\ req\_id,\ \textcolor{keywordtype}{bool}\ success,\ rapidjson::Value*\ state\_json,\ std::string\&\ err);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ request\_response(std::string\ game\_id,\ std::string\ req\_id,\ \textcolor{keywordtype}{bool}\ success,\ rapidjson::Value*\ state\_json,\ std::string\ err);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classrequest__response_aa6d02f6e36586af4a705ec47ac736fec}{\string~request\_response}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrequest__response_ad968775a041bb5616cc78140e77620f5}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ request\_response*\ \mbox{\hyperlink{classrequest__response_a93118c3447d6b97723b0169925893ea3}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_CLIENT}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrequest__response_a8aea6c4e2cfb89cf6c9e482eed746cb3}{Process}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_REQUEST\_RESPONSE\_H}}
+
+\end{DoxyCode}

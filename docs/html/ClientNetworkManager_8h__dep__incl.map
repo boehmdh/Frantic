@@ -1,0 +1,9 @@
+<map id="src/client/network/ClientNetworkManager.h" name="src/client/network/ClientNetworkManager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="253,5,439,45"/>
+<area shape="rect" id="Node000002" href="$GameController_8cpp.html" title=" " alt="" coords="5,101,220,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,53,145,103,143,98,281,48"/>
+<area shape="rect" id="Node000003" href="$ClientNetworkManager_8cpp.html" title=" " alt="" coords="245,93,447,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,59,349,93,343,93,343,59"/>
+<area shape="rect" id="Node000004" href="$ResponseListenerThread_8cpp.html" title=" " alt="" coords="471,93,685,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="411,48,528,91,526,96,409,53"/>
+</map>

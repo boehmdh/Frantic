@@ -1,0 +1,207 @@
+\doxysection{draw\+\_\+pile Class Reference}
+\hypertarget{classdraw__pile}{}\label{classdraw__pile}\index{draw\_pile@{draw\_pile}}
+
+
+{\ttfamily \#include $<$draw\+\_\+pile.\+h$>$}
+
+
+
+Inheritance diagram for draw\+\_\+pile\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classdraw__pile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for draw\+\_\+pile\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classdraw__pile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that generates a new deck of cards. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdraw__pile_ac344ed55114a956ee2501f48f2056b1a}{draw\+\_\+pile}} (std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \&cards)
+\begin{DoxyCompactList}\small\item\em Constructor that includes only the passed vector of card-\/pointers and does not generate new ones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdraw__pile_aab72cb109e4777392ba2a429cfaecb1a}{draw\+\_\+pile}} (std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}cards)
+\begin{DoxyCompactList}\small\item\em Constructor to construct a new draw pile from the reshuffled cards from the discard pile. Required because passing a pointer to the passed vector is more convenient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdraw__pile_a714782c1cddd786b90a837c8e87f6b4c}{\texorpdfstring{$\sim$}{\string~}draw\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdraw__pile_a3e7d49f7d559e57911b185fe06dddc8a}{is\+\_\+empty}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns true if the draw pile is empty. Required for reshuffling. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdraw__pile_a625ffa4e304c9ff467b370d2c2bc6d11}{get\+\_\+nof\+\_\+cards}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the number of cards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdraw__pile_aad8f47a8fce72e6c53d1998b28c4946e}{setup\+\_\+game}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Fills the pile with all cards of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdraw__pile_abbacb78446054dc3086a4cff95eaa862}{draw}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}})
+\begin{DoxyCompactList}\small\item\em Passes the top card to the player the argument points to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdraw__pile_a49dec18cd3817b84c5671b7f7da567cd}{remove\+\_\+top}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Removes the top card. Required at initialization to transfer the top card to the discard pile. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdraw__pile_af366405d0762eb4135609ccf96f0aff7}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdraw__pile_af25d6b84ce2275d10e8b291bbeae995c}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classdraw__pile_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdraw__pile_a820a134711d8450f1153888864ccd585}\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{draw\_pile()}{draw\_pile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classdraw__pile_a820a134711d8450f1153888864ccd585} 
+draw\+\_\+pile\+::draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor that generates a new deck of cards. 
+
+\Hypertarget{classdraw__pile_ac344ed55114a956ee2501f48f2056b1a}\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{draw\_pile()}{draw\_pile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classdraw__pile_ac344ed55114a956ee2501f48f2056b1a} 
+draw\+\_\+pile\+::draw\+\_\+pile (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \&}]{cards}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that includes only the passed vector of card-\/pointers and does not generate new ones. 
+
+\Hypertarget{classdraw__pile_aab72cb109e4777392ba2a429cfaecb1a}\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\index{draw\_pile@{draw\_pile}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{draw\_pile()}{draw\_pile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classdraw__pile_aab72cb109e4777392ba2a429cfaecb1a} 
+draw\+\_\+pile\+::draw\+\_\+pile (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{cards}{}\end{DoxyParamCaption})}
+
+
+
+Constructor to construct a new draw pile from the reshuffled cards from the discard pile. Required because passing a pointer to the passed vector is more convenient. 
+
+\Hypertarget{classdraw__pile_a714782c1cddd786b90a837c8e87f6b4c}\index{draw\_pile@{draw\_pile}!````~draw\_pile@{\texorpdfstring{$\sim$}{\string~}draw\_pile}}
+\index{````~draw\_pile@{\texorpdfstring{$\sim$}{\string~}draw\_pile}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}draw\_pile()}{\string~draw\_pile()}}
+{\footnotesize\ttfamily \label{classdraw__pile_a714782c1cddd786b90a837c8e87f6b4c} 
+draw\+\_\+pile\+::\texorpdfstring{$\sim$}{\string~}draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classdraw__pile_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdraw__pile_abbacb78446054dc3086a4cff95eaa862}\index{draw\_pile@{draw\_pile}!draw@{draw}}
+\index{draw@{draw}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{classdraw__pile_abbacb78446054dc3086a4cff95eaa862} 
+void draw\+\_\+pile\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Passes the top card to the player the argument points to. 
+
+\Hypertarget{classdraw__pile_af25d6b84ce2275d10e8b291bbeae995c}\index{draw\_pile@{draw\_pile}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classdraw__pile_af25d6b84ce2275d10e8b291bbeae995c} 
+\mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} draw\+\_\+pile\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classdraw__pile_a625ffa4e304c9ff467b370d2c2bc6d11}\index{draw\_pile@{draw\_pile}!get\_nof\_cards@{get\_nof\_cards}}
+\index{get\_nof\_cards@{get\_nof\_cards}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{get\_nof\_cards()}{get\_nof\_cards()}}
+{\footnotesize\ttfamily \label{classdraw__pile_a625ffa4e304c9ff467b370d2c2bc6d11} 
+int draw\+\_\+pile\+::get\+\_\+nof\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns the number of cards. 
+
+\Hypertarget{classdraw__pile_a3e7d49f7d559e57911b185fe06dddc8a}\index{draw\_pile@{draw\_pile}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily \label{classdraw__pile_a3e7d49f7d559e57911b185fe06dddc8a} 
+bool draw\+\_\+pile\+::is\+\_\+empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns true if the draw pile is empty. Required for reshuffling. 
+
+\Hypertarget{classdraw__pile_a49dec18cd3817b84c5671b7f7da567cd}\index{draw\_pile@{draw\_pile}!remove\_top@{remove\_top}}
+\index{remove\_top@{remove\_top}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{remove\_top()}{remove\_top()}}
+{\footnotesize\ttfamily \label{classdraw__pile_a49dec18cd3817b84c5671b7f7da567cd} 
+\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} draw\+\_\+pile\+::remove\+\_\+top (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Removes the top card. Required at initialization to transfer the top card to the discard pile. 
+
+\Hypertarget{classdraw__pile_aad8f47a8fce72e6c53d1998b28c4946e}\index{draw\_pile@{draw\_pile}!setup\_game@{setup\_game}}
+\index{setup\_game@{setup\_game}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{setup\_game()}{setup\_game()}}
+{\footnotesize\ttfamily \label{classdraw__pile_aad8f47a8fce72e6c53d1998b28c4946e} 
+void draw\+\_\+pile\+::setup\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Fills the pile with all cards of the game. 
+
+\Hypertarget{classdraw__pile_af366405d0762eb4135609ccf96f0aff7}\index{draw\_pile@{draw\_pile}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!draw\_pile@{draw\_pile}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classdraw__pile_af366405d0762eb4135609ccf96f0aff7} 
+void draw\+\_\+pile\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{draw__pile_8h}{draw\+\_\+pile.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{draw__pile_8cpp}{draw\+\_\+pile.\+cpp}}\end{DoxyCompactItemize}

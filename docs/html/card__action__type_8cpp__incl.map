@@ -1,0 +1,13 @@
+<map id="src/common/game_state/cards/card_action_type.cpp" name="src/common/game_state/cards/card_action_type.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,5,284,45"/>
+<area shape="rect" id="Node000002" href="$card__action__type_8h.html" title=" " alt="" coords="41,93,186,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,47,135,84,131,81,164,44"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="211,93,296,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,44,236,81,232,85,198,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,64,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,121,59,159,56,156,99,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="88,167,139,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="116,119,116,153,111,153,111,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="163,167,224,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="128,117,172,156,168,160,124,121"/>
+</map>

@@ -1,0 +1,37 @@
+\doxysection{player\+\_\+manager.\+h}
+\hypertarget{player__manager_8h_source}{}\label{player__manager_8h_source}\index{src/server/player\_manager.h@{src/server/player\_manager.h}}
+\mbox{\hyperlink{player__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 29.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ The\ player\_manager\ only\ exists\ on\ the\ server\ side.\ It\ stores\ all\ connected\ users\ since\ starting\ the\ server.\ It\ offers}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ functionality\ to\ retrieve\ players\ by\ id\ or\ adding\ players\ when\ they\ first\ connect\ to\ the\ server.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_PLAYER\_MANAGER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FRANTIC\_PLAYER\_MANAGER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <shared\_mutex>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../common/game\_state/player/player.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classplayer__manager}{player\_manager}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::shared\_mutex\ \_rw\_lock;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ player*>\ \_players\_lut;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer__manager_a7ab45176b7f1dcf02882c37de784a824}{try\_get\_player}}(\textcolor{keyword}{const}\ std::string\&\ player\_id,\ \mbox{\hyperlink{classplayer}{player}}*\&\ player\_ptr);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer__manager_a2a185ff8d0f56fb7f2bf84bfc02ca074}{add\_or\_get\_player}}(std::string\ name,\ \textcolor{keyword}{const}\ std::string\&\ player\_id,\ \mbox{\hyperlink{classplayer}{player}}*\&\ player\_ptr);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer__manager_aefdcfc9cd1fa7cd2e9be160ade5b44ea}{remove\_player}}(\textcolor{keyword}{const}\ std::string\&\ player\_id,\ \mbox{\hyperlink{classplayer}{player}}*\&\ \mbox{\hyperlink{classplayer}{player}});\ \ \textcolor{comment}{//\ not\ implemented}}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_PLAYER\_MANAGER\_H}}
+
+\end{DoxyCode}

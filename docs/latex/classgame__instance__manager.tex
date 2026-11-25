@@ -1,0 +1,68 @@
+\doxysection{game\+\_\+instance\+\_\+manager Class Reference}
+\hypertarget{classgame__instance__manager}{}\label{classgame__instance__manager}\index{game\_instance\_manager@{game\_instance\_manager}}
+
+
+{\ttfamily \#include $<$game\+\_\+instance\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_ae78f5305ca6f468dd4228a88d350257f}{try\+\_\+get\+\_\+game\+\_\+instance}} (const std\+::string \&game\+\_\+id, \mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&game\+\_\+instance\+\_\+ptr)
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_ab54ef00eae3b51619a7441d47fbd5b36}{try\+\_\+get\+\_\+player\+\_\+and\+\_\+game\+\_\+instance}} (const std\+::string \&player\+\_\+id, \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\&\mbox{\hyperlink{classplayer}{player}}, \mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&game\+\_\+instance\+\_\+ptr, std\+::string \&err)
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_a024767628969b12d1346b5baf9f9604e}{try\+\_\+add\+\_\+player\+\_\+to\+\_\+any\+\_\+game}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, \mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&game\+\_\+instance\+\_\+ptr, std\+::string \&err)
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_a24ee9a9f11c90d5fb3ce3961d8f528ba}{try\+\_\+add\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, \mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&game\+\_\+instance\+\_\+ptr, std\+::string \&err)
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_a03b0658094ba4572fd25ba068f902665}{try\+\_\+remove\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, const std\+::string \&game\+\_\+id, std\+::string \&err)
+\item 
+static bool \mbox{\hyperlink{classgame__instance__manager_a29db16566173c004507c20ca19aa54fa}{try\+\_\+remove\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, \mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&game\+\_\+instance\+\_\+ptr, std\+::string \&err)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classgame__instance__manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame__instance__manager_a24ee9a9f11c90d5fb3ce3961d8f528ba}\index{game\_instance\_manager@{game\_instance\_manager}!try\_add\_player@{try\_add\_player}}
+\index{try\_add\_player@{try\_add\_player}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_add\_player()}{try\_add\_player()}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_a24ee9a9f11c90d5fb3ce3961d8f528ba} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+add\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&}]{game\+\_\+instance\+\_\+ptr}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__instance__manager_a024767628969b12d1346b5baf9f9604e}\index{game\_instance\_manager@{game\_instance\_manager}!try\_add\_player\_to\_any\_game@{try\_add\_player\_to\_any\_game}}
+\index{try\_add\_player\_to\_any\_game@{try\_add\_player\_to\_any\_game}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_add\_player\_to\_any\_game()}{try\_add\_player\_to\_any\_game()}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_a024767628969b12d1346b5baf9f9604e} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+add\+\_\+player\+\_\+to\+\_\+any\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&}]{game\+\_\+instance\+\_\+ptr}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__instance__manager_ae78f5305ca6f468dd4228a88d350257f}\index{game\_instance\_manager@{game\_instance\_manager}!try\_get\_game\_instance@{try\_get\_game\_instance}}
+\index{try\_get\_game\_instance@{try\_get\_game\_instance}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_get\_game\_instance()}{try\_get\_game\_instance()}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_ae78f5305ca6f468dd4228a88d350257f} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+get\+\_\+game\+\_\+instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{game\+\_\+id}{, }\item[{\mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&}]{game\+\_\+instance\+\_\+ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__instance__manager_ab54ef00eae3b51619a7441d47fbd5b36}\index{game\_instance\_manager@{game\_instance\_manager}!try\_get\_player\_and\_game\_instance@{try\_get\_player\_and\_game\_instance}}
+\index{try\_get\_player\_and\_game\_instance@{try\_get\_player\_and\_game\_instance}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_get\_player\_and\_game\_instance()}{try\_get\_player\_and\_game\_instance()}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_ab54ef00eae3b51619a7441d47fbd5b36} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+get\+\_\+player\+\_\+and\+\_\+game\+\_\+instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player\+\_\+id}{, }\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\&}]{player}{, }\item[{\mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&}]{game\+\_\+instance\+\_\+ptr}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__instance__manager_a03b0658094ba4572fd25ba068f902665}\index{game\_instance\_manager@{game\_instance\_manager}!try\_remove\_player@{try\_remove\_player}}
+\index{try\_remove\_player@{try\_remove\_player}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_remove\_player()}{try\_remove\_player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_a03b0658094ba4572fd25ba068f902665} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+remove\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const std\+::string \&}]{game\+\_\+id}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__instance__manager_a29db16566173c004507c20ca19aa54fa}\index{game\_instance\_manager@{game\_instance\_manager}!try\_remove\_player@{try\_remove\_player}}
+\index{try\_remove\_player@{try\_remove\_player}!game\_instance\_manager@{game\_instance\_manager}}
+\doxysubsubsection{\texorpdfstring{try\_remove\_player()}{try\_remove\_player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classgame__instance__manager_a29db16566173c004507c20ca19aa54fa} 
+bool game\+\_\+instance\+\_\+manager\+::try\+\_\+remove\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{classgame__instance}{game\+\_\+instance}} \texorpdfstring{$\ast$}{*}\&}]{game\+\_\+instance\+\_\+ptr}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/server/\mbox{\hyperlink{game__instance__manager_8h}{game\+\_\+instance\+\_\+manager.\+h}}\item 
+src/server/\mbox{\hyperlink{game__instance__manager_8cpp}{game\+\_\+instance\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\doxysection{serializable\+\_\+value\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classserializable__value}{}\label{classserializable__value}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+
+
+{\ttfamily \#include $<$serializable\+\_\+value.\+h$>$}
+
+
+
+Inheritance diagram for serializable\+\_\+value\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classserializable__value__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for serializable\+\_\+value\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classserializable__value__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}{serializable\+\_\+value}} (T val)
+\item 
+T \mbox{\hyperlink{classserializable__value_a64a9827204b46e3917ab1e3841d82cdf}{get\+\_\+value}} () const
+\item 
+void \mbox{\hyperlink{classserializable__value_a09ede91b2214289d1e3e8ff717e153bb}{set\+\_\+value}} (T val)
+\item 
+virtual void \mbox{\hyperlink{classserializable__value_a1450a89851dd11689fa5b7156ae91bdb}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classserializable__value_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}!serializable\_value@{serializable\_value}}
+\index{serializable\_value@{serializable\_value}!serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{serializable\_value()}{serializable\_value()}}
+{\footnotesize\ttfamily \label{classserializable__value_a8eada14f8a2e103182cd340cbd84b80d} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$\+::serializable\+\_\+value (\begin{DoxyParamCaption}\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classserializable__value_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classserializable__value_a64a9827204b46e3917ab1e3841d82cdf}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily \label{classserializable__value_a64a9827204b46e3917ab1e3841d82cdf} 
+template$<$class T$>$ \\
+T \mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$\+::get\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classserializable__value_a09ede91b2214289d1e3e8ff717e153bb}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily \label{classserializable__value_a09ede91b2214289d1e3e8ff717e153bb} 
+template$<$class T$>$ \\
+void \mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classserializable__value_a1450a89851dd11689fa5b7156ae91bdb}\index{serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!serializable\_value$<$ T $>$@{serializable\_value$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classserializable__value_a1450a89851dd11689fa5b7156ae91bdb} 
+template$<$class T$>$ \\
+virtual void \mbox{\hyperlink{classserializable__value}{serializable\+\_\+value}}$<$ T $>$\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/common/serialization/\mbox{\hyperlink{serializable__value_8h}{serializable\+\_\+value.\+h}}\end{DoxyCompactItemize}

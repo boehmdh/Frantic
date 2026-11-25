@@ -1,0 +1,59 @@
+\doxysection{card.\+h}
+\hypertarget{card_8h_source}{}\label{card_8h_source}\index{src/common/game\_state/cards/card.h@{src/common/game\_state/cards/card.h}}
+\mbox{\hyperlink{card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 25.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_CARD\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_CARD\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{color_8h}{color.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card__action__type_8h}{card\_action\_type.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame__state}{game\_state}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classplayer}{player}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }card\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ int\ equals\ the\ number\ value,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ *\ special\ cards\ are\ mapped\ to\ integers\ that\ do\ not\ occur\ as\ number\ values:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}*\ \_value;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//uint:\ 10\ black,\ 11\ blue,\ 12\ green,\ 13\ red,\ 14\ yellow}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}\ \_color;}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{CardActionType}}\ \_action\ =\ \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{CardActionType::NONE}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ from\_diff\ constructor}}
+\DoxyCodeLine{00026\ \ \ \ \ card(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ deserialization\ constructor}}
+\DoxyCodeLine{00028\ \ \ \ \ card(std::string\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}*\ val,\ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}\ *col);}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ card(uint\ val,\ \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}\ col);}
+\DoxyCodeLine{00033\ \ \ \ \ card(\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}\ col,\ \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{CardActionType}}\ act);}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classcard_acbacc99b12f8705aa4b99ae98504e7eb}{\string~card}}();}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00040\ \ \ \ \ uint\ \mbox{\hyperlink{classcard_ab4fe51c45b8d5145e07c86b2f93d038f}{get\_value}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}\ \mbox{\hyperlink{classcard_a60c055be28de8908f973fae7f141818a}{get\_color}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{CardActionType}}\ \mbox{\hyperlink{classcard_aa2b5aedebb65b90f066ec2fef429e428}{get\_action}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcard_ad588c1aa0883a4477c81011fd2b379e9}{can\_be\_played\_on}}(\textcolor{keyword}{const}\ card*\ other,\ std::string\&\ err)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classcard_ad588c1aa0883a4477c81011fd2b379e9}{can\_be\_played\_on}}(\textcolor{keyword}{const}\ card*\ other)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ uint\ \mbox{\hyperlink{classcard_a376d5639163f53edb9c54e5454b09e3e}{get\_point\_value}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcard_a2bcc2bd98638f65a435c487c64ea8de4}{set\_action}}(\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{CardActionType}}\ action)\ \{\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ this-\/>\_action\ =\ action;\ }
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcard_a7f900b843e44fb18364f32dbe6cdbc7a}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classcard_a48593187c9bff442d61f197991954011}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_CARD\_H}}
+
+\end{DoxyCode}

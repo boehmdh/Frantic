@@ -1,0 +1,42 @@
+\doxysection{full\+\_\+state\+\_\+response.\+h}
+\hypertarget{full__state__response_8h_source}{}\label{full__state__response_8h_source}\index{src/common/network/responses/full\_state\_response.h@{src/common/network/responses/full\_state\_response.h}}
+\mbox{\hyperlink{full__state__response_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 15.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_FULL\_STATE\_RESPONSE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_FULL\_STATE\_RESPONSE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server__response_8h}{server\_response.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__state_8h}{../../game\_state/game\_state.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }full\_state\_response\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\_response}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ rapidjson::Value*\ \_state\_json;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ *\ Private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00018\ \ \ \ \ full\_state\_response(\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}}\ props,\ rapidjson::Value*\ state\_json);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ full\_state\_response(std::string\ game\_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classgame__state}{game\_state}}\&\ state);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classfull__state__response_a64d9fbe82c270d21fb189f877de9b90b}{\string~full\_state\_response}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ rapidjson::Value*\ \mbox{\hyperlink{classfull__state__response_a0272aadde40ceafbfd39f00816854099}{get\_state\_json}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfull__state__response_a246b4576345ed8cb9c8487764ceafc11}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ full\_state\_response*\ \mbox{\hyperlink{classfull__state__response_a2fa51506a33b924683b1d925f09b7689}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_CLIENT}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfull__state__response_a6a9cbc1ce43abeb09e4ac86639e2c7e1}{Process}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_FULL\_STATE\_RESPONSE\_H}}
+
+\end{DoxyCode}

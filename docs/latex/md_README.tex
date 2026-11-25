@@ -1,0 +1,535 @@
+\chapter{README }
+\hypertarget{md_README}{}\label{md_README}\index{README@{README}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+
+
+This is a simple C++ implementation of the game "{}\+Frantic"{} by RULE FACTORY. You can read the game\textquotesingle{}s rules \href{./docs/Regeln.pdf}{\texttt{here}}. Please note that not all event cards and action cards are implemented. The game is restricted to the event cards\+: "{}\+DOOMSDAY"{}, "{}\+EARTHQUAKE"{}, "{}\+FINISH\+\_\+\+LINE"{}, "{}\+TIME\+\_\+\+BOMB"{}, "{}\+COMMUNISM"{}, "{}\+EXPANSION"{}, "{}\+THIRD\+\_\+\+TIME\+\_\+\+LUCKY"{}, "{}\+MEXICAN\+\_\+\+STANDOFF"{}, "{}\+ROBIN\+\_\+\+HOOD"{}, "{}\+MATING\+\_\+\+SEASON"{}, "{}\+FRIDAY\+\_\+\+THE\+\_\+13\+TH"{}. The action cards in the game are\+: "{}\+NONE"{}, "{}\+SKIP"{}, "{}\+REVERSE"{}, "{}\+FANTASTIC\+\_\+\+FOUR"{}, "{}\+EQUALITY"{}, and "{}\+SECOND\+\_\+\+CHANCE"{}. "{}\+REVERSE"{} has the effect of changing the turn direction as opposed to exchanging cards and "{}\+SKIP"{} skips the next player; it is not possible to choose which player is skipped. The implementation features a client/server architecture for multiplayer scenarios. It uses \href{https://www.wxwidgets.org/}{\texttt{wx\+Widgets}} for the GUI, \href{https://github.com/fpagliughi/sockpp}{\texttt{sockpp}} for the network interface, \href{https://rapidjson.org/md_doc_tutorial.html}{\texttt{rapidjson}} for object serialization, and \href{https://github.com/google/googletest}{\texttt{googletest}} for the unit tests.
+
+\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{1. Compile instructions}{1. Compile instructions}}\label{md_README_autotoc_md1}
+This project supports Linux and mac\+OS. For Linux, we recommend Ubuntu, since installing wx\+Widgets is easiest there.\hypertarget{md_README_autotoc_md2}{}\doxysubsection{\texorpdfstring{1.\+1 Prepare OS Environment}{1.\+1 Prepare OS Environment}}\label{md_README_autotoc_md2}
+\hypertarget{md_README_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Ubuntu 20.\+4}{Ubuntu 20.\+4}}\label{md_README_autotoc_md3}
+The OS should already have git installed. If not, you can use\+: {\ttfamily sudo apt-\/get install git}
+
+Then use {\ttfamily git clone} to fetch this repository.
+
+Execute the following commands in a console\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily sudo apt-\/get update}
+\item {\ttfamily sudo apt-\/get install build-\/essential} followed by {\ttfamily sudo reboot}
+\item if on virtual machine \+: install guest-\/additions (\href{https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm}{\texttt{https\+://askubuntu.\+com/questions/22743/how-\/do-\/i-\/install-\/guest-\/additions-\/in-\/a-\/virtualbox-\/vm}}) and then {\ttfamily sudo reboot}
+\item {\ttfamily sudo snap install clion -\/-\/classic} this installs the latest stable CLion version
+\item {\ttfamily sudo apt-\/get install libwxgtk3.\+0-\/gtk3-\/dev} this installs wx\+Widgets (GUI library used in this project)
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{1.\+2 Compile Code}{1.\+2 Compile Code}}\label{md_README_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item Open Clion
+\item Click {\ttfamily File \texorpdfstring{$>$}{>} Open...} and there select the \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/sockpp\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} folder of this project
+\item Click {\ttfamily Build \texorpdfstring{$>$}{>} Build all in \textquotesingle{}Debug\textquotesingle{}}
+\item Wait until sockpp is compiled (from now on you never have to touch sockpp again ;))
+\item Click {\ttfamily File \texorpdfstring{$>$}{>} Open...} select the \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/\+Frantic\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} folder
+\item Click {\ttfamily Build \texorpdfstring{$>$}{>} Build all in \textquotesingle{}Debug\textquotesingle{}}
+\item Wait until Frantic-\/server, Frantic-\/client and Frantic-\/tests are compiled
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{2. Run the Game}{2. Run the Game}}\label{md_README_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Open a console in the project folder, navigate into "{}cmake-\/build-\/debug"{} {\ttfamily cd cmake-\/build-\/debug}
+\item Run server {\ttfamily ./\+Frantic-\/server}
+\item In new consoles run as many clients as you want players {\ttfamily ./\+Frantic-\/client}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md6}{}\doxysection{\texorpdfstring{3. Run the Unit Tests}{3. Run the Unit Tests}}\label{md_README_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item CLion should automatically create a Google Test configuration Frantic-\/tests which will run all tests. See \href{https://www.jetbrains.com/help/clion/creating-google-test-run-debug-configuration-for-test.html\#gtest-config}{\texttt{Google Test run/debug configuration﻿}} for more information.
+\item From the list on the main toolbar, select the configuration Frantic-\/tests.
+\item Click  or press {\ttfamily Shift+\+F10}.
+\end{DoxyEnumerate}
+
+You can run individual tests or test suites by opening the corresponding file in the \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/\+Google\+\_\+test\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} folder and clicking  next to the test method or class. For more information on testing in CLion read the \href{https://www.jetbrains.com/help/clion/performing-tests.html}{\texttt{documentation}}.\hypertarget{md_README_autotoc_md7}{}\doxysection{\texorpdfstring{4. Code Documentation}{4. Code Documentation}}\label{md_README_autotoc_md7}
+For reference, we provide an \href{http://localhost:63342/Frantic/docs/html/index.html}{\texttt{API}} for \doxylink{classFrantic}{Frantic}.
+
+The following paragraphs provide a brief User\textquotesingle{}s manual that covers the most important concepts.
+
+The code for the game can be found in \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/src\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, where it is separated into following folders\+:
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/client\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains only code that is used on the client side (e.\+g. UI, sending messages)
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/common\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains code that is shared between server and client.
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/exceptions\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains the exception class used on server and client side.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/game\+\_\+state\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} that is synchronized between client and server. We use the \href{https://www.cplusplus.com/doc/tutorial/preprocessor/}{\texttt{conditional pre-\/compile directive}} FRANTIC\+\_\+\+SERVER to enable certain parts of the code only on the server side. Namely, these are the state update functions, as they should only happen on the server. The client simply reflects the current game state as sent by the server without modifying it directly.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/network\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains all the messages that are being passed between client and server. We use the FRANTIC\+\_\+\+CLIENT pre-\/compile directive to make {\ttfamily server\+\_\+responses} only executable on the client side (through the function {\ttfamily Process()}) .
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/serialization\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains base classes for serializing {\ttfamily \doxylink{classgame__state}{game\+\_\+state}}, {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} and {\ttfamily \doxylink{classserver__response}{server\+\_\+response}} objects. {\bfseries{Serialization}} is the process of transforming an object instance into a string that can be sent over a network, where the receiver deserializes it, i.\+e. recreates the object from the string. If you are interested, \href{https://en.wikipedia.org/wiki/Serialization}{\texttt{read me on Wikipedia}}.
+\end{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/server\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} contains only code that is relevant for the server (e.\+g. player management, game instance management, receiving messages)
+\end{DoxyItemize}
+
+The \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/assets\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} folder stores all the images that are being used to render the GUI.
+
+The \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/\+Google\+\_\+test\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} folder contains all unit tests, which validate the correct behaviour of the functions written in the source code of the game.\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{4.\+1 Overview}{4.\+1 Overview}}\label{md_README_autotoc_md8}
+First off, this project consists of a {\bfseries{server}} and a {\bfseries{client}}, each with their own main.\+cpp file.
+
+The client renders the GUI that is presented to the player, whereas the server is a console application without a user interface. Every action a player performs in the client application (for example playing a card) is sent as a formatted message to the server application, which processes the request. ~\newline
+
+\begin{DoxyItemize}
+\item If the {\bfseries{player\textquotesingle{}s move was valid}}, the server will update the game state (e.\+g. move a card from the player\textquotesingle{}s hand to the discard pile) and broadcast this new game state to all players of the game. Whenever the client application receives a game state update, it will re-\/render the GUI accordingly and allow new interactions. ~\newline
+
+\item If the {\bfseries{move was invalid}}, the game state will not be updated and only the requesting player will get a response containing the error message.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md9}{}\doxysubsection{\texorpdfstring{4.\+2 Network Interface}{4.\+2 Network Interface}}\label{md_README_autotoc_md9}
+Everything that is passed between client and server are objects of type {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} and {\ttfamily \doxylink{classserver__response}{server\+\_\+response}}. Since the underlying network protocol works with TCP, these {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} and {\ttfamily \doxylink{classserver__response}{server\+\_\+response}} objects are transformed into a {\bfseries{\href{https://wiki.selfhtml.org/wiki/JSON}{\texttt{JSON}} string}}, which can then be sent over the network. The receiving end reads the JSON string and constructs an object of type {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} resp. {\ttfamily \doxylink{classserver__response}{server\+\_\+response}} that reflects the exact parameters that are specified in the JSON string. This process is known as {\bfseries{serialization}} (object to string) and {\bfseries{deserialization}} (string to object). If you want to read more about serialization, \href{https://en.wikipedia.org/wiki/Serialization}{\texttt{read me on Wikipedia}}.
+
+\hypertarget{md_README_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+1 Serialization \& Deserialization of messages}{4.\+2.\+1 Serialization \& Deserialization of messages}}\label{md_README_autotoc_md10}
+Both, the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} and {\ttfamily \doxylink{classserver__response}{server\+\_\+response}} base classes, implement the abstract class {\ttfamily \doxylink{classserializable}{serializable}} with its {\ttfamily write\+\_\+into\+\_\+json(...)} function. It allows to serialize the object instance into a JSON string. Additionally, they have a static function {\ttfamily from\+\_\+json(...)}, which allows creating an object instance from a JSON string.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ All\ request\ types\ of\ your\ imlementation}}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afaf057ddb577ef7ad24dddb36e24d9e768}{join\_game}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa21991e5c22a91c11795e36bb7fbc6fa0}{start\_game}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afaa4d19c311e5fa3d98d99a9db41b39ae0}{play\_card}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa788e2ec9df31d24d4fe7a495f3385a5a}{draw\_card}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa8a644c686eb987d3a5d2b55bae4c9a3a}{fold}},}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{classclient__request}{client\_request}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserializable}{serializable}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ \mbox{\hyperlink{structclient__request_1_1base__class__properties_a6334787816738f2c5f0f95c350baa497}{\_type}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structclient__request_1_1base__class__properties_a8040df2e97eee65858edea26f6478443}{\_req\_id}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structclient__request_1_1base__class__properties_ad7e659083168f5c8d0459bed9f6bf915}{\_player\_id}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structclient__request_1_1base__class__properties_a7eaa7c74e0b132bc67ebaeb281beca94}{\_game\_id}};}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ \mbox{\hyperlink{classclient__request_a295c3fe84e76b55f8500e95049460131}{\_type}};\ \ \ \textcolor{comment}{//\ stores\ the\ type\ of\ request,\ such\ that\ the\ receiving\ end\ knows\ how\ to\ deserialize\ it}}
+\DoxyCodeLine{\ \ \ \ std::string\ \mbox{\hyperlink{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}{\_req\_id}};\ \textcolor{comment}{//\ unique\ id\ of\ this\ request}}
+\DoxyCodeLine{\ \ \ \ std::string\ \mbox{\hyperlink{classclient__request_a80117cbd1673c8c8462051167f048ecd}{\_player\_id}};\ \textcolor{comment}{//\ id\ of\ the\ player\ sending\ the\ request}}
+\DoxyCodeLine{\ \ \ \ std::string\ \mbox{\hyperlink{classclient__request_a5f92f88101754287befd4dc294bd0678}{\_game\_id}};\ \ \ \textcolor{comment}{//\ id\ of\ the\ game\ this\ request\ is\ for}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}});\ \textcolor{comment}{//\ base\ constructor}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}}\ \mbox{\hyperlink{classclient__request_a7f1efcb700bcc21fbe69866828a395e6}{create\_base\_class\_properties}}(\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ type,\ std::string\ req\_id,\ std::string\&\ player\_id,\ std::string\&\ game\_id);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}}\ \mbox{\hyperlink{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c}{extract\_base\_class\_properties}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ for\ deserializing\ RequestType\ (contains\ mappings\ from\ string\ to\ RequestType)}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ RequestType>\ \_string\_to\_request\_type;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ for\ serializing\ RequestType\ (contains\ mappings\ from\ RequestType\ to\ string)}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::unordered\_map<RequestType,\ std::string>\ \_request\_type\_to\_string;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classclient__request_a2845a83ea9320712224484edb13a551f}{\string~client\_request}}()\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ \mbox{\hyperlink{classclient__request_a01ff58f993d3f9c37ff8913dddf160b9}{get\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classclient__request_a295c3fe84e76b55f8500e95049460131}{\_type}};\ \}}
+\DoxyCodeLine{\ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classclient__request_a26dcd16d0754293f82454266a567aaa2}{get\_req\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}{\_req\_id}};\ \}}
+\DoxyCodeLine{\ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classclient__request_a496555f3dec38e00169fc72f1f22009b}{get\_game\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classclient__request_a5f92f88101754287befd4dc294bd0678}{\_game\_id}};\ \}}
+\DoxyCodeLine{\ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classclient__request_a80b701881b6c22c567ceb7125d37b001}{get\_player\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classclient__request_a80117cbd1673c8c8462051167f048ecd}{\_player\_id}};\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ DESERIALIZATION:\ tries\ to\ create\ the\ specific\ client\_request\ from\ the\ provided\ json.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Throws\ exception\ if\ parsing\ fails\ -\/>\ Use\ only\ in\ "{}try\{\ \}catch()"{}\ block}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}*\ \mbox{\hyperlink{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//SERIALIZATION:\ Serializes\ the\ client\_request\ into\ a\ json\ object\ that\ can\ be\ sent\ over\ the\ network}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classclient__request_ad5940ba1f93b38a455f3494a3c4dde0e}{to\_string}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}*\ \mbox{\hyperlink{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsubsubsection{\texorpdfstring{Serialization}{Serialization}}\label{md_README_autotoc_md11}
+Here is the {\bfseries{base-\/class}} implementation\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Implementation\ in\ the\ base-\/class\ client\_request}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}{client\_request::write\_into\_json}}(rapidjson::Value\ \&json,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Look\ up\ string\ value\ of\ this\ client\_request's\ RequestType\ and\ store\ it\ in\ the\ json\ document}}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ type\_val(\_request\_type\_to\_string.at(this-\/>\_type).c\_str(),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}type"{}},\ type\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ player\_id\ in\ the\ JSON\ document}}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ player\_id\_val(\mbox{\hyperlink{classclient__request_a80117cbd1673c8c8462051167f048ecd}{\_player\_id}}.c\_str(),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}player\_id"{}},\ player\_id\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ game\_id\ in\ the\ JSON\ document}}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ game\_id\_val(\mbox{\hyperlink{classclient__request_a5f92f88101754287befd4dc294bd0678}{\_game\_id}}.c\_str(),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}game\_id"{}},\ game\_id\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ req\_id\ in\ the\ JSON\ document}}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ req\_id\_val(\mbox{\hyperlink{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}{\_req\_id}}.c\_str(),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}req\_id"{}},\ req\_id\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ And here is the {\bfseries{subclass}} implementation (for the {\ttfamily \doxylink{classplay__card__request}{play\+\_\+card\+\_\+request}} class), where an additional field {\ttfamily \+\_\+card\+\_\+id} is serialized. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Implementation\ in\ the\ subclass\ play\_card\_request\ }}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplay__card__request_a0eb0a555a17b069119682dcf21de925c}{play\_card\_request::write\_into\_json}}(rapidjson::Value\&\ json,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rapidjson::Document::AllocatorType\&\ allocator)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\textcolor{keyword}{}\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}{client\_request::write\_into\_json}}(json,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ parameters\ to\ the\ JSON\ that\ are\ unique\ to\ the\ play\_card\_request}}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}card\_id"{}},\ rapidjson::Value(\_card\_id.c\_str(),\ allocator),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}wish"{}},\ rapidjson::Value(\_wish),\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}ff\_target"{}},\ rapidjson::Value(\_ff\_target),\ allocator);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsubsubsection{\texorpdfstring{Deserialization}{Deserialization}}\label{md_README_autotoc_md12}
+The deserialization of {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} JSONs always goes through the {\ttfamily from\+\_\+json(...)} function of the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} class. In this function, the "{}type"{} field, stored in the JSON, is inspected to determine, which subclass should be called to perform the deserialization\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (json.HasMember(\textcolor{stringliteral}{"{}type"{}})\ \&\&\ json[\textcolor{stringliteral}{"{}type"{}}].IsString())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ RequestType\ stored\ as\ a\ string\ in\ the\ JSON}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ type\ =\ json[\textcolor{stringliteral}{"{}type"{}}].GetString();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lookup\ the\ actual\ RequestType\ per\ string\ from\ a\ pre-\/defined\ unordered\_map}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}\ request\_type\ =\ client\_request::\_string\_to\_request\_type.at(type);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ the\ correct\ from\_json()\ specialization}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request\_type\ ==\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afaa4d19c311e5fa3d98d99a9db41b39ae0}{RequestType::play\_card}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classplay__card__request_a25accc5649830884e0cc971e20d385dc}{play\_card\_request::from\_json}}(json);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (request\_type\ ==\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa788e2ec9df31d24d4fe7a495f3385a5a}{RequestType::draw\_card}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdraw__card__request_a140c8940ba60b8d6442b187406296b19}{draw\_card\_request::from\_json}}(json);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (...)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classFranticException}{FranticException}}(\textcolor{stringliteral}{"{}Encountered\ unknown\ ClientRequest\ type\ "{}}\ +\ type);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classFranticException}{FranticException}}(\textcolor{stringliteral}{"{}Could\ not\ determine\ type\ of\ ClientRequest.\ JSON\ was:\(\backslash\)n"{}}\ +\ \mbox{\hyperlink{classjson__utils_a5e7d8772514ff0203755dd188d7177e8}{json\_utils::to\_string}}(\&json));}
+
+\end{DoxyCode}
+
+
+Therefore, when you implement your own {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} subclasses, remember to add a new element into the {\ttfamily \doxylink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} enum to define your new request type. You will also have to add an entry for this new \doxylink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type} in the two unordered\+\_\+maps {\ttfamily \+\_\+string\+\_\+to\+\_\+request\+\_\+type}, resp. {\ttfamily \+\_\+request\+\_\+type\+\_\+to\+\_\+string} in the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} base-\/class. Once this is done, you can add a check for your new {\ttfamily \doxylink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} element in the {\ttfamily from\+\_\+json(...)} function of the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} base-\/class and call the specialized {\ttfamily from\+\_\+json(...)} function of your subclass from there.
+
+Also, don\textquotesingle{}t forget to set the correct {\ttfamily \doxylink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} in the public constructor of your new {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} subclass, here examplified at the {\ttfamily \doxylink{classplay__card__request}{play\+\_\+card\+\_\+request}} class\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Public\ constructor}}
+\DoxyCodeLine{play\_card\_request::play\_card\_request(std::string\ game\_id,\ std::string\ player\_id,\ std::string\ card\_id)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classclient__request}{client\_request}}(\mbox{\hyperlink{classclient__request}{client\_request}}::create\_base\_class\_properties(\ \ \textcolor{comment}{//\ call\ base-\/class\ constructor}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{RequestType}}::\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afaa4d19c311e5fa3d98d99a9db41b39ae0}{play\_card}},\ \textcolor{comment}{//\ IMPORTANT:\ set\ the\ RequestType\ of\ your\ subclass}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classuuid__generator}{uuid\_generator}}::generate\_uuid\_v4(),\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player\_id,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game\_id)\ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_card\_id(card\_id)\ \ \ \textcolor{comment}{//\ set\ subclass\ specific\ parameters}}
+\DoxyCodeLine{\{\ \}}
+
+\end{DoxyCode}
+
+
+The deserialization in your subclass will look something like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{play\_card\_request::play\_card\_request(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{client\_request::base\_class\_properties}}\ props,\ std::string\ card\_id)\ :}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient__request}{client\_request}}(props),\ \ \textcolor{comment}{//\ call\ base-\/class\ constructor}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_card\_id(card\_id)\ \ \ \textcolor{comment}{//\ set\ subclass\ specific\ parameters}}
+\DoxyCodeLine{\{\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Deserialization}}
+\DoxyCodeLine{\mbox{\hyperlink{classplay__card__request}{play\_card\_request}}*\ \mbox{\hyperlink{classplay__card__request_a25accc5649830884e0cc971e20d385dc}{play\_card\_request::from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ extract\ base-\/class\ properties\ from\ the\ json}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}}\ props\ =\ \mbox{\hyperlink{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c}{client\_request::extract\_base\_class\_properties}}(json);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ get\ subclass\ specific\ properties}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (json.HasMember(\textcolor{stringliteral}{"{}card\_id"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ invoke\ deserialization\ constructor}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ play\_card\_request(props,\ json[\textcolor{stringliteral}{"{}card\_id"{}}].GetString());}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ FranticException(\textcolor{stringliteral}{"{}Could\ not\ find\ 'card\_id'\ in\ play\_card\_request"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+There are plenty of examples of subclasses in the network/requests folder, where you can see how the serialization/deserialization scheme works.\hypertarget{md_README_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+2 Sending messages}{4.\+2.\+2 Sending messages}}\label{md_README_autotoc_md13}
+\hypertarget{md_README_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Client -\/\texorpdfstring{$>$}{>} Server\+:}{Client -\/\texorpdfstring{$>$}{>} Server\+:}}\label{md_README_autotoc_md14}
+All you have to do is use the static class {\ttfamily \doxylink{classClientNetworkManager}{Client\+Network\+Manager}} on the client side and then invoke its {\ttfamily send\+Request(const \doxylink{classclient__request}{client\+\_\+request}\& request)} function with the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} that you want to send. The server\textquotesingle{}s response will arrive as an object of type {\ttfamily \doxylink{classrequest__response}{request\+\_\+response}} and the {\ttfamily \doxylink{classClientNetworkManager}{Client\+Network\+Manager}} will invoke the {\ttfamily Process()} function of that {\ttfamily \doxylink{classrequest__response}{request\+\_\+response}} object automatically.\hypertarget{md_README_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Server -\/\texorpdfstring{$>$}{>} Client\+:}{Server -\/\texorpdfstring{$>$}{>} Client\+:}}\label{md_README_autotoc_md15}
+All messages arriving at the server are being deserialized and then passed on to the {\ttfamily handle\+\_\+request(client\+\_\+request\texorpdfstring{$\ast$}{*} req)} function of the {\ttfamily \doxylink{classrequest__handler}{request\+\_\+handler}} singleton class. This function returns a pointer to an object of type {\ttfamily \doxylink{classrequest__response}{request\+\_\+response}} (a subclass of {\ttfamily \doxylink{classserver__response}{server\+\_\+response}}), which is then automatically sent back to the requesting client. In your game implementation you should extend the {\ttfamily handle\+\_\+request(client\+\_\+request\texorpdfstring{$\ast$}{*} req)} function of the {\ttfamily \doxylink{classrequest__handler}{request\+\_\+handler}}, such that it can handle the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} that you add to your game and return an object of type {\ttfamily \doxylink{classrequest__response}{request\+\_\+response}} with all parameters you want to send.
+
+If the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} causes an update of the \doxylink{classgame__state}{game\+\_\+state} you should also update all other players of that game about the \doxylink{classgame__state}{game\+\_\+state} change. This happens in the {\ttfamily \doxylink{classgame__instance}{game\+\_\+instance}} class, here examplified at the case where a {\ttfamily \doxylink{classstart__game__request}{start\+\_\+game\+\_\+request}} calls the {\ttfamily \doxylink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa21991e5c22a91c11795e36bb7fbc6fa0}{start\+\_\+game(...)}} function on the respective {\ttfamily \doxylink{classgame__instance}{game\+\_\+instance}} on the server side\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__instance_aee2eedd24991ce59dbcf2ec4f6cae8ac}{game\_instance::start\_game}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ std::string\ \&err)\ \{}
+\DoxyCodeLine{\ \ \ \ modification\_lock.lock();\ \ \ \textcolor{comment}{//\ make\ sure\ only\ one\ request\ can\ modify\ the\ game\_state\ at\ a\ time}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Try\ to\ start\ the\ game}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\_game\_state-\/>start\_game(err))\ \{\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ a\ full\_state\_response\ (subclass\ of\ server\_response)\ with\ the\ full\ game\_state\ inside}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ full\_state\_response\ state\_update\_msg\ =\ full\_state\_response(this-\/>\mbox{\hyperlink{classgame__instance_a72cd93738171ffc856c3d77df5f967da}{get\_id}}(),\ *\_game\_state);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ BROADCAST\ new\ game\_state\ to\ all\ other\ players}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver__network__manager_a24978cc1bd0f67a6713e93095eec4ee7}{server\_network\_manager::broadcast\_message}}(state\_update\_msg,\ \_game\_state-\/>get\_players(),\ player);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ modification\_lock.unlock();\ \textcolor{comment}{//\ allow\ other\ threads\ to\ modify\ the\ game\_state}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ modification\_lock.unlock();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+3 Debugging Messages}{4.\+2.\+3 Debugging Messages}}\label{md_README_autotoc_md16}
+By default, the server (specifically, the \doxylink{classserver__network__manager}{server\+\_\+network\+\_\+manager}) will print every valid message that it receives to the console. In order for this to work in your project as well, you have to make sure that your CMake file contains a line, where the preprocessor variable PRINT\+\_\+\+NETWORK\+\_\+\+MESSAGES is defined for your server executable.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{target\_compile\_definitions(Frantic-\/server\ PRIVATE\ PRINT\_NETWORK\_MESSAGES=1)}
+
+\end{DoxyCode}
+
+
+If a wrongly formatted message arrives at the server, it will print an error message with the received message string to the console, no matter if PRINT\+\_\+\+NETWORK\+\_\+\+MESSAGES is defined or not.
+
+If you want to manually print one of your serialized messages (or any other serialized object for that matter), you can use the helper function {\ttfamily \doxylink{classjson__utils_a5e7d8772514ff0203755dd188d7177e8}{json\+\_\+utils\+::to\+\_\+string(const rapidjson\+::\+Value\texorpdfstring{$\ast$}{*} json)}} as follows.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{json__utils_8h}{src/common/serialization/json\_utils.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ request\ to\ serialize}}
+\DoxyCodeLine{join\_game\_request*\ req\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classjoin__game__request}{join\_game\_request}}(\mbox{\hyperlink{classplayer}{player}}-\/>\mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\_id}}(),\ \mbox{\hyperlink{classplayer}{player}}-\/>\mbox{\hyperlink{classplayer_a42d01dcf4cdbd452fc5dcaf5e6f21773}{get\_player\_name}}());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ serialize\ the\ request\ object}}
+\DoxyCodeLine{rapidjson::Document*\ req\_json\ =\ req-\/>to\_json();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ print\ serialization\ to\ the\ console.}}
+\DoxyCodeLine{std::cout\ <<\ \mbox{\hyperlink{classjson__utils_a5e7d8772514ff0203755dd188d7177e8}{json\_utils::to\_string}}(req\_json)\ <<\ std::endl;}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{\texorpdfstring{4.\+3 Game State}{4.\+3 Game State}}\label{md_README_autotoc_md17}
+The {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} class stores all parameters that are required to represent the game on the client (resp. server) side. In order to synchronize this {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} among all players, the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} can also be {\bfseries{serialized}} and {\bfseries{deserialized}}. If a {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} was successfully executed on the server, then the {\ttfamily \doxylink{classrequest__response}{request\+\_\+response}} that is sent back to the client contains a serialized version of the updated {\ttfamily \doxylink{classgame__state}{game\+\_\+state}}. All other players receive the updated {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} at the same time through a {\ttfamily \doxylink{classfull__state__response}{full\+\_\+state\+\_\+response}}.
+
+To serialize the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}}, the same {\ttfamily write\+\_\+into\+\_\+json(...)} function is used as for the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{classgame__state}{game\_state}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable}{unique\_serializable}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Properties}}
+\DoxyCodeLine{\ \ \ \ std::vector<player*>\ \_players;}
+\DoxyCodeLine{\ \ \ \ draw\_pile*\ \_draw\_pile;}
+\DoxyCodeLine{\ \ \ \ discard\_pile*\ \_discard\_pile;}
+\DoxyCodeLine{\ \ \ \ serializable\_value<bool>*\ \_is\_started;}
+\DoxyCodeLine{\ \ \ \ serializable\_value<bool>*\ \_is\_finished;}
+\DoxyCodeLine{\ \ \ \ serializable\_value<int>*\ \_round\_number;}
+\DoxyCodeLine{\ \ \ \ serializable\_value<int>*\ \_current\_player\_idx;}
+\DoxyCodeLine{\ \ \ \ serializable\_value<int>*\ \_starting\_player\_idx;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ deserialization\ constructor}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::string\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ draw\_pile*\ draw\_pile,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ discard\_pile*\ discard\_pile,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::vector<player*>\&\ players,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ serializable\_value<bool>*\ \mbox{\hyperlink{classgame__state_aa0092c41779f38eba5e921e43b38559c}{is\_started}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ serializable\_value<bool>*\ \mbox{\hyperlink{classgame__state_a9b83de8a89e3bb506184492d22c3cf45}{is\_finished}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ serializable\_value<int>*\ current\_player\_idx,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ serializable\_value<int>*\ round\_number,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ serializable\_value<int>*\ starting\_player\_idx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ SERIALIZATION}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a54873cd18b46555915d150a6d8dd6f83}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ DESERIALIZATION}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ game\_state*\ \mbox{\hyperlink{classgame__state_a794d484961c92b5b737586ec5599963f}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+The {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} inherits from {\ttfamily \doxylink{classunique__serializable}{unique\+\_\+serializable}}, which essentially requires the {\ttfamily write\+\_\+into\+\_\+json()} function and adds a unique {\ttfamily id} to the object, such that it can be uniquely identified. Similarly, each parameter nested inside the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} (e.\+g. players, \doxylink{classdraw__pile}{draw\+\_\+pile}, etc.) also inherit from {\ttfamily \doxylink{classunique__serializable}{unique\+\_\+serializable}} and therefore have their own {\ttfamily id} and serialization, resp. deserialization functions.
+
+On the client side, the new {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} is then passed to the {\ttfamily update\+Game\+State(game\+\_\+state\texorpdfstring{$\ast$}{*})} function of the {\ttfamily \doxylink{classGameController}{Game\+Controller}} class, which performs a redraw of the GUI.
+
+Since you will have to add your own properties to the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} class (and probably create other classes that inherit from {\ttfamily \doxylink{classunique__serializable}{unique\+\_\+serializable}} to add to your \doxylink{classgame__state}{game\+\_\+state}), we want to shortly elaborate how the serialization and deserialization works for subclasses of {\ttfamily \doxylink{classunique__serializable}{unique\+\_\+serializable}}. It\textquotesingle{}s very similar to the {\ttfamily \doxylink{classclient__request}{client\+\_\+request}} class discussed earlier. Here is how the {\ttfamily write\+\_\+into\+\_\+json(...)} function is implemented in the {\ttfamily \doxylink{classgame__state}{game\+\_\+state}} class of \doxylink{classFrantic}{Frantic}. {\bfseries{Don\textquotesingle{}t be shocked by the lengthy code. It\textquotesingle{}s only a lot of repetition for each class property}} \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a54873cd18b46555915d150a6d8dd6f83}{game\_state::write\_into\_json}}(rapidjson::Value\ \&json,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>\ \&allocator)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ call\ base-\/class\ to\ write\ id\ and\ object\ name\ into\ the\ json}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{unique\_serializable::write\_into\_json}}(json,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ write\ all\ properties\ of\ this\ game\_state\ instance\ into\ the\ JSON}}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ is\_finished\_val(rapidjson::kObjectType);\ \ \ \textcolor{comment}{//\ create\ an\ empty\ rapidjson::Value\ that\ can\ hold\ an\ ObjectType}}
+\DoxyCodeLine{\ \ \ \ \_is\_finished-\/>write\_into\_json(is\_finished\_val,\ allocator);\ \ \textcolor{comment}{//\ write\ class\ property\ '\_is\_finished'\ into\ the\ created\ rapidjson::Value}}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}is\_finished"{}},\ is\_finished\_val,\ allocator);\ \ \textcolor{comment}{//\ add\ the\ rapidjson::Value\ 'is\_finished\_val'\ to\ the\ game\_state\ json}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ is\_started\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_is\_started-\/>write\_into\_json(is\_started\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}is\_started"{}},\ is\_started\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ current\_player\_idx\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_current\_player\_idx-\/>write\_into\_json(current\_player\_idx\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}current\_player\_idx"{}},\ current\_player\_idx\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ starting\_player\_idx\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_starting\_player\_idx-\/>write\_into\_json(starting\_player\_idx\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}starting\_player\_idx"{}},\ starting\_player\_idx\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ round\_number\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_round\_number-\/>write\_into\_json(round\_number\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}round\_number"{}},\ round\_number\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ draw\_pile\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_draw\_pile-\/>write\_into\_json(draw\_pile\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}draw\_pile"{}},\ draw\_pile\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ rapidjson::Value\ discard\_pile\_val(rapidjson::kObjectType);}
+\DoxyCodeLine{\ \ \ \ \_discard\_pile-\/>write\_into\_json(discard\_pile\_val,\ allocator);}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}discard\_pile"{}},\ discard\_pile\_val,\ allocator);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Special\ helper\ function\ to\ serialize\ vector\ of\ pointers}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ The\ pointers\ inside\ the\ vector\ have\ to\ inherit\ from\ serializable\ (or\ unique\_serializable)}}
+\DoxyCodeLine{\ \ \ \ json.AddMember(\textcolor{stringliteral}{"{}players"{}},\ vector\_utils::serialize\_vector(\_players,\ allocator),\ allocator);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+For {\bfseries{deserialization}}, the {\ttfamily from\+\_\+json(...)} function is used, which is implemented as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ DESERIALIZATION\ CONSTRUCTOR\ receives\ pointers\ for\ all\ its\ properties\ and\ stores\ them}}
+\DoxyCodeLine{\mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state::game\_state}}(std::string\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classdraw__pile}{draw\_pile}}\ *\mbox{\hyperlink{classdraw__pile}{draw\_pile}},\ \mbox{\hyperlink{classdiscard__pile}{discard\_pile}}\ *\mbox{\hyperlink{classdiscard__pile}{discard\_pile}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<player\ *>\ \&players,\ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}\ *is\_started,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}\ *is\_finished,\ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}\ *current\_player\_idx,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ round\_number,\ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}\ *starting\_player\_idx)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classunique__serializable}{unique\_serializable}}(id),\ \ \textcolor{comment}{//\ initialize\ the\ unique\_serializable\ base-\/class}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_draw\_pile(\mbox{\hyperlink{classdraw__pile}{draw\_pile}}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_discard\_pile(\mbox{\hyperlink{classdiscard__pile}{discard\_pile}}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_players(players),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_is\_started(is\_started),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_is\_finished(is\_finished),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_current\_player\_idx(current\_player\_idx),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_round\_number(round\_number),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_starting\_player\_idx(starting\_player\_idx)}
+\DoxyCodeLine{\{\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ DESERIALIZATION\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ returns\ a\ pointer\ to\ the\ new\ game\_state}}
+\DoxyCodeLine{\mbox{\hyperlink{classgame__state}{game\_state}}*\ \mbox{\hyperlink{classgame__state_a794d484961c92b5b737586ec5599963f}{game\_state::from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\ \&json)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Make\ sure\ the\ json\ contains\ all\ required\ information}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (json.HasMember(\textcolor{stringliteral}{"{}is\_finished"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}is\_started"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}current\_player\_idx"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}round\_number"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}starting\_player\_idx"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}players"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}draw\_pile"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \&\&\ json.HasMember(\textcolor{stringliteral}{"{}discard\_pile"{}}))}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ deserialize\ all\ players}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::vector<player*>\ deserialized\_players;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&serialized\_player\ :\ json[\textcolor{stringliteral}{"{}players"{}}].GetArray())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ deserialized\_players.push\_back(\mbox{\hyperlink{classplayer_a5955c5f26db6a08862ccfb443fbe99c5}{player::from\_json}}(serialized\_player.GetObject()));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invoke\ deserialization\ constructor}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}(unique\_serializable::extract\_id(json),\ \ \ \textcolor{comment}{//\ extract\ base\_params\ from\ JSON}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdraw__pile_af25d6b84ce2275d10e8b291bbeae995c}{draw\_pile::from\_json}}(json[\textcolor{stringliteral}{"{}draw\_pile"{}}].GetObject()),\ \ \textcolor{comment}{//\ deserialize\ the\ draw\_pile}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdiscard__pile_a46bdfae2b145124ce77037c900dfb988}{discard\_pile::from\_json}}(json[\textcolor{stringliteral}{"{}discard\_pile"{}}].GetObject()),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ deserialized\_players,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{serializable\_value<bool>::from\_json}}(json[\textcolor{stringliteral}{"{}is\_started"{}}].GetObject()),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{serializable\_value<bool>::from\_json}}(json[\textcolor{stringliteral}{"{}is\_finished"{}}].GetObject()),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{serializable\_value<int>::from\_json}}(json[\textcolor{stringliteral}{"{}current\_player\_idx"{}}].GetObject()),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{serializable\_value<int>::from\_json}}(json[\textcolor{stringliteral}{"{}round\_number"{}}].GetObject()),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value_a1896e5dc77b23f25c9891c05946c7d2d}{serializable\_value<int>::from\_json}}(json[\textcolor{stringliteral}{"{}starting\_player\_idx"{}}].GetObject()));}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ FranticException(\textcolor{stringliteral}{"{}Failed\ to\ deserialize\ game\_state.\ Required\ entries\ were\ missing."{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+A similar scheme is applied in all other objects that inherit from {\ttfamily \doxylink{classunique__serializable}{unique\+\_\+serializable}}. Namely, these are\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{classplayer}{player}}
+\item {\ttfamily \doxylink{classhand}{hand}}
+\item {\ttfamily \doxylink{classcard}{card}}
+\item {\ttfamily \doxylink{classdraw__pile}{draw\+\_\+pile}}
+\item {\ttfamily \doxylink{classdiscard__pile}{discard\+\_\+pile}}
+\item {\ttfamily \doxylink{classserializable__value}{serializable\+\_\+value}}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{4.\+4 GUI with wx\+Widgets}{4.\+4 GUI with wx\+Widgets}}\label{md_README_autotoc_md18}
+The GUI of the example project was built using the cross-\/platform GUI library \href{https://www.wxwidgets.org/}{\texttt{wx\+Widgets}}. In order to build a project using wx\+Widget elements, you will first need to install wx\+Widgets on your system (see Section 1.\+1 above).\hypertarget{md_README_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{4.\+4.\+1 Structure \& Important Classes}{4.\+4.\+1 Structure \& Important Classes}}\label{md_README_autotoc_md19}
+Here is a list of the most important elements that you will need to create your GUI. This is just meant as an overview, you will need to look up their correct usage in wx\+Widget\textquotesingle{}s \href{https://docs.wxwidgets.org/3.0/index.html}{\texttt{documentation}}.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Application core}}
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily \doxylink{client_2main_8cpp_a37854945a0b91679a7d2669eedf1e25e}{wx\+IMPLEMENT\+\_\+\+APP()}}}}\+: In order to properly interact with the operating system\textquotesingle{}s GUI, wx\+Widgets takes over the control flow of your application. wx\+Widgets therefore has its own {\ttfamily \doxylink{server_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} function, that you can reference with the macro {\ttfamily wx\+IMPLEMENT\+\_\+\+APP(wx\+App\texorpdfstring{$\ast$}{*})}.
+\item {\bfseries{{\ttfamily wx\+App}}}\+: The core class of your application must inherit from the {\ttfamily wx\+App} class. wx\+Widgets will call the {\ttfamily On\+Init()} function when starting the application. You can find the example project\textquotesingle{}s implementation in {\ttfamily src/client/app/\+Lama}.
+\end{DoxyItemize}
+\item {\bfseries{Windows}}
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily wx\+Frame}}}\+: Each window of your application must inherit from the {\ttfamily wx\+Frame} class. The example project has one window which you can find here\+: {\ttfamily src/client/windows/\+Game\+Window}
+\end{DoxyItemize}
+\item {\bfseries{GUI elements}}
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily wx\+Panel}}}\+: Panels serve as containers for elements within a window. All panels must instantiate or inherit from the {\ttfamily wx\+Panel} class. A panel can contain one or more subpanels.
+\item {\bfseries{{\ttfamily wx\+Box\+Sizer}}}\+: Box sizers allow you to layout your panels within a window, either horizontally or vertically. By nesting box sizers, you can create complex layouts. Have a look at {\ttfamily src/client/panels/\+Connection\+Panel} for an example.
+\item {\bfseries{{\ttfamily wx\+Static\+Text}}}\+: This class displays text in your GUI.
+\item {\bfseries{{\ttfamily wx\+Button}}}\+: This class creates a clickable button in your GUI.
+\end{DoxyItemize}
+\item {\bfseries{Pop-\/ups}}
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily wx\+Message\+Box()}}}\+: You can use this function to display a small pop-\/up window with text in front of the your current main window. This is useful to display error or status messages.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{4.\+4.\+2 Events}{4.\+4.\+2 Events}}\label{md_README_autotoc_md20}
+Like in most GUI environments, objects in wx\+Widgets trigger {\bfseries{events}} when they are interacted with by the user. For instance, a button will trigger a {\ttfamily wx\+EVT\+\_\+\+BUTTON} event when clicked. Similarly, a panel will trigger a {\ttfamily wx\+EVT\+\_\+\+LEFT\+\_\+\+UP} event when clicked. There are many other events that can be triggered -\/ for example when a keyboard key is pressed, when a window is resized, or when the cursor moves over an element.
+
+In order to make the GUI interactive, we must specify the effect of an event. The easiest way is to {\bfseries{bind}} an event to a lambda function. A lambda function is an unnamed function that can be used as an r-\/value. In C++, lambda functions have the following syntax\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[\ external\_variables...\ ](\ function\_parameters\ ...\ )\ \{}
+\DoxyCodeLine{\ \ \ \ function\_body...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Here is an example which binds a lambda function to a button click event\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{wxButton*\ myButton\ =\ new\ wxButton(parentPanel,\ wxID\_ANY,\ "{}Click\ me!"{});}
+\DoxyCodeLine{int\ myVariable\ =\ 42;}
+\DoxyCodeLine{myButton-\/>Bind(wxEVT\_BUTTON,\ [myVariable](wxCommandEvent\&\ event)\ \{}
+\DoxyCodeLine{\ \ \ \ doSomething(myVariable,\ event);}
+\DoxyCodeLine{\});}
+
+\end{DoxyCode}
+
+
+In C++, we need to specify which variables from outside the lambda function\textquotesingle{}s scope should be accessible within it. In the example above, {\ttfamily my\+Variable} is declared outside of the lambda function but is used by the {\ttfamily do\+Something()} function call within the lambda function. We must therefore list {\ttfamily my\+Variable} within the square brackets at the beginning of the lambda function definition, in order to make it accessible from within the lambda function\textquotesingle{}s scope.\hypertarget{md_README_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{4.\+4.\+3 Positioning}{4.\+4.\+3 Positioning}}\label{md_README_autotoc_md21}
+There are two ways to position elements (panels, button, etc.) within a parent element (window, panel)\+:
+\begin{DoxyItemize}
+\item {\bfseries{Using sizers}}\+: In this approach, you will only need to provide an element\textquotesingle{}s size, but not its position. You can then add that element to a sizer, which will then determine the element\textquotesingle{}s position based on the sizer\textquotesingle{}s predefined behavior. The most common sizer is {\ttfamily wx\+Box\+Sizer}, which allows you to position a set of elements one after the other, vertically or horizontally. You can also allow sizers to change the size of elements depending on the available space. This means you can have your GUI adapt to the size of the user\textquotesingle{}s window and/or screen.
+\item {\bfseries{Using absolute positioning}}\+: In this approach, you need to provide a position (as {\ttfamily wx\+Point}) for each element. This position refers to the offset of the top-\/left corner of this element from the top-\/left corner of its parent. Using absolute positioning gives you much more control over the layout of your GUI. However, it is also much more work, as you will need to calculate the position for every single element. This is especially difficult if you want to adapt to changing window sizes.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md22}{}\doxysubsubsection{\texorpdfstring{4.\+4.\+4 Classes for reuse}{4.\+4.\+4 Classes for reuse}}\label{md_README_autotoc_md22}
+The example project provides two classes that you can reuse without changing anything\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily \doxylink{classImagePanel}{Image\+Panel}}}}\+: This behaves like a regular panel, but shows an image in the background. You should use this to display any image you need for your GUI.
+\item {\bfseries{{\ttfamily \doxylink{classInputField}{Input\+Field}}}}\+: This provides a user input field with a label in front of it. Use {\ttfamily get\+Value()} to get the user\textquotesingle{}s input.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{4.\+4.\+5 Tutorial video}{4.\+4.\+5 Tutorial video}}\label{md_README_autotoc_md23}
+We encourage you to watch this well-\/explained tutorial video on wx\+Widgets. The video focuses on layouting, but also shows you how to setup a basic wx\+Widget application\+: \href{https://www.youtube.com/watch?v=kPB5Y6ef9dw}{\texttt{https\+://www.\+youtube.\+com/watch?v=k\+PB5\+Y6ef9dw}} 

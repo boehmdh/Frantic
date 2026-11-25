@@ -1,0 +1,34 @@
+\doxysection{start\+\_\+game\+\_\+request.\+h}
+\hypertarget{start__game__request_8h_source}{}\label{start__game__request_8h_source}\index{src/common/network/requests/start\_game\_request.h@{src/common/network/requests/start\_game\_request.h}}
+\mbox{\hyperlink{start__game__request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 29.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_START\_GAME\_REQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_START\_GAME\_REQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{client\_request.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }start\_game\_request\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}\{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ *\ Private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ start\_game\_request(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ start\_game\_request(std::string\ game\_id,\ std::string\ player\_id);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classstart__game__request_ac4167e2ae30c4d620ef10693c108da1c}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ start\_game\_request*\ \mbox{\hyperlink{classstart__game__request_aa2576bbf358817189785887bae0eefc0}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_START\_GAME\_REQUEST\_H}}
+
+\end{DoxyCode}

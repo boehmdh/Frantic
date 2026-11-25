@@ -1,0 +1,219 @@
+\doxysection{card Class Reference}
+\hypertarget{classcard}{}\label{classcard}\index{card@{card}}
+
+
+{\ttfamily \#include $<$card.\+h$>$}
+
+
+
+Inheritance diagram for card\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classcard__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for card\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classcard__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcard_a924b1f470bc8f82f043b332a162316d1}{card}} (uint val, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} col)
+\begin{DoxyCompactList}\small\item\em Constructor for non-\/special cards. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcard_a8eb8a837c9dda685ecb41717426f5b05}{card}} (\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} col, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} act)
+\begin{DoxyCompactList}\small\item\em Constructor for special cards. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcard_acbacc99b12f8705aa4b99ae98504e7eb}{\texorpdfstring{$\sim$}{\string~}card}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{classcard_ab4fe51c45b8d5145e07c86b2f93d038f}{get\+\_\+value}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the number value of the card. Equals the number value of number cards, 20 for Rainbow cards and 0 for special cards. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} \mbox{\hyperlink{classcard_a60c055be28de8908f973fae7f141818a}{get\+\_\+color}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} of the card defined in the enum \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} \mbox{\hyperlink{classcard_aa2b5aedebb65b90f066ec2fef429e428}{get\+\_\+action}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type} of a special card or \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{Card\+Action\+Type\+::\+NONE} for all other cards. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcard_ad588c1aa0883a4477c81011fd2b379e9}{can\+\_\+be\+\_\+played\+\_\+on}} (const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}other, std\+::string \&err) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns true if this card can be played upon the card passed as the first argument. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcard_aac84fa6a9fe9da8fcca70096631982ff}{can\+\_\+be\+\_\+played\+\_\+on}} (const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}other) const noexcept
+\begin{DoxyCompactList}\small\item\em Overloaded version of \doxylink{classcard_ad588c1aa0883a4477c81011fd2b379e9}{can\+\_\+be\+\_\+played\+\_\+on()} for testing without passing the err String as an argument. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{classcard_a376d5639163f53edb9c54e5454b09e3e}{get\+\_\+point\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Determines the point value of a card to calculate the player points at the end of a round. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcard_a2bcc2bd98638f65a435c487c64ea8de4}{set\+\_\+action}} (\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} action)
+\begin{DoxyCompactList}\small\item\em Sets the action (required for special cards). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcard_a7f900b843e44fb18364f32dbe6cdbc7a}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcard_a48593187c9bff442d61f197991954011}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcard_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcard_a924b1f470bc8f82f043b332a162316d1}\index{card@{card}!card@{card}}
+\index{card@{card}!card@{card}}
+\doxysubsubsection{\texorpdfstring{card()}{card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcard_a924b1f470bc8f82f043b332a162316d1} 
+card\+::card (\begin{DoxyParamCaption}\item[{uint}]{val}{, }\item[{\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}}]{col}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for non-\/special cards. 
+
+\Hypertarget{classcard_a8eb8a837c9dda685ecb41717426f5b05}\index{card@{card}!card@{card}}
+\index{card@{card}!card@{card}}
+\doxysubsubsection{\texorpdfstring{card()}{card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcard_a8eb8a837c9dda685ecb41717426f5b05} 
+card\+::card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}}]{col}{, }\item[{\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}}}]{act}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for special cards. 
+
+\Hypertarget{classcard_acbacc99b12f8705aa4b99ae98504e7eb}\index{card@{card}!````~card@{\texorpdfstring{$\sim$}{\string~}card}}
+\index{````~card@{\texorpdfstring{$\sim$}{\string~}card}!card@{card}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}card()}{\string~card()}}
+{\footnotesize\ttfamily \label{classcard_acbacc99b12f8705aa4b99ae98504e7eb} 
+card\+::\texorpdfstring{$\sim$}{\string~}card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcard_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcard_aac84fa6a9fe9da8fcca70096631982ff}\index{card@{card}!can\_be\_played\_on@{can\_be\_played\_on}}
+\index{can\_be\_played\_on@{can\_be\_played\_on}!card@{card}}
+\doxysubsubsection{\texorpdfstring{can\_be\_played\_on()}{can\_be\_played\_on()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcard_aac84fa6a9fe9da8fcca70096631982ff} 
+bool card\+::can\+\_\+be\+\_\+played\+\_\+on (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Overloaded version of \doxylink{classcard_ad588c1aa0883a4477c81011fd2b379e9}{can\+\_\+be\+\_\+played\+\_\+on()} for testing without passing the err String as an argument. 
+
+\Hypertarget{classcard_ad588c1aa0883a4477c81011fd2b379e9}\index{card@{card}!can\_be\_played\_on@{can\_be\_played\_on}}
+\index{can\_be\_played\_on@{can\_be\_played\_on}!card@{card}}
+\doxysubsubsection{\texorpdfstring{can\_be\_played\_on()}{can\_be\_played\_on()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcard_ad588c1aa0883a4477c81011fd2b379e9} 
+bool card\+::can\+\_\+be\+\_\+played\+\_\+on (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{other}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns true if this card can be played upon the card passed as the first argument. 
+
+\Hypertarget{classcard_a48593187c9bff442d61f197991954011}\index{card@{card}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!card@{card}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classcard_a48593187c9bff442d61f197991954011} 
+\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} card\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classcard_aa2b5aedebb65b90f066ec2fef429e428}\index{card@{card}!get\_action@{get\_action}}
+\index{get\_action@{get\_action}!card@{card}}
+\doxysubsubsection{\texorpdfstring{get\_action()}{get\_action()}}
+{\footnotesize\ttfamily \label{classcard_aa2b5aedebb65b90f066ec2fef429e428} 
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} card\+::get\+\_\+action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns the \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type} of a special card or \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{Card\+Action\+Type\+::\+NONE} for all other cards. 
+
+\Hypertarget{classcard_a60c055be28de8908f973fae7f141818a}\index{card@{card}!get\_color@{get\_color}}
+\index{get\_color@{get\_color}!card@{card}}
+\doxysubsubsection{\texorpdfstring{get\_color()}{get\_color()}}
+{\footnotesize\ttfamily \label{classcard_a60c055be28de8908f973fae7f141818a} 
+\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} card\+::get\+\_\+color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns the \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} of the card defined in the enum \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}. 
+
+\Hypertarget{classcard_a376d5639163f53edb9c54e5454b09e3e}\index{card@{card}!get\_point\_value@{get\_point\_value}}
+\index{get\_point\_value@{get\_point\_value}!card@{card}}
+\doxysubsubsection{\texorpdfstring{get\_point\_value()}{get\_point\_value()}}
+{\footnotesize\ttfamily \label{classcard_a376d5639163f53edb9c54e5454b09e3e} 
+uint card\+::get\+\_\+point\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Determines the point value of a card to calculate the player points at the end of a round. 
+
+Returns the number value for number cards, 7 for special cards and 42 for the \textquotesingle{}FUCK YOU\textquotesingle{} card. \Hypertarget{classcard_ab4fe51c45b8d5145e07c86b2f93d038f}\index{card@{card}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!card@{card}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily \label{classcard_ab4fe51c45b8d5145e07c86b2f93d038f} 
+uint card\+::get\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns the number value of the card. Equals the number value of number cards, 20 for Rainbow cards and 0 for special cards. 
+
+\Hypertarget{classcard_a2bcc2bd98638f65a435c487c64ea8de4}\index{card@{card}!set\_action@{set\_action}}
+\index{set\_action@{set\_action}!card@{card}}
+\doxysubsubsection{\texorpdfstring{set\_action()}{set\_action()}}
+{\footnotesize\ttfamily \label{classcard_a2bcc2bd98638f65a435c487c64ea8de4} 
+void card\+::set\+\_\+action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}}}]{action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the action (required for special cards). 
+
+\Hypertarget{classcard_a7f900b843e44fb18364f32dbe6cdbc7a}\index{card@{card}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!card@{card}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classcard_a7f900b843e44fb18364f32dbe6cdbc7a} 
+void card\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{card_8h}{card.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{card_8cpp}{card.\+cpp}}\end{DoxyCompactItemize}

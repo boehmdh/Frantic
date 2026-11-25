@@ -1,0 +1,139 @@
+\doxysection{join\+\_\+game\+\_\+request Class Reference}
+\hypertarget{classjoin__game__request}{}\label{classjoin__game__request}\index{join\_game\_request@{join\_game\_request}}
+
+
+{\ttfamily \#include $<$join\+\_\+game\+\_\+request.\+h$>$}
+
+
+
+Inheritance diagram for join\+\_\+game\+\_\+request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classjoin__game__request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for join\+\_\+game\+\_\+request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classjoin__game__request__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classjoin__game__request_ab777a080fe7945e5dafafb929a7f49a1}{get\+\_\+player\+\_\+name}} () const
+\item 
+\mbox{\hyperlink{classjoin__game__request_a5718321adfe420152aca2de9a5ed3278}{join\+\_\+game\+\_\+request}} (std\+::string player\+\_\+id, std\+::string name)
+\item 
+\mbox{\hyperlink{classjoin__game__request_a9dcc67f82637f69eae9519b21c4af639}{join\+\_\+game\+\_\+request}} (std\+::string game\+\_\+id, std\+::string player\+\_\+id, std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{classjoin__game__request_ab1d449ca61e34cbf0d9054d50d542bcc}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classclient__request}{client\+\_\+request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classclient__request_a2845a83ea9320712224484edb13a551f}{\texorpdfstring{$\sim$}{\string~}client\+\_\+request}} ()
+\item 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} \mbox{\hyperlink{classclient__request_a01ff58f993d3f9c37ff8913dddf160b9}{get\+\_\+type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a26dcd16d0754293f82454266a567aaa2}{get\+\_\+req\+\_\+id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a496555f3dec38e00169fc72f1f22009b}{get\+\_\+game\+\_\+id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a80b701881b6c22c567ceb7125d37b001}{get\+\_\+player\+\_\+id}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classclient__request_ad5940ba1f93b38a455f3494a3c4dde0e}{to\+\_\+string}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classjoin__game__request}{join\+\_\+game\+\_\+request}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classjoin__game__request_ac68ecf877821ec411654026c7fa74aa4}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classclient__request}{client\+\_\+request}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classclient__request}{client\+\_\+request}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classclient__request}{client\+\_\+request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\+\_\+request}} (\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classclient__request}{client\+\_\+request}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classclient__request_a7f1efcb700bcc21fbe69866828a395e6}{create\+\_\+base\+\_\+class\+\_\+properties}} (\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} type, std\+::string req\+\_\+id, std\+::string \&player\+\_\+id, std\+::string \&game\+\_\+id)
+\item 
+static \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c}{extract\+\_\+base\+\_\+class\+\_\+properties}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classclient__request}{client\+\_\+request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} \mbox{\hyperlink{classclient__request_a295c3fe84e76b55f8500e95049460131}{\+\_\+type}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}{\+\_\+req\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a80117cbd1673c8c8462051167f048ecd}{\+\_\+player\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a5f92f88101754287befd4dc294bd0678}{\+\_\+game\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classjoin__game__request_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjoin__game__request_a5718321adfe420152aca2de9a5ed3278}\index{join\_game\_request@{join\_game\_request}!join\_game\_request@{join\_game\_request}}
+\index{join\_game\_request@{join\_game\_request}!join\_game\_request@{join\_game\_request}}
+\doxysubsubsection{\texorpdfstring{join\_game\_request()}{join\_game\_request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classjoin__game__request_a5718321adfe420152aca2de9a5ed3278} 
+join\+\_\+game\+\_\+request\+::join\+\_\+game\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::string}]{player\+\_\+id}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classjoin__game__request_a9dcc67f82637f69eae9519b21c4af639}\index{join\_game\_request@{join\_game\_request}!join\_game\_request@{join\_game\_request}}
+\index{join\_game\_request@{join\_game\_request}!join\_game\_request@{join\_game\_request}}
+\doxysubsubsection{\texorpdfstring{join\_game\_request()}{join\_game\_request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classjoin__game__request_a9dcc67f82637f69eae9519b21c4af639} 
+join\+\_\+game\+\_\+request\+::join\+\_\+game\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::string}]{game\+\_\+id}{, }\item[{std\+::string}]{player\+\_\+id}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classjoin__game__request_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjoin__game__request_ac68ecf877821ec411654026c7fa74aa4}\index{join\_game\_request@{join\_game\_request}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!join\_game\_request@{join\_game\_request}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classjoin__game__request_ac68ecf877821ec411654026c7fa74aa4} 
+\mbox{\hyperlink{classjoin__game__request}{join\+\_\+game\+\_\+request}} \texorpdfstring{$\ast$}{*} join\+\_\+game\+\_\+request\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjoin__game__request_ab777a080fe7945e5dafafb929a7f49a1}\index{join\_game\_request@{join\_game\_request}!get\_player\_name@{get\_player\_name}}
+\index{get\_player\_name@{get\_player\_name}!join\_game\_request@{join\_game\_request}}
+\doxysubsubsection{\texorpdfstring{get\_player\_name()}{get\_player\_name()}}
+{\footnotesize\ttfamily \label{classjoin__game__request_ab777a080fe7945e5dafafb929a7f49a1} 
+std\+::string join\+\_\+game\+\_\+request\+::get\+\_\+player\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classjoin__game__request_ab1d449ca61e34cbf0d9054d50d542bcc}\index{join\_game\_request@{join\_game\_request}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!join\_game\_request@{join\_game\_request}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classjoin__game__request_ab1d449ca61e34cbf0d9054d50d542bcc} 
+void join\+\_\+game\+\_\+request\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}{client\+\_\+request}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/network/requests/\mbox{\hyperlink{join__game__request_8h}{join\+\_\+game\+\_\+request.\+h}}\item 
+src/common/network/requests/\mbox{\hyperlink{join__game__request_8cpp}{join\+\_\+game\+\_\+request.\+cpp}}\end{DoxyCompactItemize}

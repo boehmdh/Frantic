@@ -1,0 +1,31 @@
+\doxysection{Game\+Window.\+h}
+\hypertarget{GameWindow_8h_source}{}\label{GameWindow_8h_source}\index{src/client/windows/GameWindow.h@{src/client/windows/GameWindow.h}}
+\mbox{\hyperlink{GameWindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_UI\_GAMEWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRANTIC\_UI\_GAMEWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConnectionPanel_8h}{../panels/ConnectionPanel.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameWindow_a5ad45eb351feed827c62865601d0e299}{GameWindow}}\ :\ \textcolor{keyword}{public}\ wxFrame}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classGameWindow_a5ad45eb351feed827c62865601d0e299}{GameWindow}}(\textcolor{keyword}{const}\ wxString\&\ title,\ \textcolor{keyword}{const}\ wxPoint\&\ pos,\ \textcolor{keyword}{const}\ wxSize\&\ size);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWindow_a38ba4c455f0a985cde1421193ede3bea}{showPanel}}(wxPanel*\ panel);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWindow_a02bb94c0f4c54c8725c6acf1615736be}{setStatus}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ wxBoxSizer*\ \_mainLayout;}
+\DoxyCodeLine{00017\ \ \ \ \ wxStatusBar*\ \_statusBar;}
+\DoxyCodeLine{00018\ \ \ \ \ wxPanel*\ \_currentPanel;}
+\DoxyCodeLine{00019\ \ \ \ \ wxSize\ DEFAULT\_SIZE\ =\ wxSize(0,25);}
+\DoxyCodeLine{00020\ \ \ \ \ wxFont\ defaultFont\ =\ wxFont(DEFAULT\_SIZE,\ wxFONTFAMILY\_SWISS,\ wxFONTSTYLE\_NORMAL,\ wxFONTWEIGHT\_NORMAL,\ \textcolor{keyword}{false},\ wxEmptyString,\ wxFONTENCODING\_SYSTEM);}
+\DoxyCodeLine{00021\ \ \ \ \ wxSize\ minWinSize\ =\ wxSize(1200,\ 850);}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_UI\_GAMEWINDOW\_H}}
+
+\end{DoxyCode}

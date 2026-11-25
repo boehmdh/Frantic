@@ -1,0 +1,131 @@
+\doxysection{request\+\_\+response Class Reference}
+\hypertarget{classrequest__response}{}\label{classrequest__response}\index{request\_response@{request\_response}}
+
+
+{\ttfamily \#include $<$request\+\_\+response.\+h$>$}
+
+
+
+Inheritance diagram for request\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classrequest__response__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for request\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classrequest__response__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrequest__response_a1573c7c4e34a0cfa49101a66bb5cd065}{request\+\_\+response}} (std\+::string game\+\_\+id, std\+::string req\+\_\+id, bool success, rapidjson\+::\+Value \texorpdfstring{$\ast$}{*}state\+\_\+json, std\+::string err)
+\item 
+\mbox{\hyperlink{classrequest__response_aa6d02f6e36586af4a705ec47ac736fec}{\texorpdfstring{$\sim$}{\string~}request\+\_\+response}} ()
+\item 
+virtual void \mbox{\hyperlink{classrequest__response_ad968775a041bb5616cc78140e77620f5}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\item 
+virtual void \mbox{\hyperlink{classrequest__response_a8aea6c4e2cfb89cf6c9e482eed746cb3}{Process}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae}{get\+\_\+type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a091bb106c9468416f8d4be44f297d8da}{get\+\_\+game\+\_\+id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classrequest__response}{request\+\_\+response}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classrequest__response_a93118c3447d6b97723b0169925893ea3}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classserver__response}{server\+\_\+response}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\+\_\+response}} (\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a91a54ce809b848278e730c32fe4322ce}{create\+\_\+base\+\_\+class\+\_\+properties}} (\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} type, const std\+::string \&game\+\_\+id)
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a003d03454d92e34725006460d192d1eb}{extract\+\_\+base\+\_\+class\+\_\+properties}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a40595ead49e44e96d51240d9ffc2ad81}{\+\_\+game\+\_\+id}}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_a5412fce03c043a5cd18d92ced3544425}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classrequest__response_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classrequest__response_a1573c7c4e34a0cfa49101a66bb5cd065}\index{request\_response@{request\_response}!request\_response@{request\_response}}
+\index{request\_response@{request\_response}!request\_response@{request\_response}}
+\doxysubsubsection{\texorpdfstring{request\_response()}{request\_response()}}
+{\footnotesize\ttfamily \label{classrequest__response_a1573c7c4e34a0cfa49101a66bb5cd065} 
+request\+\_\+response\+::request\+\_\+response (\begin{DoxyParamCaption}\item[{std\+::string}]{game\+\_\+id}{, }\item[{std\+::string}]{req\+\_\+id}{, }\item[{bool}]{success}{, }\item[{rapidjson\+::\+Value \texorpdfstring{$\ast$}{*}}]{state\+\_\+json}{, }\item[{std\+::string}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classrequest__response_aa6d02f6e36586af4a705ec47ac736fec}\index{request\_response@{request\_response}!````~request\_response@{\texorpdfstring{$\sim$}{\string~}request\_response}}
+\index{````~request\_response@{\texorpdfstring{$\sim$}{\string~}request\_response}!request\_response@{request\_response}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}request\_response()}{\string~request\_response()}}
+{\footnotesize\ttfamily \label{classrequest__response_aa6d02f6e36586af4a705ec47ac736fec} 
+request\+\_\+response\+::\texorpdfstring{$\sim$}{\string~}request\+\_\+response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classrequest__response_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classrequest__response_a93118c3447d6b97723b0169925893ea3}\index{request\_response@{request\_response}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!request\_response@{request\_response}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classrequest__response_a93118c3447d6b97723b0169925893ea3} 
+\mbox{\hyperlink{classrequest__response}{request\+\_\+response}} \texorpdfstring{$\ast$}{*} request\+\_\+response\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classrequest__response_a8aea6c4e2cfb89cf6c9e482eed746cb3}\index{request\_response@{request\_response}!Process@{Process}}
+\index{Process@{Process}!request\_response@{request\_response}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily \label{classrequest__response_a8aea6c4e2cfb89cf6c9e482eed746cb3} 
+void request\+\_\+response\+::\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4}{server\+\_\+response}}.
+
+\Hypertarget{classrequest__response_ad968775a041bb5616cc78140e77620f5}\index{request\_response@{request\_response}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!request\_response@{request\_response}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classrequest__response_ad968775a041bb5616cc78140e77620f5} 
+void request\+\_\+response\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classserver__response_adbc96c056bf86e60c46424533f0e70f1}{server\+\_\+response}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/network/responses/\mbox{\hyperlink{request__response_8h}{request\+\_\+response.\+h}}\item 
+src/common/network/responses/\mbox{\hyperlink{request__response_8cpp}{request\+\_\+response.\+cpp}}\end{DoxyCompactItemize}

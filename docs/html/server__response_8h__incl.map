@@ -1,0 +1,11 @@
+<map id="src/common/network/responses/server_response.h" name="src/common/network/responses/server_response.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,258,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,64,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,48,63,95,60,90,123,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,101,213,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,46,153,87,148,87,148,46"/>
+<area shape="rect" id="Node000004" href="$serializable_8h.html" title=" " alt="" coords="237,93,363,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,43,257,84,254,89,182,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="217,181,383,221"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="303,134,303,167,297,167,297,134"/>
+</map>

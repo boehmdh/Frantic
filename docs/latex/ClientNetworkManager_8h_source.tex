@@ -1,0 +1,37 @@
+\doxysection{Client\+Network\+Manager.\+h}
+\hypertarget{ClientNetworkManager_8h_source}{}\label{ClientNetworkManager_8h_source}\index{src/client/network/ClientNetworkManager.h@{src/client/network/ClientNetworkManager.h}}
+\mbox{\hyperlink{ClientNetworkManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_CLIENTNETWORKMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRANTIC\_CLIENTNETWORKMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResponseListenerThread_8h}{ResponseListenerThread.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{../../common/network/requests/client\_request.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClientNetworkManager}{ClientNetworkManager}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClientNetworkManager_a06cadb3e1070d0a3156b87f52771e969}{init}}(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keyword}{const}\ uint16\_t\ port);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClientNetworkManager_aca5b61bbf31e8acc3a294b6211c639c3}{sendRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classclient__request}{client\_request}}\&\ request);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClientNetworkManager_ab4b6b832ed99967b973f1cb3a699f638}{parseResponse}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ connect(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keyword}{const}\ uint16\_t\ port);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ sockpp::tcp\_connector*\ \_connection;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_connectionSuccess;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_failedToConnect;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_CLIENTNETWORKMANAGER\_H}}
+
+\end{DoxyCode}

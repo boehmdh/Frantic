@@ -1,0 +1,46 @@
+\doxysection{Game\+Controller.\+h}
+\hypertarget{GameController_8h_source}{}\label{GameController_8h_source}\index{src/client/GameController.h@{src/client/GameController.h}}
+\mbox{\hyperlink{GameController_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_UI\_GAMECONTROLLER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRANTIC\_UI\_GAMECONTROLLER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GameWindow_8h}{windows/GameWindow.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConnectionPanel_8h}{panels/ConnectionPanel.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MainGamePanel_8h}{panels/MainGamePanel.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ResponseListenerThread_8h}{network/ResponseListenerThread.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__state_8h}{../common/game\_state/game\_state.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameController}{GameController}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a8889bad76bc35487d3391fb8a5791616}{init}}(\mbox{\hyperlink{classGameWindow}{GameWindow}}*\ gameWindow);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a023da21da545374ee46fb873149976c4}{connectToServer}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a994773f79be8c9e8dc8c19ee2d389103}{updateGameState}}(\mbox{\hyperlink{classgame__state}{game\_state}}*\ newGameState);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}{startGame}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a4af7842635cb6105516ef72d07eb7262}{drawCard}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a374ccc9dcda9776268ce61e4b1eb96b4}{fold}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a87b164e2094901861e5b47056634facc}{playCard}}(\mbox{\hyperlink{classcard}{card}}*\ cardToPlay);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ wxEvtHandler*\ \mbox{\hyperlink{classGameController_abec8c73ea01e4b7e01b2ca1d932e0c16}{getMainThreadEventHandler}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_adf043f9026a62f634a873c9f9d292034}{showError}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a6a43eb061a9882b3937fc88bb4794324}{showStatus}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_a3c350056b82df662c946cb9119f11ced}{showNewRoundMessage}}(\mbox{\hyperlink{classgame__state}{game\_state}}*\ oldGameState,\ \mbox{\hyperlink{classgame__state}{game\_state}}*\ newGameState);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameController_abb91c546ab8400c1e2e9f2a2ccc8298f}{showGameOverMessage}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classGameWindow}{GameWindow}}*\ \_gameWindow;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConnectionPanel}{ConnectionPanel}}*\ \_connectionPanel;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMainGamePanel}{MainGamePanel}}*\ \_mainGamePanel;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classplayer}{player}}*\ \_me;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classgame__state}{game\_state}}*\ \_currentGameState;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_UI\_GAMECONTROLLER\_H}}
+
+\end{DoxyCode}

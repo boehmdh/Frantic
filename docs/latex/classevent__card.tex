@@ -1,0 +1,220 @@
+\doxysection{event\+\_\+card Class Reference}
+\hypertarget{classevent__card}{}\label{classevent__card}\index{event\_card@{event\_card}}
+
+
+{\ttfamily \#include $<$event\+\_\+card.\+h$>$}
+
+
+
+Inheritance diagram for event\+\_\+card\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__card__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for event\+\_\+card\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__card__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevent__card_a4e9c8ed60ba5ba5468de18d1605b88aa}{event\+\_\+card}} (\mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\+\_\+card\+\_\+collection}} typ)
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classevent__card_a3dfdcb7facddacd166ba62f10eaf8697}{\texorpdfstring{$\sim$}{\string~}event\+\_\+card}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\+\_\+card\+\_\+collection}} \mbox{\hyperlink{classevent__card_a95a157f10cd10dc3dda012d8de575811}{get\+\_\+event\+\_\+name}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the event of the card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classevent__card_af0da5772a67bdf468d32472d617ece07}{effect}} (\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classgame__state}{game\+\_\+state}}, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Executes the respective special effect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classevent__card_ab8abe0832f441363ea374808b9aed52a}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classevent__card_a1449ff1bfd326a2ce6ae54ffe550c3a3}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classevent__card_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classevent__card_a4e9c8ed60ba5ba5468de18d1605b88aa}\index{event\_card@{event\_card}!event\_card@{event\_card}}
+\index{event\_card@{event\_card}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{event\_card()}{event\_card()}}
+{\footnotesize\ttfamily \label{classevent__card_a4e9c8ed60ba5ba5468de18d1605b88aa} 
+event\+\_\+card\+::event\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\+\_\+card\+\_\+collection}}}]{typ}{}\end{DoxyParamCaption})}
+
+
+
+Public constructor. 
+
+\Hypertarget{classevent__card_a3dfdcb7facddacd166ba62f10eaf8697}\index{event\_card@{event\_card}!````~event\_card@{\texorpdfstring{$\sim$}{\string~}event\_card}}
+\index{````~event\_card@{\texorpdfstring{$\sim$}{\string~}event\_card}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}event\_card()}{\string~event\_card()}}
+{\footnotesize\ttfamily \label{classevent__card_a3dfdcb7facddacd166ba62f10eaf8697} 
+event\+\_\+card\+::\texorpdfstring{$\sim$}{\string~}event\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classevent__card_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevent__card_af0da5772a67bdf468d32472d617ece07}\index{event\_card@{event\_card}!effect@{effect}}
+\index{effect@{effect}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{effect()}{effect()}}
+{\footnotesize\ttfamily \label{classevent__card_af0da5772a67bdf468d32472d617ece07} 
+void event\+\_\+card\+::effect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+state}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Executes the respective special effect. 
+
+Executes the effect of the event card.
+
+This function applies the specific effect of the event card that is played\+:
+
+{\bfseries{DOOMSDAY\+:}}
+\begin{DoxyItemize}
+\item The game immediately ends.
+\item Every player receives 50 points.
+\end{DoxyItemize}
+
+{\bfseries{EARTHQUAKE\+:}}
+\begin{DoxyItemize}
+\item Every player passes their entire hand of cards to the player on their right.
+\end{DoxyItemize}
+
+{\bfseries{FINISH\+\_\+\+LINE\+:}}
+\begin{DoxyItemize}
+\item The game ends immediately.
+\item All players count the points of the cards remaining in their hands.
+\end{DoxyItemize}
+
+{\bfseries{TIME\+\_\+\+BOMB\+:}}
+\begin{DoxyItemize}
+\item The game lasts for three more turns.
+\item The game ends immediately if a player would take a fourth turn.
+\item If a player empties their hand before the three-\/turn limit\+:
+\begin{DoxyItemize}
+\item That player loses 10 points.
+\item All other players receive a 10-\/point penalty plus points for the cards in their hand.
+\end{DoxyItemize}
+\item If no player finishes the game within the three-\/turn limit, all points are doubled.
+\end{DoxyItemize}
+
+{\bfseries{EXPANSION\+:}}
+\begin{DoxyItemize}
+\item The game ends immediately.
+\item All players count the points of the cards remaining in their hands.
+\end{DoxyItemize}
+
+{\bfseries{COMMUNISM\+:}}
+\begin{DoxyItemize}
+\item All players are adjusted to have the same number of cards as the player with the most cards.
+\item Players with fewer cards draw the necessary number of cards to match the maximum.
+\end{DoxyItemize}
+
+{\bfseries{CAPITALISM\+:}}
+
+{\bfseries{THIRD\+\_\+\+TIME\+\_\+\+LUCKY\+:}}
+\begin{DoxyItemize}
+\item Every player draws three cards from the draw pile.
+\end{DoxyItemize}
+
+{\bfseries{MEXICAN\+\_\+\+STANDOFF\+:}}
+\begin{DoxyItemize}
+\item Every player discards all cards in their hand.
+\item Players then draw three new cards from the draw pile, in turn order.
+\end{DoxyItemize}
+
+{\bfseries{ROBIN\+\_\+\+HOOD\+:}}
+\begin{DoxyItemize}
+\item The player with the fewest cards swaps their entire hand with the player who has the most cards.
+\end{DoxyItemize}
+
+{\bfseries{MATING\+\_\+\+SEASON\+:}}
+\begin{DoxyItemize}
+\item Every player must discard all sets of number cards in their hand.
+\item Sets include pairs, triples, quadruples, etc., regardless of the color of the cards.
+\end{DoxyItemize}
+
+{\bfseries{FRIDAY\+\_\+\+THE\+\_\+13\+TH\+:}}
+\begin{DoxyItemize}
+\item It is Friday the 13th, but nothing unusual happens in the game.
+\item The game continues normally without any effect. 
+\end{DoxyItemize}\Hypertarget{classevent__card_a1449ff1bfd326a2ce6ae54ffe550c3a3}\index{event\_card@{event\_card}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classevent__card_a1449ff1bfd326a2ce6ae54ffe550c3a3} 
+\mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} event\+\_\+card\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classevent__card_a95a157f10cd10dc3dda012d8de575811}\index{event\_card@{event\_card}!get\_event\_name@{get\_event\_name}}
+\index{get\_event\_name@{get\_event\_name}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{get\_event\_name()}{get\_event\_name()}}
+{\footnotesize\ttfamily \label{classevent__card_a95a157f10cd10dc3dda012d8de575811} 
+\mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\+\_\+card\+\_\+collection}} event\+\_\+card\+::get\+\_\+event\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Accessor for the event of the card. 
+
+\Hypertarget{classevent__card_ab8abe0832f441363ea374808b9aed52a}\index{event\_card@{event\_card}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!event\_card@{event\_card}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classevent__card_ab8abe0832f441363ea374808b9aed52a} 
+void event\+\_\+card\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__card_8h}{event\+\_\+card.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__card_8cpp}{event\+\_\+card.\+cpp}}\end{DoxyCompactItemize}

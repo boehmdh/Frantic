@@ -1,0 +1,139 @@
+\doxysection{full\+\_\+state\+\_\+response Class Reference}
+\hypertarget{classfull__state__response}{}\label{classfull__state__response}\index{full\_state\_response@{full\_state\_response}}
+
+
+{\ttfamily \#include $<$full\+\_\+state\+\_\+response.\+h$>$}
+
+
+
+Inheritance diagram for full\+\_\+state\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classfull__state__response__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for full\+\_\+state\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classfull__state__response__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfull__state__response_ab2b137a4670f81507e7464d5ef9d86fc}{full\+\_\+state\+\_\+response}} (std\+::string game\+\_\+id, const \mbox{\hyperlink{classgame__state}{game\+\_\+state}} \&state)
+\item 
+\mbox{\hyperlink{classfull__state__response_a64d9fbe82c270d21fb189f877de9b90b}{\texorpdfstring{$\sim$}{\string~}full\+\_\+state\+\_\+response}} ()
+\item 
+rapidjson\+::\+Value \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfull__state__response_a0272aadde40ceafbfd39f00816854099}{get\+\_\+state\+\_\+json}} () const
+\item 
+virtual void \mbox{\hyperlink{classfull__state__response_a246b4576345ed8cb9c8487764ceafc11}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\item 
+virtual void \mbox{\hyperlink{classfull__state__response_a6a9cbc1ce43abeb09e4ac86639e2c7e1}{Process}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae}{get\+\_\+type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a091bb106c9468416f8d4be44f297d8da}{get\+\_\+game\+\_\+id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfull__state__response}{full\+\_\+state\+\_\+response}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfull__state__response_a2fa51506a33b924683b1d925f09b7689}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classserver__response}{server\+\_\+response}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\+\_\+response}} (\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a91a54ce809b848278e730c32fe4322ce}{create\+\_\+base\+\_\+class\+\_\+properties}} (\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} type, const std\+::string \&game\+\_\+id)
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a003d03454d92e34725006460d192d1eb}{extract\+\_\+base\+\_\+class\+\_\+properties}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classserver__response}{server\+\_\+response}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a40595ead49e44e96d51240d9ffc2ad81}{\+\_\+game\+\_\+id}}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_a5412fce03c043a5cd18d92ced3544425}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classfull__state__response_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfull__state__response_ab2b137a4670f81507e7464d5ef9d86fc}\index{full\_state\_response@{full\_state\_response}!full\_state\_response@{full\_state\_response}}
+\index{full\_state\_response@{full\_state\_response}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{full\_state\_response()}{full\_state\_response()}}
+{\footnotesize\ttfamily \label{classfull__state__response_ab2b137a4670f81507e7464d5ef9d86fc} 
+full\+\_\+state\+\_\+response\+::full\+\_\+state\+\_\+response (\begin{DoxyParamCaption}\item[{std\+::string}]{game\+\_\+id}{, }\item[{const \mbox{\hyperlink{classgame__state}{game\+\_\+state}} \&}]{state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfull__state__response_a64d9fbe82c270d21fb189f877de9b90b}\index{full\_state\_response@{full\_state\_response}!````~full\_state\_response@{\texorpdfstring{$\sim$}{\string~}full\_state\_response}}
+\index{````~full\_state\_response@{\texorpdfstring{$\sim$}{\string~}full\_state\_response}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}full\_state\_response()}{\string~full\_state\_response()}}
+{\footnotesize\ttfamily \label{classfull__state__response_a64d9fbe82c270d21fb189f877de9b90b} 
+full\+\_\+state\+\_\+response\+::\texorpdfstring{$\sim$}{\string~}full\+\_\+state\+\_\+response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classfull__state__response_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfull__state__response_a2fa51506a33b924683b1d925f09b7689}\index{full\_state\_response@{full\_state\_response}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classfull__state__response_a2fa51506a33b924683b1d925f09b7689} 
+\mbox{\hyperlink{classfull__state__response}{full\+\_\+state\+\_\+response}} \texorpdfstring{$\ast$}{*} full\+\_\+state\+\_\+response\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classfull__state__response_a0272aadde40ceafbfd39f00816854099}\index{full\_state\_response@{full\_state\_response}!get\_state\_json@{get\_state\_json}}
+\index{get\_state\_json@{get\_state\_json}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{get\_state\_json()}{get\_state\_json()}}
+{\footnotesize\ttfamily \label{classfull__state__response_a0272aadde40ceafbfd39f00816854099} 
+rapidjson\+::\+Value \texorpdfstring{$\ast$}{*} full\+\_\+state\+\_\+response\+::get\+\_\+state\+\_\+json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfull__state__response_a6a9cbc1ce43abeb09e4ac86639e2c7e1}\index{full\_state\_response@{full\_state\_response}!Process@{Process}}
+\index{Process@{Process}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily \label{classfull__state__response_a6a9cbc1ce43abeb09e4ac86639e2c7e1} 
+void full\+\_\+state\+\_\+response\+::\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4}{server\+\_\+response}}.
+
+\Hypertarget{classfull__state__response_a246b4576345ed8cb9c8487764ceafc11}\index{full\_state\_response@{full\_state\_response}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!full\_state\_response@{full\_state\_response}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classfull__state__response_a246b4576345ed8cb9c8487764ceafc11} 
+void full\+\_\+state\+\_\+response\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classserver__response_adbc96c056bf86e60c46424533f0e70f1}{server\+\_\+response}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/network/responses/\mbox{\hyperlink{full__state__response_8h}{full\+\_\+state\+\_\+response.\+h}}\item 
+src/common/network/responses/\mbox{\hyperlink{full__state__response_8cpp}{full\+\_\+state\+\_\+response.\+cpp}}\end{DoxyCompactItemize}

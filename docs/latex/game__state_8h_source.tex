@@ -1,0 +1,139 @@
+\doxysection{game\+\_\+state.\+h}
+\hypertarget{game__state_8h_source}{}\label{game__state_8h_source}\index{src/common/game\_state/game\_state.h@{src/common/game\_state/game\_state.h}}
+\mbox{\hyperlink{game__state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_GAME\_STATE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_GAME\_STATE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player/player.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw__pile_8h}{cards/draw\_pile.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{discard__pile_8h}{cards/discard\_pile.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__draw__pile_8h}{cards/event\_draw\_pile.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__discard__pile_8h}{cards/event\_discard\_pile.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{../serialization/serializable.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }game\_state\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_max\_nof\_players\ =\ 6;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_min\_nof\_players\ =\ 2;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_skip\_next\_player\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classdraw__pile}{draw\_pile}}*\ \_draw\_pile;}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile}{discard\_pile}}*\ \_discard\_pile;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile}{event\_draw\_pile}}*\ \_event\_draw\_pile;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classevent__discard__pile}{event\_discard\_pile}}*\ \_event\_discard\_pile;}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<player*>\ \_players;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \_is\_started;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \_is\_finished;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_round\_number;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_current\_player\_idx;}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_current\_turn\_idx;\ \textcolor{comment}{//\ turn\ counter,\ zero-\/based}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_play\_direction;\ \ \textcolor{comment}{//\ 1\ or\ -\/1\ depending\ on\ which\ direction\ is\ played\ in}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_starting\_player\_idx;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}*\ \_wish;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_final\_turn;\ \textcolor{comment}{//for\ Time\ bomb,\ equals\ -\/1\ unless\ set}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdraw__pile}{draw\_pile}}*\ \mbox{\hyperlink{classdraw__pile}{draw\_pile}},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdiscard__pile}{discard\_pile}}*\ \mbox{\hyperlink{classdiscard__pile}{discard\_pile}},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile}{event\_draw\_pile}}*\ \mbox{\hyperlink{classevent__draw__pile}{event\_draw\_pile}},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classevent__discard__pile}{event\_discard\_pile}}*\ \mbox{\hyperlink{classevent__discard__pile}{event\_discard\_pile}},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<player*>\&\ players,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \mbox{\hyperlink{classgame__state_aa0092c41779f38eba5e921e43b38559c}{is\_started}},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \mbox{\hyperlink{classgame__state_a9b83de8a89e3bb506184492d22c3cf45}{is\_finished}},}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ current\_player\_idx,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_current\_turn\_idx,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ play\_direction,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ round\_number,}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ starting\_player\_idx,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}*\ wish,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ final\_turn}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_player\_index(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\_state}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classgame__state_a87557c624623fbee3acbf90786433b4a}{\string~game\_state}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_ae161c283e275a57d71834754d11e9e40}{is\_full}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_aa0092c41779f38eba5e921e43b38559c}{is\_started}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_a9b83de8a89e3bb506184492d22c3cf45}{is\_finished}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_a371d6a6d84395b90c15d84549b05d553}{is\_player\_in\_game}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_a149a90d5f3c24a23263c6e553ffbf41c}{is\_allowed\_to\_play\_now}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<player*>\&\ \mbox{\hyperlink{classgame__state_abcaccd551f938f961d12266e34c037d2}{get\_players}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgame__state_a39d87c34fae95631cc6f72adcebed7ec}{get\_current\_turn\_idx}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgame__state_a8640dc5a24ae185a4ded6f690511afe0}{get\_play\_direction}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgame__state_ab3ef836a1b3a1e2bc9e429a018c72eca}{get\_round\_number}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ uint\ \mbox{\hyperlink{classgame__state_a362dab9ac0e4560603c87136eb1e565a}{get\_current\_player\_idx}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classdraw__pile}{draw\_pile}}*\ \mbox{\hyperlink{classgame__state_a276b903556f20e587993f25b35093872}{get\_draw\_pile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile}{discard\_pile}}*\ \mbox{\hyperlink{classgame__state_a701fa0c1b8ec5074500435a78639b944}{get\_discard\_pile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile}{event\_draw\_pile}}*\ \mbox{\hyperlink{classgame__state_a92655e6eacf360a7cdac0eaddc40fe62}{get\_event\_draw\_pile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classevent__discard__pile}{event\_discard\_pile}}*\ \mbox{\hyperlink{classgame__state_a59d27599727ea70ac3161a00370f9850}{get\_event\_discard\_pile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classgame__state_a2d16f420a8aa651685461a5efb8bb600}{get\_current\_player}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \ \ uint\ \mbox{\hyperlink{classgame__state_a299c9532ff5bfb20804e5b1d20022a24}{get\_wish}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgame__state_a15825f1af1e2b8493da19456ad3674ef}{get\_final\_turn}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ setters\ for\ testing}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a0f368697da71e0895d28b399fdebd027}{set\_draw\_pile}}(\mbox{\hyperlink{classdraw__pile}{draw\_pile}}*\ draw);}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a4d994866b32ad50652cac92b3aa74206}{set\_discard\_pile}}(\mbox{\hyperlink{classdiscard__pile}{discard\_pile}}*\ discard);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a511a4c7645766a57b3437c6604829540}{set\_current\_player\_idx}}(\textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a212a5e517113b2460d9aa5220077fcee}{set\_wish}}(uint\ value)\ \{\ \_wish-\/>set\_value(value);\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ Functions\ for\ special\ cards}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_ac2bd3ffefbea6387db73db8777228898}{reverse\_direction}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a431940fd63c9c8dbfea335f0c275c27b}{skip\_next\_player}}();}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ server-\/side\ state\ update\ functions}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_ab520d4076c53f70a68bc19f355243a4d}{setup\_round}}(std::string\&\ err);\ \ \ \textcolor{comment}{//\ server\ side\ initialization}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa21991e5c22a91c11795e36bb7fbc6fa0}{start\_game}}(std::string\&\ err);}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_a734fc594d457aa4e6db5bc7467e6442d}{remove\_player}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ std::string\&\ err);}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__state_a4a4fde0700a05c589a6b9c4dbcffac18}{add\_player}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ std::string\&\ err);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa788e2ec9df31d24d4fe7a495f3385a5a}{draw\_card}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ std::string\&\ err);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a616ac79dbab9a17b753da42498ef30cc}{draw\_card\_action}}(\mbox{\hyperlink{classplayer}{player}}\ *\mbox{\hyperlink{classplayer}{player}});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afaa4d19c311e5fa3d98d99a9db41b39ae0}{play\_card}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ \textcolor{keyword}{const}\ std::string\&\ card\_id,\ uint\ new\_wish,\ uint\ ff\_target,\ std::string\&\ err);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa8a644c686eb987d3a5d2b55bae4c9a3a}{fold}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}},\ std::string\&\ err);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a8285686ea7777682d8ebad25bc7db61e}{set\_time\_bomb}}();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a59cee175e334c6eaaa62f9d9a52514ea}{update\_current\_player}}(std::string\&\ err);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_ad2e967638043670ebae93dd6ec32e91e}{wrap\_up\_round}}(std::string\&\ err);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a888dbad669e3678a8d3bac3e3b60dfb0}{end\_game}}();}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ serializable\ interface}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classgame__state}{game\_state}}*\ \mbox{\hyperlink{classgame__state_a794d484961c92b5b737586ec5599963f}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__state_a54873cd18b46555915d150a6d8dd6f83}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_GAME\_STATE\_H}}
+
+\end{DoxyCode}

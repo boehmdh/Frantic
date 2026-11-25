@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['rainbow_0',['RAINBOW',['../color_8h.html#a92015c32f0bd122d73cb95b58aa5583baf105d2e7e230814257820eada783f9cd',1,'color.h']]],
+  ['readme_1',['README',['../md_README.html',1,'']]],
+  ['readme_2emd_2',['README.md',['../README_8md.html',1,'']]],
+  ['red_3',['RED',['../color_8h.html#a92015c32f0bd122d73cb95b58aa5583baa2d9547b5d3dd9f05984475f7c926da0',1,'color.h']]],
+  ['remove_5fcard_4',['remove_card',['../classhand.html#ae4203ef4ca99af21b726d68579b70e95',1,'hand::remove_card()'],['../classplayer.html#a81b4fbf234164b13ec3f24e59c2094d9',1,'player::remove_card()']]],
+  ['remove_5fplayer_5',['remove_player',['../classgame__state.html#a734fc594d457aa4e6db5bc7467e6442d',1,'game_state::remove_player()'],['../classplayer__manager.html#aefdcfc9cd1fa7cd2e9be160ade5b44ea',1,'player_manager::remove_player()']]],
+  ['remove_5ftop_6',['remove_top',['../classdraw__pile.html#a49dec18cd3817b84c5671b7f7da567cd',1,'draw_pile::remove_top()'],['../classevent__draw__pile.html#a8a4fa16419e968ac533efadf178b1c69',1,'event_draw_pile::remove_top()']]],
+  ['req_5fresponse_7',['req_response',['../server__response_8h.html#af5055605e320b3f9ea9fa330b57604e7ac0c16445621a6067c89a3cd5a5e05e32',1,'server_response.h']]],
+  ['request_5fhandler_8',['request_handler',['../classrequest__handler.html',1,'']]],
+  ['request_5fhandler_2ecpp_9',['request_handler.cpp',['../request__handler_8cpp.html',1,'']]],
+  ['request_5fhandler_2eh_10',['request_handler.h',['../request__handler_8h.html',1,'']]],
+  ['request_5fresponse_11',['request_response',['../classrequest__response.html',1,'request_response'],['../classrequest__response.html#a1573c7c4e34a0cfa49101a66bb5cd065',1,'request_response::request_response()']]],
+  ['request_5fresponse_2ecpp_12',['request_response.cpp',['../request__response_8cpp.html',1,'']]],
+  ['request_5fresponse_2eh_13',['request_response.h',['../request__response_8h.html',1,'']]],
+  ['requesttype_14',['RequestType',['../client__request_8h.html#ae10b07f2d0feb103db7fe4cfd192e5af',1,'client_request.h']]],
+  ['responselistenerthread_15',['ResponseListenerThread',['../classResponseListenerThread.html',1,'ResponseListenerThread'],['../classResponseListenerThread.html#a74d3367112e61051efa42b1fc7f2a7a5',1,'ResponseListenerThread::ResponseListenerThread()']]],
+  ['responselistenerthread_2ecpp_16',['ResponseListenerThread.cpp',['../ResponseListenerThread_8cpp.html',1,'']]],
+  ['responselistenerthread_2eh_17',['ResponseListenerThread.h',['../ResponseListenerThread_8h.html',1,'']]],
+  ['responsetype_18',['ResponseType',['../server__response_8h.html#af5055605e320b3f9ea9fa330b57604e7',1,'server_response.h']]],
+  ['reuse_19',['4.4.4 Classes for reuse',['../md_README.html#autotoc_md22',1,'']]],
+  ['reverse_20',['REVERSE',['../card__action__type_8h.html#a8be5f5ebbb6da7691c9699f6cd3747c7a642e0b6684e6165e142c074f1cd8d55c',1,'card_action_type.h']]],
+  ['reverse_5fdirection_21',['reverse_direction',['../classgame__state.html#ac2bd3ffefbea6387db73db8777228898',1,'game_state']]],
+  ['robin_5fhood_22',['ROBIN_HOOD',['../event__card__collection_8h.html#aef56bd8456d4ba0a422118977e546e44af13badf63825bbab078e6092047b6044',1,'event_card_collection.h']]],
+  ['run_20the_20game_23',['2. Run the Game',['../md_README.html#autotoc_md5',1,'']]],
+  ['run_20the_20unit_20tests_24',['3. Run the Unit Tests',['../md_README.html#autotoc_md6',1,'']]]
+];

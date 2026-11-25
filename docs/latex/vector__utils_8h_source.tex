@@ -1,0 +1,43 @@
+\doxysection{vector\+\_\+utils.\+h}
+\hypertarget{vector__utils_8h_source}{}\label{vector__utils_8h_source}\index{src/common/serialization/vector\_utils.h@{src/common/serialization/vector\_utils.h}}
+\mbox{\hyperlink{vector__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 10.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Helper\ functions\ to\ serialize\ vectors\ containing\ objects\ that\ implement\ the\ 'serializable'\ class.}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_VECTOR\_UTILS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FRANTIC\_VECTOR\_UTILS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{serializable.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacevector__utils}{vector\_utils}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ B>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvector__utils_1_1derived__from_a87f7b3944b0c1afd0ea4f3512cfc938b}{derived\_from}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structvector__utils_1_1derived__from_a9596e8e0ef6bd7d3bf85a85e00cd7ee6}{constraints}}(T*\ p)\ \{\ B*\ pb\ =\ p;\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvector__utils_1_1derived__from_a87f7b3944b0c1afd0ea4f3512cfc938b}{derived\_from}}()\ \{\ void(*p)(T*)\ =\ \mbox{\hyperlink{structvector__utils_1_1derived__from_a9596e8e0ef6bd7d3bf85a85e00cd7ee6}{constraints}};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*\ WARNING:\ can\ only\ be\ called\ with\ vectors\ containing\ elements\ of\ type\ T\ that\ derives\ from\ "{}serializable"{}\ */}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ rapidjson::Value\ serialize\_vector(\textcolor{keyword}{const}\ std::vector<T*>\&\ serializables,\ rapidjson::Document::AllocatorType\&\ allocator)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ derived\_from<T,serializable>();\ \textcolor{comment}{//\ ensure\ T\ derives\ from\ serializable}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ rapidjson::Value\ arr\_val(rapidjson::kArrayType);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ serializables.size();\ i++)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ rapidjson::Value\ elem(rapidjson::kObjectType);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ serializables[i]-\/>write\_into\_json(elem,\ allocator);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ arr\_val.PushBack(elem,\ allocator);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr\_val;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_VECTOR\_UTILS\_H}}
+
+\end{DoxyCode}

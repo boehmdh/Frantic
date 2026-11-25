@@ -1,0 +1,102 @@
+\doxysection{unique\+\_\+serializable Class Reference}
+\hypertarget{classunique__serializable}{}\label{classunique__serializable}\index{unique\_serializable@{unique\_serializable}}
+
+
+{\ttfamily \#include $<$unique\+\_\+serializable.\+h$>$}
+
+
+
+Inheritance diagram for unique\+\_\+serializable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classunique__serializable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for unique\+\_\+serializable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classunique__serializable__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\item 
+virtual void \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classunique__serializable_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classunique__serializable_ab3831f96a970f41aed89df709414fea3}\index{unique\_serializable@{unique\_serializable}!unique\_serializable@{unique\_serializable}}
+\index{unique\_serializable@{unique\_serializable}!unique\_serializable@{unique\_serializable}}
+\doxysubsubsection{\texorpdfstring{unique\_serializable()}{unique\_serializable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classunique__serializable_ab3831f96a970f41aed89df709414fea3} 
+unique\+\_\+serializable\+::unique\+\_\+serializable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}\index{unique\_serializable@{unique\_serializable}!unique\_serializable@{unique\_serializable}}
+\index{unique\_serializable@{unique\_serializable}!unique\_serializable@{unique\_serializable}}
+\doxysubsubsection{\texorpdfstring{unique\_serializable()}{unique\_serializable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae} 
+unique\+\_\+serializable\+::unique\+\_\+serializable (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classunique__serializable_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}\index{unique\_serializable@{unique\_serializable}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!unique\_serializable@{unique\_serializable}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \label{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7} 
+std\+::string unique\+\_\+serializable\+::get\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}\index{unique\_serializable@{unique\_serializable}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!unique\_serializable@{unique\_serializable}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c} 
+void unique\+\_\+serializable\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classunique__serializable_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}\index{unique\_serializable@{unique\_serializable}!\_id@{\_id}}
+\index{\_id@{\_id}!unique\_serializable@{unique\_serializable}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily \label{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b} 
+std\+::string unique\+\_\+serializable\+::\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/serialization/\mbox{\hyperlink{unique__serializable_8h}{unique\+\_\+serializable.\+h}}\item 
+src/common/serialization/\mbox{\hyperlink{unique__serializable_8cpp}{unique\+\_\+serializable.\+cpp}}\end{DoxyCompactItemize}

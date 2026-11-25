@@ -1,0 +1,116 @@
+\doxysection{Game\+Controller Class Reference}
+\hypertarget{classGameController}{}\label{classGameController}\index{GameController@{GameController}}
+
+
+{\ttfamily \#include $<$Game\+Controller.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGameController_a8889bad76bc35487d3391fb8a5791616}{init}} (\mbox{\hyperlink{classGameWindow}{Game\+Window}} \texorpdfstring{$\ast$}{*}game\+Window)
+\item 
+static void \mbox{\hyperlink{classGameController_a023da21da545374ee46fb873149976c4}{connect\+To\+Server}} ()
+\item 
+static void \mbox{\hyperlink{classGameController_a994773f79be8c9e8dc8c19ee2d389103}{update\+Game\+State}} (\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}new\+Game\+State)
+\item 
+static void \mbox{\hyperlink{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}{start\+Game}} ()
+\item 
+static void \mbox{\hyperlink{classGameController_a4af7842635cb6105516ef72d07eb7262}{draw\+Card}} ()
+\item 
+static void \mbox{\hyperlink{classGameController_a374ccc9dcda9776268ce61e4b1eb96b4}{fold}} ()
+\item 
+static void \mbox{\hyperlink{classGameController_a87b164e2094901861e5b47056634facc}{play\+Card}} (\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}card\+To\+Play)
+\item 
+static wx\+Evt\+Handler \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGameController_abec8c73ea01e4b7e01b2ca1d932e0c16}{get\+Main\+Thread\+Event\+Handler}} ()
+\item 
+static void \mbox{\hyperlink{classGameController_adf043f9026a62f634a873c9f9d292034}{show\+Error}} (const std\+::string \&title, const std\+::string \&message)
+\item 
+static void \mbox{\hyperlink{classGameController_a6a43eb061a9882b3937fc88bb4794324}{show\+Status}} (const std\+::string \&message)
+\item 
+static void \mbox{\hyperlink{classGameController_a3c350056b82df662c946cb9119f11ced}{show\+New\+Round\+Message}} (\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}old\+Game\+State, \mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}new\+Game\+State)
+\item 
+static void \mbox{\hyperlink{classGameController_abb91c546ab8400c1e2e9f2a2ccc8298f}{show\+Game\+Over\+Message}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classGameController_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGameController_a023da21da545374ee46fb873149976c4}\index{GameController@{GameController}!connectToServer@{connectToServer}}
+\index{connectToServer@{connectToServer}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{connectToServer()}{connectToServer()}}
+{\footnotesize\ttfamily \label{classGameController_a023da21da545374ee46fb873149976c4} 
+void Game\+Controller\+::connect\+To\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a4af7842635cb6105516ef72d07eb7262}\index{GameController@{GameController}!drawCard@{drawCard}}
+\index{drawCard@{drawCard}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{drawCard()}{drawCard()}}
+{\footnotesize\ttfamily \label{classGameController_a4af7842635cb6105516ef72d07eb7262} 
+void Game\+Controller\+::draw\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a374ccc9dcda9776268ce61e4b1eb96b4}\index{GameController@{GameController}!fold@{fold}}
+\index{fold@{fold}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{classGameController_a374ccc9dcda9776268ce61e4b1eb96b4} 
+void Game\+Controller\+::fold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_abec8c73ea01e4b7e01b2ca1d932e0c16}\index{GameController@{GameController}!getMainThreadEventHandler@{getMainThreadEventHandler}}
+\index{getMainThreadEventHandler@{getMainThreadEventHandler}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getMainThreadEventHandler()}{getMainThreadEventHandler()}}
+{\footnotesize\ttfamily \label{classGameController_abec8c73ea01e4b7e01b2ca1d932e0c16} 
+wx\+Evt\+Handler \texorpdfstring{$\ast$}{*} Game\+Controller\+::get\+Main\+Thread\+Event\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a8889bad76bc35487d3391fb8a5791616}\index{GameController@{GameController}!init@{init}}
+\index{init@{init}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classGameController_a8889bad76bc35487d3391fb8a5791616} 
+void Game\+Controller\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGameWindow}{Game\+Window}} \texorpdfstring{$\ast$}{*}}]{game\+Window}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a87b164e2094901861e5b47056634facc}\index{GameController@{GameController}!playCard@{playCard}}
+\index{playCard@{playCard}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{playCard()}{playCard()}}
+{\footnotesize\ttfamily \label{classGameController_a87b164e2094901861e5b47056634facc} 
+void Game\+Controller\+::play\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{card\+To\+Play}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_adf043f9026a62f634a873c9f9d292034}\index{GameController@{GameController}!showError@{showError}}
+\index{showError@{showError}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{showError()}{showError()}}
+{\footnotesize\ttfamily \label{classGameController_adf043f9026a62f634a873c9f9d292034} 
+void Game\+Controller\+::show\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_abb91c546ab8400c1e2e9f2a2ccc8298f}\index{GameController@{GameController}!showGameOverMessage@{showGameOverMessage}}
+\index{showGameOverMessage@{showGameOverMessage}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{showGameOverMessage()}{showGameOverMessage()}}
+{\footnotesize\ttfamily \label{classGameController_abb91c546ab8400c1e2e9f2a2ccc8298f} 
+void Game\+Controller\+::show\+Game\+Over\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a3c350056b82df662c946cb9119f11ced}\index{GameController@{GameController}!showNewRoundMessage@{showNewRoundMessage}}
+\index{showNewRoundMessage@{showNewRoundMessage}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{showNewRoundMessage()}{showNewRoundMessage()}}
+{\footnotesize\ttfamily \label{classGameController_a3c350056b82df662c946cb9119f11ced} 
+void Game\+Controller\+::show\+New\+Round\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{old\+Game\+State}{, }\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{new\+Game\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a6a43eb061a9882b3937fc88bb4794324}\index{GameController@{GameController}!showStatus@{showStatus}}
+\index{showStatus@{showStatus}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{showStatus()}{showStatus()}}
+{\footnotesize\ttfamily \label{classGameController_a6a43eb061a9882b3937fc88bb4794324} 
+void Game\+Controller\+::show\+Status (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}\index{GameController@{GameController}!startGame@{startGame}}
+\index{startGame@{startGame}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily \label{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4} 
+void Game\+Controller\+::start\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGameController_a994773f79be8c9e8dc8c19ee2d389103}\index{GameController@{GameController}!updateGameState@{updateGameState}}
+\index{updateGameState@{updateGameState}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{updateGameState()}{updateGameState()}}
+{\footnotesize\ttfamily \label{classGameController_a994773f79be8c9e8dc8c19ee2d389103} 
+void Game\+Controller\+::update\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{new\+Game\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/client/\mbox{\hyperlink{GameController_8h}{Game\+Controller.\+h}}\item 
+src/client/\mbox{\hyperlink{GameController_8cpp}{Game\+Controller.\+cpp}}\end{DoxyCompactItemize}

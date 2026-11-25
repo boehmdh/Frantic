@@ -1,0 +1,257 @@
+\doxysection{player Class Reference}
+\hypertarget{classplayer}{}\label{classplayer}\index{player@{player}}
+
+
+For every client a player object is treated that holds its hand, score and information whether the player has already drawn a card, which allows them to fold.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Inheritance diagram for player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classplayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classplayer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classplayer_ae44180ebf3c2fab6fa082f8c3b9672d8}{player}} (std\+::string name)
+\item 
+\mbox{\hyperlink{classplayer_aab5d2e47b80e0481f09ca0df8b823057}{\texorpdfstring{$\sim$}{\string~}player}} ()
+\item 
+\mbox{\hyperlink{classplayer_a25d93b40b6c823c5383e65ce6afae123}{player}} (std\+::string id, std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{classplayer_afeb6c5483a59042fcc4a3a2aed6a6a2c}{get\+\_\+game\+\_\+id}} ()
+\item 
+void \mbox{\hyperlink{classplayer_a92751ec7cbe72afad68b4545c5279247}{set\+\_\+game\+\_\+id}} (std\+::string game\+\_\+id)
+\item 
+int \mbox{\hyperlink{classplayer_af990b6d6b3cf01e97a71f20823fa3ac0}{get\+\_\+score}} () const noexcept
+\begin{DoxyCompactList}\small\item\em To determine whether a player has exceeded the limit of 140 Points that ends the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classplayer_af98a4c885906e22ee0706436e2e7d65a}{has\+\_\+drawn}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns true if the player has already drawn in this round. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classplayer_a3a3095accdbc1161bd36a4783d78556b}{get\+\_\+nof\+\_\+cards}} () const noexcept
+\item 
+\mbox{\hyperlink{classhand}{hand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classplayer_af333dcbf7123726c9bda3ab94ba9ee6d}{get\+\_\+hand}} () const noexcept
+\item 
+std\+::string \mbox{\hyperlink{classplayer_a42d01dcf4cdbd452fc5dcaf5e6f21773}{get\+\_\+player\+\_\+name}} () const noexcept
+\item 
+void \mbox{\hyperlink{classplayer_ae23726c87684a03ef5c6e85098ce0e3d}{add\+\_\+card}} (\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcard}{card}})
+\item 
+bool \mbox{\hyperlink{classplayer_a81b4fbf234164b13ec3f24e59c2094d9}{remove\+\_\+card}} (std\+::string card\+\_\+id, \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&\mbox{\hyperlink{classcard}{card}}, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classplayer_a412fc5cb89ecd5c155a3c2dafae3ffaa}{fold}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Folds and returns true if permitted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classplayer_a7972eb48a721c7e3a8717e7229d143b0}{wrap\+\_\+up\+\_\+round}} (std\+::string \&err)
+\item 
+void \mbox{\hyperlink{classplayer_a4fd66cfb0442ecc0c7be9c98ecb1d495}{setup\+\_\+round}} (std\+::string \&err)
+\item 
+void \mbox{\hyperlink{classplayer_ab793638b5004827d44a0861fc167a2de}{set\+\_\+has\+\_\+drawn}} (bool \mbox{\hyperlink{classplayer_af98a4c885906e22ee0706436e2e7d65a}{has\+\_\+drawn}})
+\begin{DoxyCompactList}\small\item\em Setter for testing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classplayer_a94c164226f3f3119757a56a5fac91c9e}{add\+\_\+score}} (int amount)
+\begin{DoxyCompactList}\small\item\em Add a score by the game state at the end of each round. Required for the server-\/side check. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classplayer_a0cf13abfdb6b837faa88eda064bf51dc}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classplayer_a5955c5f26db6a08862ccfb443fbe99c5}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+For every client a player object is treated that holds its hand, score and information whether the player has already drawn a card, which allows them to fold. 
+
+\label{doc-constructors}
+\Hypertarget{classplayer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classplayer_ae44180ebf3c2fab6fa082f8c3b9672d8}\index{player@{player}!player@{player}}
+\index{player@{player}!player@{player}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classplayer_ae44180ebf3c2fab6fa082f8c3b9672d8} 
+player\+::player (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classplayer_aab5d2e47b80e0481f09ca0df8b823057}\index{player@{player}!````~player@{\texorpdfstring{$\sim$}{\string~}player}}
+\index{````~player@{\texorpdfstring{$\sim$}{\string~}player}!player@{player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}player()}{\string~player()}}
+{\footnotesize\ttfamily \label{classplayer_aab5d2e47b80e0481f09ca0df8b823057} 
+player\+::\texorpdfstring{$\sim$}{\string~}player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_a25d93b40b6c823c5383e65ce6afae123}\index{player@{player}!player@{player}}
+\index{player@{player}!player@{player}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classplayer_a25d93b40b6c823c5383e65ce6afae123} 
+player\+::player (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classplayer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classplayer_ae23726c87684a03ef5c6e85098ce0e3d}\index{player@{player}!add\_card@{add\_card}}
+\index{add\_card@{add\_card}!player@{player}}
+\doxysubsubsection{\texorpdfstring{add\_card()}{add\_card()}}
+{\footnotesize\ttfamily \label{classplayer_ae23726c87684a03ef5c6e85098ce0e3d} 
+void player\+::add\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{card}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_a94c164226f3f3119757a56a5fac91c9e}\index{player@{player}!add\_score@{add\_score}}
+\index{add\_score@{add\_score}!player@{player}}
+\doxysubsubsection{\texorpdfstring{add\_score()}{add\_score()}}
+{\footnotesize\ttfamily \label{classplayer_a94c164226f3f3119757a56a5fac91c9e} 
+void player\+::add\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Add a score by the game state at the end of each round. Required for the server-\/side check. 
+
+\Hypertarget{classplayer_a412fc5cb89ecd5c155a3c2dafae3ffaa}\index{player@{player}!fold@{fold}}
+\index{fold@{fold}!player@{player}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{classplayer_a412fc5cb89ecd5c155a3c2dafae3ffaa} 
+bool player\+::fold (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Folds and returns true if permitted. 
+
+Checks whether the player is on turn and has already drawn a card. If both is true, the turn is passed to the next player. Otherwise no effect takes place and the method returns false. \Hypertarget{classplayer_a5955c5f26db6a08862ccfb443fbe99c5}\index{player@{player}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!player@{player}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classplayer_a5955c5f26db6a08862ccfb443fbe99c5} 
+\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} player\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classplayer_afeb6c5483a59042fcc4a3a2aed6a6a2c}\index{player@{player}!get\_game\_id@{get\_game\_id}}
+\index{get\_game\_id@{get\_game\_id}!player@{player}}
+\doxysubsubsection{\texorpdfstring{get\_game\_id()}{get\_game\_id()}}
+{\footnotesize\ttfamily \label{classplayer_afeb6c5483a59042fcc4a3a2aed6a6a2c} 
+std\+::string player\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_af333dcbf7123726c9bda3ab94ba9ee6d}\index{player@{player}!get\_hand@{get\_hand}}
+\index{get\_hand@{get\_hand}!player@{player}}
+\doxysubsubsection{\texorpdfstring{get\_hand()}{get\_hand()}}
+{\footnotesize\ttfamily \label{classplayer_af333dcbf7123726c9bda3ab94ba9ee6d} 
+\mbox{\hyperlink{classhand}{hand}} \texorpdfstring{$\ast$}{*} player\+::get\+\_\+hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classplayer_a3a3095accdbc1161bd36a4783d78556b}\index{player@{player}!get\_nof\_cards@{get\_nof\_cards}}
+\index{get\_nof\_cards@{get\_nof\_cards}!player@{player}}
+\doxysubsubsection{\texorpdfstring{get\_nof\_cards()}{get\_nof\_cards()}}
+{\footnotesize\ttfamily \label{classplayer_a3a3095accdbc1161bd36a4783d78556b} 
+int player\+::get\+\_\+nof\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classplayer_a42d01dcf4cdbd452fc5dcaf5e6f21773}\index{player@{player}!get\_player\_name@{get\_player\_name}}
+\index{get\_player\_name@{get\_player\_name}!player@{player}}
+\doxysubsubsection{\texorpdfstring{get\_player\_name()}{get\_player\_name()}}
+{\footnotesize\ttfamily \label{classplayer_a42d01dcf4cdbd452fc5dcaf5e6f21773} 
+std\+::string player\+::get\+\_\+player\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classplayer_af990b6d6b3cf01e97a71f20823fa3ac0}\index{player@{player}!get\_score@{get\_score}}
+\index{get\_score@{get\_score}!player@{player}}
+\doxysubsubsection{\texorpdfstring{get\_score()}{get\_score()}}
+{\footnotesize\ttfamily \label{classplayer_af990b6d6b3cf01e97a71f20823fa3ac0} 
+int player\+::get\+\_\+score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+To determine whether a player has exceeded the limit of 140 Points that ends the game. 
+
+\Hypertarget{classplayer_af98a4c885906e22ee0706436e2e7d65a}\index{player@{player}!has\_drawn@{has\_drawn}}
+\index{has\_drawn@{has\_drawn}!player@{player}}
+\doxysubsubsection{\texorpdfstring{has\_drawn()}{has\_drawn()}}
+{\footnotesize\ttfamily \label{classplayer_af98a4c885906e22ee0706436e2e7d65a} 
+bool player\+::has\+\_\+drawn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns true if the player has already drawn in this round. 
+
+Is only set to true by a deliberately drawing a card, not if an effect or a \textquotesingle{}Fantastic Four\textquotesingle{} card forces the player to draw. Only if the player has drawn a card, he is permitted to fold. \Hypertarget{classplayer_a81b4fbf234164b13ec3f24e59c2094d9}\index{player@{player}!remove\_card@{remove\_card}}
+\index{remove\_card@{remove\_card}!player@{player}}
+\doxysubsubsection{\texorpdfstring{remove\_card()}{remove\_card()}}
+{\footnotesize\ttfamily \label{classplayer_a81b4fbf234164b13ec3f24e59c2094d9} 
+bool player\+::remove\+\_\+card (\begin{DoxyParamCaption}\item[{std\+::string}]{card\+\_\+id}{, }\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&}]{card}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_a92751ec7cbe72afad68b4545c5279247}\index{player@{player}!set\_game\_id@{set\_game\_id}}
+\index{set\_game\_id@{set\_game\_id}!player@{player}}
+\doxysubsubsection{\texorpdfstring{set\_game\_id()}{set\_game\_id()}}
+{\footnotesize\ttfamily \label{classplayer_a92751ec7cbe72afad68b4545c5279247} 
+void player\+::set\+\_\+game\+\_\+id (\begin{DoxyParamCaption}\item[{std\+::string}]{game\+\_\+id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_ab793638b5004827d44a0861fc167a2de}\index{player@{player}!set\_has\_drawn@{set\_has\_drawn}}
+\index{set\_has\_drawn@{set\_has\_drawn}!player@{player}}
+\doxysubsubsection{\texorpdfstring{set\_has\_drawn()}{set\_has\_drawn()}}
+{\footnotesize\ttfamily \label{classplayer_ab793638b5004827d44a0861fc167a2de} 
+void player\+::set\+\_\+has\+\_\+drawn (\begin{DoxyParamCaption}\item[{bool}]{has\+\_\+drawn}{}\end{DoxyParamCaption})}
+
+
+
+Setter for testing. 
+
+\Hypertarget{classplayer_a4fd66cfb0442ecc0c7be9c98ecb1d495}\index{player@{player}!setup\_round@{setup\_round}}
+\index{setup\_round@{setup\_round}!player@{player}}
+\doxysubsubsection{\texorpdfstring{setup\_round()}{setup\_round()}}
+{\footnotesize\ttfamily \label{classplayer_a4fd66cfb0442ecc0c7be9c98ecb1d495} 
+void player\+::setup\+\_\+round (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_a7972eb48a721c7e3a8717e7229d143b0}\index{player@{player}!wrap\_up\_round@{wrap\_up\_round}}
+\index{wrap\_up\_round@{wrap\_up\_round}!player@{player}}
+\doxysubsubsection{\texorpdfstring{wrap\_up\_round()}{wrap\_up\_round()}}
+{\footnotesize\ttfamily \label{classplayer_a7972eb48a721c7e3a8717e7229d143b0} 
+void player\+::wrap\+\_\+up\+\_\+round (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classplayer_a0cf13abfdb6b837faa88eda064bf51dc}\index{player@{player}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!player@{player}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classplayer_a0cf13abfdb6b837faa88eda064bf51dc} 
+void player\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/player/\mbox{\hyperlink{player_8h}{player.\+h}}\item 
+src/common/game\+\_\+state/player/\mbox{\hyperlink{player_8cpp}{player.\+cpp}}\end{DoxyCompactItemize}

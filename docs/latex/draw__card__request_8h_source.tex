@@ -1,0 +1,38 @@
+\doxysection{draw\+\_\+card\+\_\+request.\+h}
+\hypertarget{draw__card__request_8h_source}{}\label{draw__card__request_8h_source}\index{src/common/network/requests/draw\_card\_request.h@{src/common/network/requests/draw\_card\_request.h}}
+\mbox{\hyperlink{draw__card__request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 29.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_DRAW\_CARD\_REQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_DRAW\_CARD\_REQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{client\_request.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }draw\_card\_request\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\_request}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \_nof\_cards;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ *\ Private\ constructor\ for\ deserialization}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00020\ \ \ \ \ draw\_card\_request(\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\_class\_properties}},\ \textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdraw__card__request_a782a0031a23260628ddd5f7a8f9b1502}{get\_nof\_cards}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_nof\_cards;\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classdraw__card__request}{draw\_card\_request}}(std::string\ game\_id,\ std::string\ player\_id,\ \textcolor{keywordtype}{int}\ nof\_cards\ =\ 1);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdraw__card__request_a9e65be91475109abdb5afb3bf0210bbd}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdraw__card__request}{draw\_card\_request}}*\ \mbox{\hyperlink{classdraw__card__request_a140c8940ba60b8d6442b187406296b19}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_DRAW\_CARD\_REQUEST\_H}}
+
+\end{DoxyCode}

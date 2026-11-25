@@ -1,0 +1,48 @@
+\doxysection{event\+\_\+card.\+h}
+\hypertarget{event__card_8h_source}{}\label{event__card_8h_source}\index{src/common/game\_state/cards/event\_card.h@{src/common/game\_state/cards/event\_card.h}}
+\mbox{\hyperlink{event__card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ daniel\ on\ 08.11.2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_EVENT\_CARD\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_EVENT\_CARD\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__card__collection_8h}{event\_card\_collection.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../player/player.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame__state}{game\_state}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }event\_card\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{/*\ determined\ by\ string\ for\ maintainability}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\_card\_collection}}\ event\_name;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//serializable\_value<string>*\ \_type;}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ from\_diff\ constructor}}
+\DoxyCodeLine{00026\ \ \ \ \ event\_card(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ deserialization\ constructor}}
+\DoxyCodeLine{00028\ \ \ \ \ event\_card(std::string\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classserializable__value}{serializable\_value<uint>}}*\ typ);}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ event\_card(\mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\_card\_collection}}\ typ);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classevent__card_a3dfdcb7facddacd166ba62f10eaf8697}{\string~event\_card}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{event__card__collection_8h_aef56bd8456d4ba0a422118977e546e44}{Event\_card\_collection}}\ \mbox{\hyperlink{classevent__card_a95a157f10cd10dc3dda012d8de575811}{get\_event\_name}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ card\ functions}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classevent__card_af0da5772a67bdf468d32472d617ece07}{effect}}(\mbox{\hyperlink{classgame__state}{game\_state}}*\ \mbox{\hyperlink{classgame__state}{game\_state}},\ std::string\&\ err);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classevent__card_ab8abe0832f441363ea374808b9aed52a}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ event\_card*\ \mbox{\hyperlink{classevent__card_a1449ff1bfd326a2ce6ae54ffe550c3a3}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_EVENT\_CARD\_H}}
+
+\end{DoxyCode}

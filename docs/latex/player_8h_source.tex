@@ -1,0 +1,81 @@
+\doxysection{player.\+h}
+\hypertarget{player_8h_source}{}\label{player_8h_source}\index{src/common/game\_state/player/player.h@{src/common/game\_state/player/player.h}}
+\mbox{\hyperlink{player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 25.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_PLAYER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_PLAYER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hand_8h}{hand.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uuid__generator_8h}{../../serialization/uuid\_generator.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }player\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<std::string>}}*\ \_player\_name;}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \_has\_drawn;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ \_score;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classhand}{hand}}*\ \_hand;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \_game\_id;}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ Deserialization\ constructor}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00030\ \ \ \ \ player(std::string\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<std::string>}}*\ name,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<int>}}*\ score,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhand}{hand}}*\ \mbox{\hyperlink{classhand}{hand}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserializable__value}{serializable\_value<bool>}}*\ \mbox{\hyperlink{classplayer_af98a4c885906e22ee0706436e2e7d65a}{has\_drawn}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{explicit}\ player(std::string\ name);\ \ \ \textcolor{comment}{//\ for\ client}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classplayer_aab5d2e47b80e0481f09ca0df8b823057}{\string~player}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00042\ \ \ \ \ player(std::string\ \textcolor{keywordtype}{id},\ std::string\ name);\ \ \textcolor{comment}{//\ for\ server}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classplayer_afeb6c5483a59042fcc4a3a2aed6a6a2c}{get\_game\_id}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_a92751ec7cbe72afad68b4545c5279247}{set\_game\_id}}(std::string\ game\_id);}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classplayer_af990b6d6b3cf01e97a71f20823fa3ac0}{get\_score}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer_af98a4c885906e22ee0706436e2e7d65a}{has\_drawn}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classplayer_a3a3095accdbc1161bd36a4783d78556b}{get\_nof\_cards}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classhand}{hand}}*\ \mbox{\hyperlink{classplayer_af333dcbf7123726c9bda3ab94ba9ee6d}{get\_hand}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ \mbox{\hyperlink{classplayer_a42d01dcf4cdbd452fc5dcaf5e6f21773}{get\_player\_name}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ state\ update\ functions}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_ae23726c87684a03ef5c6e85098ce0e3d}{add\_card}}(\mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classcard}{card}});}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer_a81b4fbf234164b13ec3f24e59c2094d9}{remove\_card}}(std::string\ card\_id,\ \mbox{\hyperlink{classcard}{card}}*\&\ \mbox{\hyperlink{classcard}{card}},\ std::string\&\ err);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5afa8a644c686eb987d3a5d2b55bae4c9a3a}{fold}}(std::string\ \&err);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_a7972eb48a721c7e3a8717e7229d143b0}{wrap\_up\_round}}(std::string\&\ err);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_a4fd66cfb0442ecc0c7be9c98ecb1d495}{setup\_round}}(std::string\&\ err);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_ab793638b5004827d44a0861fc167a2de}{set\_has\_drawn}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classplayer_af98a4c885906e22ee0706436e2e7d65a}{has\_drawn}});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_a94c164226f3f3119757a56a5fac91c9e}{add\_score}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ serialization}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ player*\ \mbox{\hyperlink{classplayer_a5955c5f26db6a08862ccfb443fbe99c5}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classplayer_a0cf13abfdb6b837faa88eda064bf51dc}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_PLAYER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,98 @@
+\doxysection{src/common/game\+\_\+state/cards/color.h File Reference}
+\hypertarget{color_8h}{}\label{color_8h}\index{src/common/game\_state/cards/color.h@{src/common/game\_state/cards/color.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+Include dependency graph for color.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{color_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{color_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} \+: uint \{ \newline
+\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583ba08d0012388564e95c3b4a7407cf04965}{BLACK}} = 10
+, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583ba1b3e1ee9bff86431dea6b181365ba65f}{BLUE}} = 11
+, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583ba9de0e5dd94e861317e74964bed179fa0}{GREEN}} = 12
+, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583baa2d9547b5d3dd9f05984475f7c926da0}{RED}} = 13
+, \newline
+\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583ba8a568e5f41b7e4da88fe5c4a00aad34e}{YELLOW}} = 14
+, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583baf105d2e7e230814257820eada783f9cd}{RAINBOW}} = 15
+, \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583ba506db3f229e07482c0a9041f10160759}{END\+\_\+\+COLOR}}
+ \}
+\begin{DoxyCompactList}\small\item\em This enum maps he available Colors to uint values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{color_8h_af4769844f394994ee4dbc3a3889a11da}{get\+Color\+String}} (\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} color)
+\begin{DoxyCompactList}\small\item\em Helper function to return a string of the respective \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} in capital letters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{color_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583b}\index{color.h@{color.h}!Color@{Color}}
+\index{Color@{Color}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily \label{color_8h_a92015c32f0bd122d73cb95b58aa5583b} 
+enum class \mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}} \+: uint\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+This enum maps he available Colors to uint values. 
+
+As playing a rainbow card allows to wish either for a color (BLUE, GREEN, RED or YELLOW) or a number (1--9), the underlying uint values are the following to avoid overlap\+: BLACK\+: 10, BLUE\+: 11, GREEN\+: 12, RED\+: 13, YELLOW\+: 14, RAINBOW\+: 15. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!color.h@{color.h}}\index{color.h@{color.h}!BLACK@{BLACK}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583ba08d0012388564e95c3b4a7407cf04965}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583ba08d0012388564e95c3b4a7407cf04965} 
+BLACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!color.h@{color.h}}\index{color.h@{color.h}!BLUE@{BLUE}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583ba1b3e1ee9bff86431dea6b181365ba65f}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583ba1b3e1ee9bff86431dea6b181365ba65f} 
+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!color.h@{color.h}}\index{color.h@{color.h}!GREEN@{GREEN}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583ba9de0e5dd94e861317e74964bed179fa0}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583ba9de0e5dd94e861317e74964bed179fa0} 
+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!color.h@{color.h}}\index{color.h@{color.h}!RED@{RED}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583baa2d9547b5d3dd9f05984475f7c926da0}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583baa2d9547b5d3dd9f05984475f7c926da0} 
+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOW@{YELLOW}!color.h@{color.h}}\index{color.h@{color.h}!YELLOW@{YELLOW}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583ba8a568e5f41b7e4da88fe5c4a00aad34e}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583ba8a568e5f41b7e4da88fe5c4a00aad34e} 
+YELLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAINBOW@{RAINBOW}!color.h@{color.h}}\index{color.h@{color.h}!RAINBOW@{RAINBOW}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583baf105d2e7e230814257820eada783f9cd}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583baf105d2e7e230814257820eada783f9cd} 
+RAINBOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END\_COLOR@{END\_COLOR}!color.h@{color.h}}\index{color.h@{color.h}!END\_COLOR@{END\_COLOR}}}\Hypertarget{color_8h_a92015c32f0bd122d73cb95b58aa5583ba506db3f229e07482c0a9041f10160759}\label{color_8h_a92015c32f0bd122d73cb95b58aa5583ba506db3f229e07482c0a9041f10160759} 
+END\+\_\+\+COLOR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{color_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{color_8h_af4769844f394994ee4dbc3a3889a11da}\index{color.h@{color.h}!getColorString@{getColorString}}
+\index{getColorString@{getColorString}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{getColorString()}{getColorString()}}
+{\footnotesize\ttfamily \label{color_8h_af4769844f394994ee4dbc3a3889a11da} 
+std\+::string get\+Color\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to return a string of the respective \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} in capital letters. 
+

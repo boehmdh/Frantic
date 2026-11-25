@@ -1,0 +1,9 @@
+<map id="src/common/network/requests/fold_request.h" name="src/common/network/requests/fold_request.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="258,5,437,45"/>
+<area shape="rect" id="Node000002" href="$GameController_8cpp.html" title=" " alt="" coords="5,101,220,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,53,145,103,143,98,282,48"/>
+<area shape="rect" id="Node000003" href="$client__request_8cpp.html" title=" " alt="" coords="245,93,450,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="350,59,350,93,345,93,345,59"/>
+<area shape="rect" id="Node000004" href="$fold__request_8cpp.html" title=" " alt="" coords="474,93,669,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="410,48,523,91,521,96,408,53"/>
+</map>

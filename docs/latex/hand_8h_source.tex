@@ -1,0 +1,53 @@
+\doxysection{hand.\+h}
+\hypertarget{hand_8h_source}{}\label{hand_8h_source}\index{src/common/game\_state/player/hand.h@{src/common/game\_state/player/hand.h}}
+\mbox{\hyperlink{hand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_HAND\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_HAND\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{../cards/card.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }hand\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<card*>\ \_cards;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classhand_ae8d7de2589266f57271ac191dab8cd64}{hand}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classhand_ae8d7de2589266f57271ac191dab8cd64}{hand}}(std::string\ \textcolor{keywordtype}{id},\ std::vector<card*>\ cards);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classcard}{card}}*\ remove\_card(std::vector<card*>::iterator\ pos);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classcard}{card}}*\ remove\_card(\textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classcard}{card}}*\ remove\_card(\mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classcard}{card}});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classhand_ae8d7de2589266f57271ac191dab8cd64}{hand}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classhand_ae60a8ef2a1097b53723e094f1944832a}{\string~hand}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ serializable\ interface}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ hand*\ \mbox{\hyperlink{classhand_aa9cffdf932d80c7304a335074403e785}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhand_a505a82447d0ae305dadcc9c4aa54071e}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classhand_a995bef7782a03ff0cd14931ce84106a7}{get\_nof\_cards}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ uint\ \mbox{\hyperlink{classhand_a89029f49c26199eb23e08d2afeeedb85}{get\_score}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<card*>\ \mbox{\hyperlink{classhand_a1b5b959ed23a620f9a4f8a5795f264e9}{get\_cards}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhand_a0a50cbbb167e6a1d633dd48bc4b695fe}{try\_get\_card}}(\textcolor{keyword}{const}\ std::string\&\ card\_id,\ \mbox{\hyperlink{classcard}{card}}*\&\ hand\_card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ state\ update\ functions}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhand_a29d594ca40cf701145ad9c9293eb800d}{setup\_round}}(std::string\&\ err);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhand_a4c551bb8a3216245b3af025605b144c3}{add\_card}}(\mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classcard}{card}});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ remove\_card(std::string\ card\_id,\ \mbox{\hyperlink{classcard}{card}}*\&\ played\_card,\ std::string\&\ err);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<card*>::iterator\ \mbox{\hyperlink{classhand_adae2057cfa5ea715e824ba13eebe561d}{get\_card\_iterator}}();}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_HAND\_H}}
+
+\end{DoxyCode}

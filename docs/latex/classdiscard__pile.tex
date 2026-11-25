@@ -1,0 +1,197 @@
+\doxysection{discard\+\_\+pile Class Reference}
+\hypertarget{classdiscard__pile}{}\label{classdiscard__pile}\index{discard\_pile@{discard\_pile}}
+
+
+This class holds the deck of cards that have been played. The most recently played card is displayed in the GUI.  
+
+
+
+
+{\ttfamily \#include $<$discard\+\_\+pile.\+h$>$}
+
+
+
+Inheritance diagram for discard\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classdiscard__pile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for discard\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classdiscard__pile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74}{discard\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdiscard__pile_a5b0d3872e6d1fcd91d0364c3328900dd}{\texorpdfstring{$\sim$}{\string~}discard\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdiscard__pile_a52b1f79ab5d3508a80b080d73c281e72}{can\+\_\+play}} (const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcard}{card}}, std\+::string \&err)
+\item 
+const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdiscard__pile_ac96a329bff907b53a07e8c3a840ab191}{get\+\_\+top\+\_\+card}} () const
+\item 
+void \mbox{\hyperlink{classdiscard__pile_ab888981eee9838c41691efe027efa3c4}{setup\+\_\+game}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Sets up a new discard pile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdiscard__pile_adbe76e5aff1dc9b1a227377026d54966}{try\+\_\+play}} (const std\+::string \&card\+\_\+id, \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}current\+Player, std\+::vector$<$ \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} $>$ \&players, uint wish, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Returns true if the passed card of the passed player could be played on the discard pile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdiscard__pile_a11910bf2f2f28c2e6893035a8129f27e}{add\+Card}} (\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}played\+\_\+card, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Add a card. Required to place the first card on the pile at the start of each round. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdiscard__pile_a2bf715a87e6845d68471dcab32ff5589}{get\+\_\+pile\+\_\+for\+\_\+reshuffling}} ()
+\begin{DoxyCompactList}\small\item\em Get all cards except the top one to reshuffle and pass them to the draw pile. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdiscard__pile_ab47b66a0e3aa06219352546a6880f5a0}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdiscard__pile_a46bdfae2b145124ce77037c900dfb988}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class holds the deck of cards that have been played. The most recently played card is displayed in the GUI. 
+
+\label{doc-constructors}
+\Hypertarget{classdiscard__pile_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74}\index{discard\_pile@{discard\_pile}!discard\_pile@{discard\_pile}}
+\index{discard\_pile@{discard\_pile}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{discard\_pile()}{discard\_pile()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74} 
+discard\+\_\+pile\+::discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public constructor. 
+
+\Hypertarget{classdiscard__pile_a5b0d3872e6d1fcd91d0364c3328900dd}\index{discard\_pile@{discard\_pile}!````~discard\_pile@{\texorpdfstring{$\sim$}{\string~}discard\_pile}}
+\index{````~discard\_pile@{\texorpdfstring{$\sim$}{\string~}discard\_pile}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}discard\_pile()}{\string~discard\_pile()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a5b0d3872e6d1fcd91d0364c3328900dd} 
+discard\+\_\+pile\+::\texorpdfstring{$\sim$}{\string~}discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classdiscard__pile_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdiscard__pile_a11910bf2f2f28c2e6893035a8129f27e}\index{discard\_pile@{discard\_pile}!addCard@{addCard}}
+\index{addCard@{addCard}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{addCard()}{addCard()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a11910bf2f2f28c2e6893035a8129f27e} 
+void discard\+\_\+pile\+::add\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{played\+\_\+card}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Add a card. Required to place the first card on the pile at the start of each round. 
+
+\Hypertarget{classdiscard__pile_a52b1f79ab5d3508a80b080d73c281e72}\index{discard\_pile@{discard\_pile}!can\_play@{can\_play}}
+\index{can\_play@{can\_play}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{can\_play()}{can\_play()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a52b1f79ab5d3508a80b080d73c281e72} 
+bool discard\+\_\+pile\+::can\+\_\+play (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}}]{card}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classdiscard__pile_a46bdfae2b145124ce77037c900dfb988}\index{discard\_pile@{discard\_pile}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a46bdfae2b145124ce77037c900dfb988} 
+\mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} discard\+\_\+pile\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classdiscard__pile_a2bf715a87e6845d68471dcab32ff5589}\index{discard\_pile@{discard\_pile}!get\_pile\_for\_reshuffling@{get\_pile\_for\_reshuffling}}
+\index{get\_pile\_for\_reshuffling@{get\_pile\_for\_reshuffling}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{get\_pile\_for\_reshuffling()}{get\_pile\_for\_reshuffling()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_a2bf715a87e6845d68471dcab32ff5589} 
+std\+::vector$<$ \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} discard\+\_\+pile\+::get\+\_\+pile\+\_\+for\+\_\+reshuffling (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get all cards except the top one to reshuffle and pass them to the draw pile. 
+
+\Hypertarget{classdiscard__pile_ac96a329bff907b53a07e8c3a840ab191}\index{discard\_pile@{discard\_pile}!get\_top\_card@{get\_top\_card}}
+\index{get\_top\_card@{get\_top\_card}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{get\_top\_card()}{get\_top\_card()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_ac96a329bff907b53a07e8c3a840ab191} 
+const \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*} discard\+\_\+pile\+::get\+\_\+top\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classdiscard__pile_ab888981eee9838c41691efe027efa3c4}\index{discard\_pile@{discard\_pile}!setup\_game@{setup\_game}}
+\index{setup\_game@{setup\_game}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{setup\_game()}{setup\_game()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_ab888981eee9838c41691efe027efa3c4} 
+void discard\+\_\+pile\+::setup\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Sets up a new discard pile. 
+
+\Hypertarget{classdiscard__pile_adbe76e5aff1dc9b1a227377026d54966}\index{discard\_pile@{discard\_pile}!try\_play@{try\_play}}
+\index{try\_play@{try\_play}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{try\_play()}{try\_play()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_adbe76e5aff1dc9b1a227377026d54966} 
+bool discard\+\_\+pile\+::try\+\_\+play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{card\+\_\+id}{, }\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{current\+Player}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} $>$ \&}]{players}{, }\item[{uint}]{wish}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Returns true if the passed card of the passed player could be played on the discard pile. 
+
+\Hypertarget{classdiscard__pile_ab47b66a0e3aa06219352546a6880f5a0}\index{discard\_pile@{discard\_pile}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!discard\_pile@{discard\_pile}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classdiscard__pile_ab47b66a0e3aa06219352546a6880f5a0} 
+void discard\+\_\+pile\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{discard__pile_8h}{discard\+\_\+pile.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{discard__pile_8cpp}{discard\+\_\+pile.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{discard\+\_\+pile.\+h}
+\hypertarget{discard__pile_8h_source}{}\label{discard__pile_8h_source}\index{src/common/game\_state/cards/discard\_pile.h@{src/common/game\_state/cards/discard\_pile.h}}
+\mbox{\hyperlink{discard__pile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_DISCARD\_PILE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_DISCARD\_PILE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../player/player.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{../../serialization/serializable.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }discard\_pile:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<card*>\ \_cards;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74}{discard\_pile}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74}{discard\_pile}}(std::string\ \textcolor{keywordtype}{id},\ std::vector<card*>\&\ cards);}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile_a5736c2455f59e9aab344418e4b42ef74}{discard\_pile}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classdiscard__pile_a5b0d3872e6d1fcd91d0364c3328900dd}{\string~discard\_pile}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdiscard__pile_a52b1f79ab5d3508a80b080d73c281e72}{can\_play}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classcard}{card}},\ std::string\&\ err);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classdiscard__pile_ac96a329bff907b53a07e8c3a840ab191}{get\_top\_card}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ state\ update\ functions}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdiscard__pile_ab888981eee9838c41691efe027efa3c4}{setup\_game}}(std::string\&\ err);\ \ \textcolor{comment}{//\ Clears\ the\ stack}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdiscard__pile_adbe76e5aff1dc9b1a227377026d54966}{try\_play}}(\textcolor{keyword}{const}\ std::string\&\ card\_id,\ \mbox{\hyperlink{classplayer}{player}}*\ currentPlayer,std::vector<player*>\&\ players,\ uint\ wish,\ std::string\&\ err);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdiscard__pile_a11910bf2f2f28c2e6893035a8129f27e}{addCard}}(\mbox{\hyperlink{classcard}{card}}*\ played\_card,\ std::string\&\ err);}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<card*>*\ \mbox{\hyperlink{classdiscard__pile_a2bf715a87e6845d68471dcab32ff5589}{get\_pile\_for\_reshuffling}}();}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ serializable\ interface}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdiscard__pile_ab47b66a0e3aa06219352546a6880f5a0}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ discard\_pile*\ \mbox{\hyperlink{classdiscard__pile_a46bdfae2b145124ce77037c900dfb988}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_DISCARD\_PILE\_H}}
+
+\end{DoxyCode}

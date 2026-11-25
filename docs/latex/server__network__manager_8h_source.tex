@@ -1,0 +1,59 @@
+\doxysection{server\+\_\+network\+\_\+manager.\+h}
+\hypertarget{server__network__manager_8h_source}{}\label{server__network__manager_8h_source}\index{src/server/server\_network\_manager.h@{src/server/server\_network\_manager.h}}
+\mbox{\hyperlink{server__network__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 12.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ The\ server\_network\_manager\ handles\ all\ incoming\ messages\ and\ offers\ functionality\ to\ broadcast\ messages}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ to\ all\ connected\ players\ of\ a\ game.}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_SERVER\_NETWORK\_MANAGER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ FRANTIC\_SERVER\_NETWORK\_MANAGER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <shared\_mutex>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}sockpp/tcp\_socket.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}sockpp/tcp\_connector.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}sockpp/tcp\_acceptor.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client__request_8h}{../common/network/requests/client\_request.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server__response_8h}{../common/network/responses/server\_response.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../common/game\_state/player/player.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__state_8h}{../common/game\_state/game\_state.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classserver__network__manager_a0637cee6f14df18d888846c0c8e11608}{server\_network\_manager}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classserver__network__manager_a0637cee6f14df18d888846c0c8e11608}{server\_network\_manager}}*\ \_instance;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::shared\_mutex\ \_rw\_lock;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ sockpp::tcp\_acceptor\ \_acc;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ std::string>\ \_player\_id\_to\_address;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ sockpp::tcp\_socket>\ \_address\_to\_socket;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ connect(\textcolor{keyword}{const}\ std::string\&\ url,\ \textcolor{keyword}{const}\ uint16\_t\ \ port);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ listener\_loop();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ read\_message(sockpp::tcp\_socket\ socket,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ sockpp::tcp\_socket::addr\_t\&)>\&\ message\_handler);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handle\_incoming\_message(\textcolor{keyword}{const}\ std::string\&\ msg,\ \textcolor{keyword}{const}\ sockpp::tcp\_socket::addr\_t\&\ peer\_address);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ ssize\_t\ send\_message(\textcolor{keyword}{const}\ std::string\&\ msg,\ \textcolor{keyword}{const}\ std::string\&\ address);}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classserver__network__manager_a0637cee6f14df18d888846c0c8e11608}{server\_network\_manager}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classserver__network__manager_a35effeb59eaf663bceb87da67232bba5}{\string~server\_network\_manager}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Used\ to\ broadcast\ a\ server\_response\ (e.g.\ a\ full\_state\_response)\ to\ all\ 'players'\ except\ 'exclude'}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver__network__manager_a24978cc1bd0f67a6713e93095eec4ee7}{broadcast\_message}}(\mbox{\hyperlink{classserver__response}{server\_response}}\&\ msg,\ \textcolor{keyword}{const}\ std::vector<player*>\&\ players,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classplayer}{player}}*\ exclude);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver__network__manager_ad4c8e060331067dae44f593148b678a5}{on\_player\_left}}(std::string\ player\_id);}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_SERVER\_NETWORK\_MANAGER\_H}}
+
+\end{DoxyCode}

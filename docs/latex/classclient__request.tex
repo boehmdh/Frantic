@@ -1,0 +1,198 @@
+\doxysection{client\+\_\+request Class Reference}
+\hypertarget{classclient__request}{}\label{classclient__request}\index{client\_request@{client\_request}}
+
+
+{\ttfamily \#include $<$client\+\_\+request.\+h$>$}
+
+
+
+Inheritance diagram for client\+\_\+request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient__request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\+\_\+request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classclient__request__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classclient__request_a2845a83ea9320712224484edb13a551f}{\texorpdfstring{$\sim$}{\string~}client\+\_\+request}} ()
+\item 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} \mbox{\hyperlink{classclient__request_a01ff58f993d3f9c37ff8913dddf160b9}{get\+\_\+type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a26dcd16d0754293f82454266a567aaa2}{get\+\_\+req\+\_\+id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a496555f3dec38e00169fc72f1f22009b}{get\+\_\+game\+\_\+id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a80b701881b6c22c567ceb7125d37b001}{get\+\_\+player\+\_\+id}} () const
+\item 
+void \mbox{\hyperlink{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\item 
+virtual std\+::string \mbox{\hyperlink{classclient__request_ad5940ba1f93b38a455f3494a3c4dde0e}{to\+\_\+string}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classclient__request}{client\+\_\+request}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}{client\+\_\+request}} (\mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classclient__request_a7f1efcb700bcc21fbe69866828a395e6}{create\+\_\+base\+\_\+class\+\_\+properties}} (\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} type, std\+::string req\+\_\+id, std\+::string \&player\+\_\+id, std\+::string \&game\+\_\+id)
+\item 
+static \mbox{\hyperlink{structclient__request_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c}{extract\+\_\+base\+\_\+class\+\_\+properties}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} \mbox{\hyperlink{classclient__request_a295c3fe84e76b55f8500e95049460131}{\+\_\+type}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}{\+\_\+req\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a80117cbd1673c8c8462051167f048ecd}{\+\_\+player\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{classclient__request_a5f92f88101754287befd4dc294bd0678}{\+\_\+game\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classclient__request_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classclient__request_ad82d34f88dfb222997b29f08ef5061dd}\index{client\_request@{client\_request}!client\_request@{client\_request}}
+\index{client\_request@{client\_request}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{client\_request()}{client\_request()}}
+{\footnotesize\ttfamily \label{classclient__request_ad82d34f88dfb222997b29f08ef5061dd} 
+client\+\_\+request\+::client\+\_\+request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclient__request_1_1base__class__properties}{client\+\_\+request\+::base\+\_\+class\+\_\+properties}}}]{props}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_a2845a83ea9320712224484edb13a551f}\index{client\_request@{client\_request}!````~client\_request@{\texorpdfstring{$\sim$}{\string~}client\_request}}
+\index{````~client\_request@{\texorpdfstring{$\sim$}{\string~}client\_request}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}client\_request()}{\string~client\_request()}}
+{\footnotesize\ttfamily \label{classclient__request_a2845a83ea9320712224484edb13a551f} 
+virtual client\+\_\+request\+::\texorpdfstring{$\sim$}{\string~}client\+\_\+request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classclient__request_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classclient__request_a7f1efcb700bcc21fbe69866828a395e6}\index{client\_request@{client\_request}!create\_base\_class\_properties@{create\_base\_class\_properties}}
+\index{create\_base\_class\_properties@{create\_base\_class\_properties}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{create\_base\_class\_properties()}{create\_base\_class\_properties()}}
+{\footnotesize\ttfamily \label{classclient__request_a7f1efcb700bcc21fbe69866828a395e6} 
+\mbox{\hyperlink{structclient__request_1_1base__class__properties}{client\+\_\+request\+::base\+\_\+class\+\_\+properties}} client\+\_\+request\+::create\+\_\+base\+\_\+class\+\_\+properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}}}]{type}{, }\item[{std\+::string}]{req\+\_\+id}{, }\item[{std\+::string \&}]{player\+\_\+id}{, }\item[{std\+::string \&}]{game\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c}\index{client\_request@{client\_request}!extract\_base\_class\_properties@{extract\_base\_class\_properties}}
+\index{extract\_base\_class\_properties@{extract\_base\_class\_properties}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{extract\_base\_class\_properties()}{extract\_base\_class\_properties()}}
+{\footnotesize\ttfamily \label{classclient__request_abfc5fd99bce08b794ffbe62ca07b029c} 
+\mbox{\hyperlink{structclient__request_1_1base__class__properties}{client\+\_\+request\+::base\+\_\+class\+\_\+properties}} client\+\_\+request\+::extract\+\_\+base\+\_\+class\+\_\+properties (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701}\index{client\_request@{client\_request}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classclient__request_ace4cc1fbe3a5eb2829618fb53dee9701} 
+\mbox{\hyperlink{classclient__request}{client\+\_\+request}} \texorpdfstring{$\ast$}{*} client\+\_\+request\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classclient__request_a496555f3dec38e00169fc72f1f22009b}\index{client\_request@{client\_request}!get\_game\_id@{get\_game\_id}}
+\index{get\_game\_id@{get\_game\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{get\_game\_id()}{get\_game\_id()}}
+{\footnotesize\ttfamily \label{classclient__request_a496555f3dec38e00169fc72f1f22009b} 
+std\+::string client\+\_\+request\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classclient__request_a80b701881b6c22c567ceb7125d37b001}\index{client\_request@{client\_request}!get\_player\_id@{get\_player\_id}}
+\index{get\_player\_id@{get\_player\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{get\_player\_id()}{get\_player\_id()}}
+{\footnotesize\ttfamily \label{classclient__request_a80b701881b6c22c567ceb7125d37b001} 
+std\+::string client\+\_\+request\+::get\+\_\+player\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classclient__request_a26dcd16d0754293f82454266a567aaa2}\index{client\_request@{client\_request}!get\_req\_id@{get\_req\_id}}
+\index{get\_req\_id@{get\_req\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{get\_req\_id()}{get\_req\_id()}}
+{\footnotesize\ttfamily \label{classclient__request_a26dcd16d0754293f82454266a567aaa2} 
+std\+::string client\+\_\+request\+::get\+\_\+req\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classclient__request_a01ff58f993d3f9c37ff8913dddf160b9}\index{client\_request@{client\_request}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classclient__request_a01ff58f993d3f9c37ff8913dddf160b9} 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} client\+\_\+request\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classclient__request_ad5940ba1f93b38a455f3494a3c4dde0e}\index{client\_request@{client\_request}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily \label{classclient__request_ad5940ba1f93b38a455f3494a3c4dde0e} 
+std\+::string client\+\_\+request\+::to\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d}\index{client\_request@{client\_request}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classclient__request_a43fb5479927258d8e3b0b8781ea5fe2d} 
+void client\+\_\+request\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classdraw__card__request_a9e65be91475109abdb5afb3bf0210bbd}{draw\+\_\+card\+\_\+request}}, \mbox{\hyperlink{classfold__request_a6d016d6138d13f0590cd242d51858a67}{fold\+\_\+request}}, \mbox{\hyperlink{classjoin__game__request_ab1d449ca61e34cbf0d9054d50d542bcc}{join\+\_\+game\+\_\+request}}, \mbox{\hyperlink{classplay__card__request_a0eb0a555a17b069119682dcf21de925c}{play\+\_\+card\+\_\+request}}, and \mbox{\hyperlink{classstart__game__request_ac4167e2ae30c4d620ef10693c108da1c}{start\+\_\+game\+\_\+request}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classclient__request_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classclient__request_a5f92f88101754287befd4dc294bd0678}\index{client\_request@{client\_request}!\_game\_id@{\_game\_id}}
+\index{\_game\_id@{\_game\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{\_game\_id}{\_game\_id}}
+{\footnotesize\ttfamily \label{classclient__request_a5f92f88101754287befd4dc294bd0678} 
+std\+::string client\+\_\+request\+::\+\_\+game\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_a80117cbd1673c8c8462051167f048ecd}\index{client\_request@{client\_request}!\_player\_id@{\_player\_id}}
+\index{\_player\_id@{\_player\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{\_player\_id}{\_player\_id}}
+{\footnotesize\ttfamily \label{classclient__request_a80117cbd1673c8c8462051167f048ecd} 
+std\+::string client\+\_\+request\+::\+\_\+player\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1}\index{client\_request@{client\_request}!\_req\_id@{\_req\_id}}
+\index{\_req\_id@{\_req\_id}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{\_req\_id}{\_req\_id}}
+{\footnotesize\ttfamily \label{classclient__request_abbe4a1c0e0c607dd428243111e9a60d1} 
+std\+::string client\+\_\+request\+::\+\_\+req\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classclient__request_a295c3fe84e76b55f8500e95049460131}\index{client\_request@{client\_request}!\_type@{\_type}}
+\index{\_type@{\_type}!client\_request@{client\_request}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily \label{classclient__request_a295c3fe84e76b55f8500e95049460131} 
+\mbox{\hyperlink{client__request_8h_ae10b07f2d0feb103db7fe4cfd192e5af}{Request\+Type}} client\+\_\+request\+::\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/network/requests/\mbox{\hyperlink{client__request_8h}{client\+\_\+request.\+h}}\item 
+src/common/network/requests/\mbox{\hyperlink{client__request_8cpp}{client\+\_\+request.\+cpp}}\end{DoxyCompactItemize}

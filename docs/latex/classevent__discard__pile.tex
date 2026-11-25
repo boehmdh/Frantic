@@ -1,0 +1,169 @@
+\doxysection{event\+\_\+discard\+\_\+pile Class Reference}
+\hypertarget{classevent__discard__pile}{}\label{classevent__discard__pile}\index{event\_discard\_pile@{event\_discard\_pile}}
+
+
+Event discard pile, represented in the GUI. Initially empty.  
+
+
+
+
+{\ttfamily \#include $<$event\+\_\+discard\+\_\+pile.\+h$>$}
+
+
+
+Inheritance diagram for event\+\_\+discard\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__discard__pile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for event\+\_\+discard\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__discard__pile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevent__discard__pile_a763ba2bbfac8f096e3b8e0291ff68660}{event\+\_\+discard\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classevent__discard__pile_a7f19811037100cfb8b31b0c32ec1c703}{\texorpdfstring{$\sim$}{\string~}event\+\_\+discard\+\_\+pile}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classevent__discard__pile_a70ec093b841dabd61d6d72268f10ed1b}{get\+\_\+top\+\_\+card}} () const
+\begin{DoxyCompactList}\small\item\em Returns nullptr is the event discard pile is empty, otherwise a pointer to the top event card. For representation in the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classevent__discard__pile_ad44b07b3c6bb2a7a9e440f23f44f39c6}{setup\+\_\+game}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Clears all event cards and creates a new empty pile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classevent__discard__pile_a8d31d9979c1791de9c7e42228ac9f1e3}{play}} (\mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*}drawn\+\_\+event\+\_\+card, \mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}gs, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Plays an event card and calls its effect() function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classevent__discard__pile_a49be71a9538f9b7289264036aa946a13}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classevent__discard__pile}{event\+\_\+discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classevent__discard__pile_a0c68da68de9f5a24a1826a8dbee0ad0d}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Event discard pile, represented in the GUI. Initially empty. 
+
+\label{doc-constructors}
+\Hypertarget{classevent__discard__pile_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classevent__discard__pile_a763ba2bbfac8f096e3b8e0291ff68660}\index{event\_discard\_pile@{event\_discard\_pile}!event\_discard\_pile@{event\_discard\_pile}}
+\index{event\_discard\_pile@{event\_discard\_pile}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{event\_discard\_pile()}{event\_discard\_pile()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a763ba2bbfac8f096e3b8e0291ff68660} 
+event\+\_\+discard\+\_\+pile\+::event\+\_\+discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public constructor. 
+
+\Hypertarget{classevent__discard__pile_a7f19811037100cfb8b31b0c32ec1c703}\index{event\_discard\_pile@{event\_discard\_pile}!````~event\_discard\_pile@{\texorpdfstring{$\sim$}{\string~}event\_discard\_pile}}
+\index{````~event\_discard\_pile@{\texorpdfstring{$\sim$}{\string~}event\_discard\_pile}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}event\_discard\_pile()}{\string~event\_discard\_pile()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a7f19811037100cfb8b31b0c32ec1c703} 
+event\+\_\+discard\+\_\+pile\+::\texorpdfstring{$\sim$}{\string~}event\+\_\+discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classevent__discard__pile_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevent__discard__pile_a0c68da68de9f5a24a1826a8dbee0ad0d}\index{event\_discard\_pile@{event\_discard\_pile}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a0c68da68de9f5a24a1826a8dbee0ad0d} 
+\mbox{\hyperlink{classevent__discard__pile}{event\+\_\+discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} event\+\_\+discard\+\_\+pile\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classevent__discard__pile_a70ec093b841dabd61d6d72268f10ed1b}\index{event\_discard\_pile@{event\_discard\_pile}!get\_top\_card@{get\_top\_card}}
+\index{get\_top\_card@{get\_top\_card}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{get\_top\_card()}{get\_top\_card()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a70ec093b841dabd61d6d72268f10ed1b} 
+const \mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} event\+\_\+discard\+\_\+pile\+::get\+\_\+top\+\_\+card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns nullptr is the event discard pile is empty, otherwise a pointer to the top event card. For representation in the GUI. 
+
+\Hypertarget{classevent__discard__pile_a8d31d9979c1791de9c7e42228ac9f1e3}\index{event\_discard\_pile@{event\_discard\_pile}!play@{play}}
+\index{play@{play}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a8d31d9979c1791de9c7e42228ac9f1e3} 
+bool event\+\_\+discard\+\_\+pile\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*}}]{drawn\+\_\+event\+\_\+card}{, }\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{gs}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Plays an event card and calls its effect() function. 
+
+\Hypertarget{classevent__discard__pile_ad44b07b3c6bb2a7a9e440f23f44f39c6}\index{event\_discard\_pile@{event\_discard\_pile}!setup\_game@{setup\_game}}
+\index{setup\_game@{setup\_game}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{setup\_game()}{setup\_game()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_ad44b07b3c6bb2a7a9e440f23f44f39c6} 
+void event\+\_\+discard\+\_\+pile\+::setup\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Clears all event cards and creates a new empty pile. 
+
+\Hypertarget{classevent__discard__pile_a49be71a9538f9b7289264036aa946a13}\index{event\_discard\_pile@{event\_discard\_pile}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!event\_discard\_pile@{event\_discard\_pile}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classevent__discard__pile_a49be71a9538f9b7289264036aa946a13} 
+void event\+\_\+discard\+\_\+pile\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__discard__pile_8h}{event\+\_\+discard\+\_\+pile.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__discard__pile_8cpp}{event\+\_\+discard\+\_\+pile.\+cpp}}\end{DoxyCompactItemize}

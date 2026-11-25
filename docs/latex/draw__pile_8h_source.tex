@@ -1,0 +1,61 @@
+\doxysection{draw\+\_\+pile.\+h}
+\hypertarget{draw__pile_8h_source}{}\label{draw__pile_8h_source}\index{src/common/game\_state/cards/draw\_pile.h@{src/common/game\_state/cards/draw\_pile.h}}
+\mbox{\hyperlink{draw__pile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 25.01.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_DRAW\_PILE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_DRAW\_PILE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{../../serialization/serializable.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../game\_state/player/player.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }draw\_pile\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<card*>\ \_cards;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ *\ Deserialization\ constructor}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\_pile}}(std::string\ \textcolor{keywordtype}{id},\ std::vector<card*>\&\ cards);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ from\_diff\ constructor}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\_pile}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ pile\ functions}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ shuffle();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\_pile}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\_pile}}(std::vector<card*>\&\ cards);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a820a134711d8450f1153888864ccd585}{draw\_pile}}(std::vector<card*>*\ cards);}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classdraw__pile_a714782c1cddd786b90a837c8e87f6b4c}{\string~draw\_pile}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdraw__pile_a3e7d49f7d559e57911b185fe06dddc8a}{is\_empty}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdraw__pile_a625ffa4e304c9ff467b370d2c2bc6d11}{get\_nof\_cards}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ state\ update\ functions}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdraw__pile_aad8f47a8fce72e6c53d1998b28c4946e}{setup\_game}}(std::string\&\ err);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdraw__pile_abbacb78446054dc3086a4cff95eaa862}{draw}}(\mbox{\hyperlink{classplayer}{player}}*\ \mbox{\hyperlink{classplayer}{player}});}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classcard}{card}}*\ \mbox{\hyperlink{classdraw__pile_a49dec18cd3817b84c5671b7f7da567cd}{remove\_top}}(std::string\&\ err);}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdraw__pile_af366405d0762eb4135609ccf96f0aff7}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ draw\_pile*\ \mbox{\hyperlink{classdraw__pile_af25d6b84ce2275d10e8b291bbeae995c}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_DRAW\_PILE\_H}}
+
+\end{DoxyCode}

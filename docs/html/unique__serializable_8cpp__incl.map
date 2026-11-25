@@ -1,0 +1,19 @@
+<map id="src/common/serialization/unique_serializable.cpp" name="src/common/serialization/unique_serializable.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="165,5,351,45"/>
+<area shape="rect" id="Node000002" href="$unique__serializable_8h.html" title=" " alt="" coords="9,93,169,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,48,127,90,125,85,216,43"/>
+<area shape="rect" id="Node000005" href="$uuid__generator_8h.html" title=" " alt="" coords="193,93,323,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="261,46,261,79,255,79,255,46"/>
+<area shape="rect" id="Node000008" href="$FranticException_8h.html" title=" " alt="" coords="347,93,577,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="308,43,420,86,418,91,306,48"/>
+<area shape="rect" id="Node000003" href="$serializable_8h.html" title=" " alt="" coords="34,167,143,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,119,91,153,86,153,86,119"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,240,172,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,192,91,226,86,226,86,192"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="194,167,266,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="256,120,242,155,237,153,251,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="290,167,365,192"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="271,117,309,155,305,159,268,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="433,167,491,192"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="465,119,465,153,459,153,459,119"/>
+</map>

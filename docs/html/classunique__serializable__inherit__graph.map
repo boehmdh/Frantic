@@ -1,0 +1,23 @@
+<map id="unique_serializable" name="unique_serializable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="151,203,299,228"/>
+<area shape="rect" id="Node000003" href="$classcard.html" title=" " alt="" coords="393,5,444,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,189,276,116,308,75,345,40,369,27,392,20,394,25,371,32,348,44,312,79,281,118,239,191"/>
+<area shape="rect" id="Node000004" href="$classdiscard__pile.html" title="This class holds the deck of cards that have been played. The most recently played card is displayed ..." alt="" coords="369,55,469,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="241,190,285,140,314,113,345,89,368,78,371,83,348,94,317,117,289,143,245,194"/>
+<area shape="rect" id="Node000005" href="$classdraw__pile.html" title=" " alt="" coords="376,104,461,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="254,193,296,165,346,138,375,126,377,131,348,143,299,170,256,197"/>
+<area shape="rect" id="Node000006" href="$classevent__card.html" title=" " alt="" coords="371,153,466,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="288,197,370,175,372,181,289,202"/>
+<area shape="rect" id="Node000007" href="$classevent__discard__pile.html" title="Event discard pile, represented in the GUI. Initially empty." alt="" coords="347,203,491,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="312,213,347,213,347,218,312,218"/>
+<area shape="rect" id="Node000008" href="$classevent__draw__pile.html" title="This class is a container of the event cards." alt="" coords="354,252,483,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="289,229,368,249,367,254,288,234"/>
+<area shape="rect" id="Node000009" href="$classgame__state.html" title=" " alt="" coords="369,301,468,327"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="256,234,299,261,348,288,376,299,374,304,346,292,296,266,254,238"/>
+<area shape="rect" id="Node000010" href="$classhand.html" title=" " alt="" coords="391,351,446,376"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="245,237,289,287,317,314,348,337,370,348,392,355,390,360,368,353,345,342,314,318,285,291,241,241"/>
+<area shape="rect" id="Node000011" href="$classplayer.html" title="For every client a player object is treated that holds its hand, score and information whether the pl..." alt="" coords="387,400,450,425"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="239,239,281,312,312,352,348,387,367,397,388,404,386,409,365,402,345,391,308,356,276,315,235,242"/>
+<area shape="rect" id="Node000002" href="$classserializable.html" title=" " alt="" coords="5,203,103,228"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,213,150,213,150,218,117,218"/>
+</map>

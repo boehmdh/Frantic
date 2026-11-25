@@ -1,0 +1,7 @@
+# CLion / Jetbrains IDE files 
+.idea
+# CMake & CLion build dirs
+cmake-build-*/
+build/
+# exclude in sockpp/ subfolder
+cmake_install.cmake

@@ -1,0 +1,64 @@
+\doxysection{Main\+Game\+Panel.\+h}
+\hypertarget{MainGamePanel_8h_source}{}\label{MainGamePanel_8h_source}\index{src/client/panels/MainGamePanel.h@{src/client/panels/MainGamePanel.h}}
+\mbox{\hyperlink{MainGamePanel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_CLIENT\_MAINGAMEPANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FRANTIC\_CLIENT\_MAINGAMEPANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__state_8h}{../../common/game\_state/game\_state.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainGamePanel_a32f9a20804c9262f462f823825d5d5d3}{MainGamePanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classMainGamePanel_a32f9a20804c9262f462f823825d5d5d3}{MainGamePanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainGamePanel_a1e0e5d20b3482dd31f7bdb8607360570}{buildGameState}}(\mbox{\hyperlink{classgame__state}{game\_state}}*\ gameState,\ \mbox{\hyperlink{classplayer}{player}}*\ me);}
+\DoxyCodeLine{00016\ \ \ \ \ uint\ \mbox{\hyperlink{classMainGamePanel_a4fce89f99d7835cc2ed2a68fb1dee7c6}{ShowWishColorMessage}}();}
+\DoxyCodeLine{00017\ \ \ \ \ uint\ \mbox{\hyperlink{classMainGamePanel_a4812b2d6459629e0ab237424892ff9e3}{ShowFantasticFourPlayerMessage}}();}
+\DoxyCodeLine{00018\ \ \ \ \ uint\ \mbox{\hyperlink{classMainGamePanel_afa37e2d75c93f4925cc40a3131accf03}{ShowEqualityPlayerMessage}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ wxBoxSizer*\ outerLayout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classgame__state}{game\_state}}*\ currentGameState\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classplayer}{player}}*\ currentPlayer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00025\ \ \ \ \ wxSize\ la\ =\ wxSize(0,32);}
+\DoxyCodeLine{00026\ \ \ \ \ wxFont\ laF\ =\ this-\/>GetFont();\ \textcolor{comment}{//\ Large\ font\ 32\ pixel\ high}}
+\DoxyCodeLine{00027\ \ \ \ \ wxSize\ lTWin\ =\ wxSize(750,\ 40);}
+\DoxyCodeLine{00028\ \ \ \ \ wxSize\ sTWin\ =\ wxSize(550,\ 25);}
+\DoxyCodeLine{00029\ \ \ \ \ wxSize\ labelTWin\ =\ wxSize(200,70);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ buildOtherPlayerHand(\mbox{\hyperlink{classgame__state}{game\_state}}*\ gameState,\ \mbox{\hyperlink{classplayer}{player}}*\ otherPlayer,\ \textcolor{keywordtype}{double}\ playerAngle);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ buildCardPiles(\mbox{\hyperlink{classgame__state}{game\_state}}*\ gameState,\ \mbox{\hyperlink{classplayer}{player}}\ *me);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ buildThisPlayer(\mbox{\hyperlink{classgame__state}{game\_state}}*\ gameState,\ \mbox{\hyperlink{classplayer}{player}}*\ me);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ wxSize\ getBoundsOfRotatedSquare(\textcolor{keywordtype}{double}\ edgeLength,\ \textcolor{keywordtype}{double}\ rotationAngle);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ getEdgeLengthOfRotatedSquare(\textcolor{keywordtype}{double}\ originalEdgeLength,\ \textcolor{keywordtype}{double}\ rotationAngle);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ wxPoint\ getPointOnEllipse(\textcolor{keywordtype}{double}\ horizontalRadius,\ \textcolor{keywordtype}{double}\ verticalRadius,\ \textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ wxStaticText*\ eventBanner\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00041\ \ \ \ \ wxTimer\ \ \ \ \ \ \ eventBannerTimer;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ eventBannerBlinkCount\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ StartEventBanner(\textcolor{keyword}{const}\ wxString\&\ text);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ OnEventBannerTimer(wxTimerEvent\&\ event);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ define\ key\ layout\ values}}
+\DoxyCodeLine{00048\ \ \ \ \ wxSize\ panelSize\ =\ wxSize(1200,\ 850);}
+\DoxyCodeLine{00049\ \ \ \ \ wxPoint\ tableCenter\ =\ wxPoint(620,\ 395);}
+\DoxyCodeLine{00050\ \ \ \ \ wxSize\ cardSize\ =\ wxSize(100,\ 150);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\ otherPlayerHandSize\ =\ 160.0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\ oPlHaDist\ =\ 230.0;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\ oPlLaDist\ =\ 380.0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \textcolor{keyword}{const}\ twoPi\ =\ 6.28318530718;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_CLIENT\_MAINGAMEPANEL\_H}}
+
+\end{DoxyCode}

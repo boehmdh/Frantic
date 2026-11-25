@@ -1,0 +1,92 @@
+\doxysection{Main\+Game\+Panel Class Reference}
+\hypertarget{classMainGamePanel}{}\label{classMainGamePanel}\index{MainGamePanel@{MainGamePanel}}
+
+
+{\ttfamily \#include $<$Main\+Game\+Panel.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Game\+Panel\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classMainGamePanel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Game\+Panel\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classMainGamePanel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainGamePanel_a32f9a20804c9262f462f823825d5d5d3}{Main\+Game\+Panel}} (wx\+Window \texorpdfstring{$\ast$}{*}parent)
+\item 
+void \mbox{\hyperlink{classMainGamePanel_a1e0e5d20b3482dd31f7bdb8607360570}{build\+Game\+State}} (\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}game\+State, \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}me)
+\item 
+uint \mbox{\hyperlink{classMainGamePanel_a4fce89f99d7835cc2ed2a68fb1dee7c6}{Show\+Wish\+Color\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Displays a dialog for the player to choose a color or number for a Rainbow card. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{classMainGamePanel_a4812b2d6459629e0ab237424892ff9e3}{Show\+Fantastic\+Four\+Player\+Message}} ()
+\item 
+uint \mbox{\hyperlink{classMainGamePanel_afa37e2d75c93f4925cc40a3131accf03}{Show\+Equality\+Player\+Message}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classMainGamePanel_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMainGamePanel_a32f9a20804c9262f462f823825d5d5d3}\index{MainGamePanel@{MainGamePanel}!MainGamePanel@{MainGamePanel}}
+\index{MainGamePanel@{MainGamePanel}!MainGamePanel@{MainGamePanel}}
+\doxysubsubsection{\texorpdfstring{MainGamePanel()}{MainGamePanel()}}
+{\footnotesize\ttfamily \label{classMainGamePanel_a32f9a20804c9262f462f823825d5d5d3} 
+Main\+Game\+Panel\+::\+Main\+Game\+Panel (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classMainGamePanel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMainGamePanel_a1e0e5d20b3482dd31f7bdb8607360570}\index{MainGamePanel@{MainGamePanel}!buildGameState@{buildGameState}}
+\index{buildGameState@{buildGameState}!MainGamePanel@{MainGamePanel}}
+\doxysubsubsection{\texorpdfstring{buildGameState()}{buildGameState()}}
+{\footnotesize\ttfamily \label{classMainGamePanel_a1e0e5d20b3482dd31f7bdb8607360570} 
+void Main\+Game\+Panel\+::build\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{game\+State}{, }\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{me}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classMainGamePanel_afa37e2d75c93f4925cc40a3131accf03}\index{MainGamePanel@{MainGamePanel}!ShowEqualityPlayerMessage@{ShowEqualityPlayerMessage}}
+\index{ShowEqualityPlayerMessage@{ShowEqualityPlayerMessage}!MainGamePanel@{MainGamePanel}}
+\doxysubsubsection{\texorpdfstring{ShowEqualityPlayerMessage()}{ShowEqualityPlayerMessage()}}
+{\footnotesize\ttfamily \label{classMainGamePanel_afa37e2d75c93f4925cc40a3131accf03} 
+uint Main\+Game\+Panel\+::\+Show\+Equality\+Player\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classMainGamePanel_a4812b2d6459629e0ab237424892ff9e3}\index{MainGamePanel@{MainGamePanel}!ShowFantasticFourPlayerMessage@{ShowFantasticFourPlayerMessage}}
+\index{ShowFantasticFourPlayerMessage@{ShowFantasticFourPlayerMessage}!MainGamePanel@{MainGamePanel}}
+\doxysubsubsection{\texorpdfstring{ShowFantasticFourPlayerMessage()}{ShowFantasticFourPlayerMessage()}}
+{\footnotesize\ttfamily \label{classMainGamePanel_a4812b2d6459629e0ab237424892ff9e3} 
+uint Main\+Game\+Panel\+::\+Show\+Fantastic\+Four\+Player\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classMainGamePanel_a4fce89f99d7835cc2ed2a68fb1dee7c6}\index{MainGamePanel@{MainGamePanel}!ShowWishColorMessage@{ShowWishColorMessage}}
+\index{ShowWishColorMessage@{ShowWishColorMessage}!MainGamePanel@{MainGamePanel}}
+\doxysubsubsection{\texorpdfstring{ShowWishColorMessage()}{ShowWishColorMessage()}}
+{\footnotesize\ttfamily \label{classMainGamePanel_a4fce89f99d7835cc2ed2a68fb1dee7c6} 
+uint Main\+Game\+Panel\+::\+Show\+Wish\+Color\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays a dialog for the player to choose a color or number for a Rainbow card. 
+
+If a Rainbow card is on top of the discard pile, this function asks the player for a color or number for the wish. The choices for colors are Red, Blue, Green, and Yellow. The number choices range from I to IX.
+
+\begin{DoxyReturn}{Returns}
+uint The selected color (as \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} enum) or number (1-\/9) chosen by the player. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/client/panels/\mbox{\hyperlink{MainGamePanel_8h}{Main\+Game\+Panel.\+h}}\item 
+src/client/panels/\mbox{\hyperlink{MainGamePanel_8cpp}{Main\+Game\+Panel.\+cpp}}\end{DoxyCompactItemize}

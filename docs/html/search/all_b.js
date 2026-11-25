@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['fantastic_5ffour_0',['FANTASTIC_FOUR',['../card__action__type_8h.html#a8be5f5ebbb6da7691c9699f6cd3747c7a219b1ae465b92c8d5a52a7440de01688',1,'card_action_type.h']]],
+  ['finish_5fline_1',['FINISH_LINE',['../event__card__collection_8h.html#aef56bd8456d4ba0a422118977e546e44a77dc04cb45b98007d1f0502a7610704a',1,'event_card_collection.h']]],
+  ['floattype_2',['floatType',['../namespacevalue__type__helpers.html#a9c190f827cd3e8051ac12234d8f03cf7a62dfebcea72ad0fcb73fcd2281677751',1,'value_type_helpers']]],
+  ['fold_3',['fold',['../classGameController.html#a374ccc9dcda9776268ce61e4b1eb96b4',1,'GameController::fold()'],['../classgame__state.html#a8696904d30789026e22b38b2b0e8e24a',1,'game_state::fold()'],['../classplayer.html#a412fc5cb89ecd5c155a3c2dafae3ffaa',1,'player::fold()'],['../classgame__instance.html#a4b5f4a1f8e595a05a0bb224eba78161b',1,'game_instance::fold()'],['../client__request_8h.html#ae10b07f2d0feb103db7fe4cfd192e5afa8a644c686eb987d3a5d2b55bae4c9a3a',1,'fold:&#160;client_request.h']]],
+  ['fold_5frequest_4',['fold_request',['../classfold__request.html',1,'fold_request'],['../classfold__request.html#ac82879f83231ea78bf462c458f67c525',1,'fold_request::fold_request()']]],
+  ['fold_5frequest_2ecpp_5',['fold_request.cpp',['../fold__request_8cpp.html',1,'']]],
+  ['fold_5frequest_2eh_6',['fold_request.h',['../fold__request_8h.html',1,'']]],
+  ['for_20reuse_7',['4.4.4 Classes for reuse',['../md_README.html#autotoc_md22',1,'']]],
+  ['frantic_8',['Frantic',['../classFrantic.html',1,'']]],
+  ['frantic_20documentation_9',['Frantic documentation',['../index.html',1,'']]],
+  ['frantic_2ecpp_10',['Frantic.cpp',['../Frantic_8cpp.html',1,'']]],
+  ['frantic_2eh_11',['Frantic.h',['../Frantic_8h.html',1,'']]],
+  ['frantic_5frequest_5fhandler_5fcpp_12',['FRANTIC_REQUEST_HANDLER_CPP',['../request__handler_8cpp.html#a2c7757a207f4d43ee2605b5842438696',1,'request_handler.cpp']]],
+  ['franticexception_13',['FranticException',['../classFranticException.html',1,'FranticException'],['../classFranticException.html#aab64685712744b4aad30ace1c3f48fd6',1,'FranticException::FranticException()']]],
+  ['franticexception_2eh_14',['FranticException.h',['../FranticException_8h.html',1,'']]],
+  ['friday_5fthe_5f13th_15',['FRIDAY_THE_13TH',['../event__card__collection_8h.html#aef56bd8456d4ba0a422118977e546e44aed07bba194ce2a39d05ec1397a786c18',1,'event_card_collection.h']]],
+  ['from_5fjson_16',['from_json',['../classcard.html#a48593187c9bff442d61f197991954011',1,'card::from_json()'],['../classdiscard__pile.html#a46bdfae2b145124ce77037c900dfb988',1,'discard_pile::from_json()'],['../classdraw__pile.html#af25d6b84ce2275d10e8b291bbeae995c',1,'draw_pile::from_json()'],['../classevent__card.html#a1449ff1bfd326a2ce6ae54ffe550c3a3',1,'event_card::from_json()'],['../classevent__discard__pile.html#a0c68da68de9f5a24a1826a8dbee0ad0d',1,'event_discard_pile::from_json()'],['../classevent__draw__pile.html#a395cf90c4b717927930f8fa6210058c4',1,'event_draw_pile::from_json()'],['../classgame__state.html#a794d484961c92b5b737586ec5599963f',1,'game_state::from_json()'],['../classhand.html#aa9cffdf932d80c7304a335074403e785',1,'hand::from_json()'],['../classplayer.html#a5955c5f26db6a08862ccfb443fbe99c5',1,'player::from_json()'],['../classclient__request.html#ace4cc1fbe3a5eb2829618fb53dee9701',1,'client_request::from_json()'],['../classdraw__card__request.html#a140c8940ba60b8d6442b187406296b19',1,'draw_card_request::from_json()'],['../classfold__request.html#a7d257c8fd44aae3d2a22741808c4e587',1,'fold_request::from_json()'],['../classjoin__game__request.html#ac68ecf877821ec411654026c7fa74aa4',1,'join_game_request::from_json()'],['../classplay__card__request.html#a25accc5649830884e0cc971e20d385dc',1,'play_card_request::from_json()'],['../classstart__game__request.html#aa2576bbf358817189785887bae0eefc0',1,'start_game_request::from_json()'],['../classfull__state__response.html#a2fa51506a33b924683b1d925f09b7689',1,'full_state_response::from_json()'],['../classrequest__response.html#a93118c3447d6b97723b0169925893ea3',1,'request_response::from_json()'],['../classserver__response.html#aa7d7e0b28a050ddc0b0e9edf649408be',1,'server_response::from_json()'],['../classserializable__value.html#a1896e5dc77b23f25c9891c05946c7d2d',1,'serializable_value::from_json()']]],
+  ['full_5fstate_5fmsg_17',['full_state_msg',['../server__response_8h.html#af5055605e320b3f9ea9fa330b57604e7a43a6b869a81fa03239ac9bca9c8b4d4e',1,'server_response.h']]],
+  ['full_5fstate_5fresponse_18',['full_state_response',['../classfull__state__response.html',1,'full_state_response'],['../classfull__state__response.html#ab2b137a4670f81507e7464d5ef9d86fc',1,'full_state_response::full_state_response()']]],
+  ['full_5fstate_5fresponse_2ecpp_19',['full_state_response.cpp',['../full__state__response_8cpp.html',1,'']]],
+  ['full_5fstate_5fresponse_2eh_20',['full_state_response.h',['../full__state__response_8h.html',1,'']]]
+];

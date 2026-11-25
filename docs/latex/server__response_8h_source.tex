@@ -1,0 +1,68 @@
+\doxysection{server\+\_\+response.\+h}
+\hypertarget{server__response_8h_source}{}\label{server__response_8h_source}\index{src/common/network/responses/server\_response.h@{src/common/network/responses/server\_response.h}}
+\mbox{\hyperlink{server__response_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 15.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Base\ class\ for\ all\ messages\ sent\ from\ the\ server\ to\ the\ client.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ It\ offers\ a\ function\ to\ deserialize\ a\ server\_response\ subclass\ from\ a\ valid\ json.}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_SERVER\_RESPONSE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ FRANTIC\_SERVER\_RESPONSE\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{../../serialization/serializable.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Identifier\ for\ the\ different\ response\ types.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ The\ ResponseType\ is\ sent\ with\ every\ server\_response\ to\ identify\ the\ type\ of\ server\_response}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ during\ deserialization\ on\ the\ client\ side.}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{ResponseType}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7ac0c16445621a6067c89a3cd5a5e05e32}{req\_response}},}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7a83e01a25fdd9d4d4196d5af938ef3884}{state\_diff\_msg}},}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7a43a6b869a81fa03239ac9bca9c8b4d4e}{full\_state\_msg}}}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\_response}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserializable}{serializable}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ for\ deserialization}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ ResponseType>\ \_string\_to\_response\_type;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ for\ serialization}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::unordered\_map<ResponseType,\ std::string>\ \_response\_type\_to\_string;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classserver__response_a40595ead49e44e96d51240d9ffc2ad81}{\_game\_id}};}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{ResponseType}}\ \mbox{\hyperlink{classserver__response_a5412fce03c043a5cd18d92ced3544425}{\_type}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structserver__response_1_1base__class__properties_a20aba2a744964228467b4ee42e4b0a16}{game\_id}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{ResponseType}}\ \mbox{\hyperlink{structserver__response_1_1base__class__properties_a9c5c6f97714cd814b95a725c070b151a}{type}};}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\_response}}(\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}});\ \textcolor{comment}{//\ base\ constructor}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}}\ \mbox{\hyperlink{classserver__response_a91a54ce809b848278e730c32fe4322ce}{create\_base\_class\_properties}}(\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{ResponseType}}\ type,\ \textcolor{keyword}{const}\ std::string\&\ game\_id);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\_class\_properties}}\ \mbox{\hyperlink{classserver__response_a003d03454d92e34725006460d192d1eb}{extract\_base\_class\_properties}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{ResponseType}}\ \mbox{\hyperlink{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae}{get\_type}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classserver__response_a091bb106c9468416f8d4be44f297d8da}{get\_game\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Tries\ to\ create\ the\ specific\ server\_response\ from\ the\ provided\ json.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Throws\ exception\ if\ parsing\ fails\ -\/>\ Use\ only\ inside\ "{}try\{\ \}catch()"{}\ block}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\_response}}*\ \mbox{\hyperlink{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Serializes\ the\ server\_response\ into\ a\ json\ object\ that\ can\ be\ sent\ over\ the\ network}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver__response_adbc96c056bf86e60c46424533f0e70f1}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_CLIENT}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4}{Process}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_SERVER\_RESPONSE\_H}}
+
+\end{DoxyCode}

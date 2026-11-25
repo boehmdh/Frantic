@@ -1,0 +1,16 @@
+<map id="src/client/windows/GameWindow.h" name="src/client/windows/GameWindow.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="140,5,283,45"/>
+<area shape="rect" id="Node000002" href="$ConnectionPanel_8h.html" title=" " alt="" coords="111,93,312,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,46,214,79,209,79,209,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="210,240,286,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,120,65,131,28,145,16,155,9,165,9,177,17,190,28,200,44,209,91,224,196,243,196,248,90,229,42,214,25,204,12,194,4,178,4,163,12,151,25,141,63,125,110,115"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="26,167,133,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,121,114,162,112,158,189,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="158,167,266,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="214,119,214,153,209,153,209,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="290,167,389,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="234,116,308,157,305,162,231,121"/>
+<area shape="rect" id="Node000007" href="$InputField_8h.html" title=" " alt="" coords="413,167,600,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="260,116,446,161,445,166,258,121"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="466,195,300,240,298,235,464,189"/>
+</map>

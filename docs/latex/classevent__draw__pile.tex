@@ -1,0 +1,183 @@
+\doxysection{event\+\_\+draw\+\_\+pile Class Reference}
+\hypertarget{classevent__draw__pile}{}\label{classevent__draw__pile}\index{event\_draw\_pile@{event\_draw\_pile}}
+
+
+This class is a container of the event cards.  
+
+
+
+
+{\ttfamily \#include $<$event\+\_\+draw\+\_\+pile.\+h$>$}
+
+
+
+Inheritance diagram for event\+\_\+draw\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__draw__pile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for event\+\_\+draw\+\_\+pile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classevent__draw__pile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}{event\+\_\+draw\+\_\+pile}} ()
+\item 
+\mbox{\hyperlink{classevent__draw__pile_a61c62353413e6d875034854abfd03f05}{event\+\_\+draw\+\_\+pile}} (std\+::vector$<$ \mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} $>$ \&event\+\_\+cards)
+\item 
+\mbox{\hyperlink{classevent__draw__pile_a10d66776d06fd24084ee1af451272b71}{\texorpdfstring{$\sim$}{\string~}event\+\_\+draw\+\_\+pile}} ()
+\item 
+bool \mbox{\hyperlink{classevent__draw__pile_ae514683993a37569c3d7b5069ce6acfd}{is\+\_\+empty}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns true if the event draw pile is empty. Should always return false as long as event cards are included that end the round immediately. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classevent__draw__pile_a22fbfe555265042f2c1010fc25d4d0bc}{get\+\_\+nof\+\_\+cards}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the number of cards on the draw pile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classevent__draw__pile_a2667b0e5fc2f689757095dc5b062f668}{setup\+\_\+game}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Creates a new deck of event cards (one card of each type). The new deck is shuffled after creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classevent__draw__pile_a8a4fa16419e968ac533efadf178b1c69}{remove\+\_\+top}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Removes the top card to transfer it to the event discard pile. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classevent__draw__pile_ad9cdf255b794e25d8ce2c785f7244d16}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em Serialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classevent__draw__pile}{event\+\_\+draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classevent__draw__pile_a395cf90c4b717927930f8fa6210058c4}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Deserialization implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is a container of the event cards. 
+
+Whenever a black card is played, one event card is automatically drawn and transferred to the event discard pile. Unlike the ordinary draw pile, this object has no GUI representation. 
+
+\label{doc-constructors}
+\Hypertarget{classevent__draw__pile_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}\index{event\_draw\_pile@{event\_draw\_pile}!event\_draw\_pile@{event\_draw\_pile}}
+\index{event\_draw\_pile@{event\_draw\_pile}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{event\_draw\_pile()}{event\_draw\_pile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067} 
+event\+\_\+draw\+\_\+pile\+::event\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classevent__draw__pile_a61c62353413e6d875034854abfd03f05}\index{event\_draw\_pile@{event\_draw\_pile}!event\_draw\_pile@{event\_draw\_pile}}
+\index{event\_draw\_pile@{event\_draw\_pile}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{event\_draw\_pile()}{event\_draw\_pile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a61c62353413e6d875034854abfd03f05} 
+event\+\_\+draw\+\_\+pile\+::event\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} $>$ \&}]{event\+\_\+cards}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classevent__draw__pile_a10d66776d06fd24084ee1af451272b71}\index{event\_draw\_pile@{event\_draw\_pile}!````~event\_draw\_pile@{\texorpdfstring{$\sim$}{\string~}event\_draw\_pile}}
+\index{````~event\_draw\_pile@{\texorpdfstring{$\sim$}{\string~}event\_draw\_pile}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}event\_draw\_pile()}{\string~event\_draw\_pile()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a10d66776d06fd24084ee1af451272b71} 
+event\+\_\+draw\+\_\+pile\+::\texorpdfstring{$\sim$}{\string~}event\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classevent__draw__pile_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevent__draw__pile_a395cf90c4b717927930f8fa6210058c4}\index{event\_draw\_pile@{event\_draw\_pile}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a395cf90c4b717927930f8fa6210058c4} 
+\mbox{\hyperlink{classevent__draw__pile}{event\+\_\+draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} event\+\_\+draw\+\_\+pile\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialization implementation. 
+
+\Hypertarget{classevent__draw__pile_a22fbfe555265042f2c1010fc25d4d0bc}\index{event\_draw\_pile@{event\_draw\_pile}!get\_nof\_cards@{get\_nof\_cards}}
+\index{get\_nof\_cards@{get\_nof\_cards}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{get\_nof\_cards()}{get\_nof\_cards()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a22fbfe555265042f2c1010fc25d4d0bc} 
+int event\+\_\+draw\+\_\+pile\+::get\+\_\+nof\+\_\+cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns the number of cards on the draw pile. 
+
+\Hypertarget{classevent__draw__pile_ae514683993a37569c3d7b5069ce6acfd}\index{event\_draw\_pile@{event\_draw\_pile}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_ae514683993a37569c3d7b5069ce6acfd} 
+bool event\+\_\+draw\+\_\+pile\+::is\+\_\+empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Returns true if the event draw pile is empty. Should always return false as long as event cards are included that end the round immediately. 
+
+\Hypertarget{classevent__draw__pile_a8a4fa16419e968ac533efadf178b1c69}\index{event\_draw\_pile@{event\_draw\_pile}!remove\_top@{remove\_top}}
+\index{remove\_top@{remove\_top}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{remove\_top()}{remove\_top()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a8a4fa16419e968ac533efadf178b1c69} 
+\mbox{\hyperlink{classevent__card}{event\+\_\+card}} \texorpdfstring{$\ast$}{*} event\+\_\+draw\+\_\+pile\+::remove\+\_\+top (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Removes the top card to transfer it to the event discard pile. 
+
+\Hypertarget{classevent__draw__pile_a2667b0e5fc2f689757095dc5b062f668}\index{event\_draw\_pile@{event\_draw\_pile}!setup\_game@{setup\_game}}
+\index{setup\_game@{setup\_game}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{setup\_game()}{setup\_game()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_a2667b0e5fc2f689757095dc5b062f668} 
+void event\+\_\+draw\+\_\+pile\+::setup\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new deck of event cards (one card of each type). The new deck is shuffled after creation. 
+
+\Hypertarget{classevent__draw__pile_ad9cdf255b794e25d8ce2c785f7244d16}\index{event\_draw\_pile@{event\_draw\_pile}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!event\_draw\_pile@{event\_draw\_pile}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classevent__draw__pile_ad9cdf255b794e25d8ce2c785f7244d16} 
+void event\+\_\+draw\+\_\+pile\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serialization implementation. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__draw__pile_8h}{event\+\_\+draw\+\_\+pile.\+h}}\item 
+src/common/game\+\_\+state/cards/\mbox{\hyperlink{event__draw__pile_8cpp}{event\+\_\+draw\+\_\+pile.\+cpp}}\end{DoxyCompactItemize}

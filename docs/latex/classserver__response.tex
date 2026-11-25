@@ -1,0 +1,162 @@
+\doxysection{server\+\_\+response Class Reference}
+\hypertarget{classserver__response}{}\label{classserver__response}\index{server\_response@{server\_response}}
+
+
+{\ttfamily \#include $<$server\+\_\+response.\+h$>$}
+
+
+
+Inheritance diagram for server\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classserver__response__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for server\+\_\+response\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classserver__response__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae}{get\+\_\+type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a091bb106c9468416f8d4be44f297d8da}{get\+\_\+game\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classserver__response_adbc96c056bf86e60c46424533f0e70f1}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\item 
+virtual void \mbox{\hyperlink{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4}{Process}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classserver__response}{server\+\_\+response}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}{server\+\_\+response}} (\mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a91a54ce809b848278e730c32fe4322ce}{create\+\_\+base\+\_\+class\+\_\+properties}} (\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} type, const std\+::string \&game\+\_\+id)
+\item 
+static \mbox{\hyperlink{structserver__response_1_1base__class__properties}{base\+\_\+class\+\_\+properties}} \mbox{\hyperlink{classserver__response_a003d03454d92e34725006460d192d1eb}{extract\+\_\+base\+\_\+class\+\_\+properties}} (const rapidjson\+::\+Value \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classserver__response_a40595ead49e44e96d51240d9ffc2ad81}{\+\_\+game\+\_\+id}}
+\item 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} \mbox{\hyperlink{classserver__response_a5412fce03c043a5cd18d92ced3544425}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classserver__response_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355}\index{server\_response@{server\_response}!server\_response@{server\_response}}
+\index{server\_response@{server\_response}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{server\_response()}{server\_response()}}
+{\footnotesize\ttfamily \label{classserver__response_a957bd4d0acbcc8d1907da50ddfd5d355} 
+server\+\_\+response\+::server\+\_\+response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structserver__response_1_1base__class__properties}{server\+\_\+response\+::base\+\_\+class\+\_\+properties}}}]{params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classserver__response_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classserver__response_a91a54ce809b848278e730c32fe4322ce}\index{server\_response@{server\_response}!create\_base\_class\_properties@{create\_base\_class\_properties}}
+\index{create\_base\_class\_properties@{create\_base\_class\_properties}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{create\_base\_class\_properties()}{create\_base\_class\_properties()}}
+{\footnotesize\ttfamily \label{classserver__response_a91a54ce809b848278e730c32fe4322ce} 
+\mbox{\hyperlink{structserver__response_1_1base__class__properties}{server\+\_\+response\+::base\+\_\+class\+\_\+properties}} server\+\_\+response\+::create\+\_\+base\+\_\+class\+\_\+properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}}}]{type}{, }\item[{const std\+::string \&}]{game\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classserver__response_a003d03454d92e34725006460d192d1eb}\index{server\_response@{server\_response}!extract\_base\_class\_properties@{extract\_base\_class\_properties}}
+\index{extract\_base\_class\_properties@{extract\_base\_class\_properties}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{extract\_base\_class\_properties()}{extract\_base\_class\_properties()}}
+{\footnotesize\ttfamily \label{classserver__response_a003d03454d92e34725006460d192d1eb} 
+\mbox{\hyperlink{structserver__response_1_1base__class__properties}{server\+\_\+response\+::base\+\_\+class\+\_\+properties}} server\+\_\+response\+::extract\+\_\+base\+\_\+class\+\_\+properties (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be}\index{server\_response@{server\_response}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classserver__response_aa7d7e0b28a050ddc0b0e9edf649408be} 
+\mbox{\hyperlink{classserver__response}{server\+\_\+response}} \texorpdfstring{$\ast$}{*} server\+\_\+response\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classserver__response_a091bb106c9468416f8d4be44f297d8da}\index{server\_response@{server\_response}!get\_game\_id@{get\_game\_id}}
+\index{get\_game\_id@{get\_game\_id}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{get\_game\_id()}{get\_game\_id()}}
+{\footnotesize\ttfamily \label{classserver__response_a091bb106c9468416f8d4be44f297d8da} 
+std\+::string server\+\_\+response\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae}\index{server\_response@{server\_response}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \label{classserver__response_aba40247ac9c0b1eae584e8da4cfa2eae} 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} server\+\_\+response\+::get\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4}\index{server\_response@{server\_response}!Process@{Process}}
+\index{Process@{Process}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}}
+{\footnotesize\ttfamily \label{classserver__response_a23e8e53944ca4dc709bd28bcc2c023b4} 
+virtual void server\+\_\+response\+::\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classfull__state__response_a6a9cbc1ce43abeb09e4ac86639e2c7e1}{full\+\_\+state\+\_\+response}}, and \mbox{\hyperlink{classrequest__response_a8aea6c4e2cfb89cf6c9e482eed746cb3}{request\+\_\+response}}.
+
+\Hypertarget{classserver__response_adbc96c056bf86e60c46424533f0e70f1}\index{server\_response@{server\_response}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classserver__response_adbc96c056bf86e60c46424533f0e70f1} 
+void server\+\_\+response\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classfull__state__response_a246b4576345ed8cb9c8487764ceafc11}{full\+\_\+state\+\_\+response}}, and \mbox{\hyperlink{classrequest__response_ad968775a041bb5616cc78140e77620f5}{request\+\_\+response}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classserver__response_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classserver__response_a40595ead49e44e96d51240d9ffc2ad81}\index{server\_response@{server\_response}!\_game\_id@{\_game\_id}}
+\index{\_game\_id@{\_game\_id}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{\_game\_id}{\_game\_id}}
+{\footnotesize\ttfamily \label{classserver__response_a40595ead49e44e96d51240d9ffc2ad81} 
+std\+::string server\+\_\+response\+::\+\_\+game\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classserver__response_a5412fce03c043a5cd18d92ced3544425}\index{server\_response@{server\_response}!\_type@{\_type}}
+\index{\_type@{\_type}!server\_response@{server\_response}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily \label{classserver__response_a5412fce03c043a5cd18d92ced3544425} 
+\mbox{\hyperlink{server__response_8h_af5055605e320b3f9ea9fa330b57604e7}{Response\+Type}} server\+\_\+response\+::\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/network/responses/\mbox{\hyperlink{server__response_8h}{server\+\_\+response.\+h}}\item 
+src/common/network/responses/\mbox{\hyperlink{server__response_8cpp}{server\+\_\+response.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\doxysection{src/common/game\+\_\+state/cards/card\+\_\+action\+\_\+type.h File Reference}
+\hypertarget{card__action__type_8h}{}\label{card__action__type_8h}\index{src/common/game\_state/cards/card\_action\_type.h@{src/common/game\_state/cards/card\_action\_type.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+Include dependency graph for card\+\_\+action\+\_\+type.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{card__action__type_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{card__action__type_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} \+: uint \{ \newline
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab85df04e922fe1dd3c1f0692faeaacef}{SKIP}}
+, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a642e0b6684e6165e142c074f1cd8d55c}{REVERSE}}
+, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a219b1ae465b92c8d5a52a7440de01688}{FANTASTIC\+\_\+\+FOUR}}
+, \newline
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a22d77b4f36283fa15f20867ad3f2a30e}{EQUALITY}}
+, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a6d53a4f1bd026fb20739607d7fb7ef33}{SECOND\+\_\+\+CHANCE}}
+, \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab1a326c06d88bf042f73d70f50197905}{END}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the action type of a card. For non-\/special cards \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{Card\+Action\+Type\+::\+NONE} (uint 0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{card__action__type_8h_ab47c44156a36ed416392a752622d28ae}{action\+\_\+to\+\_\+string}} (\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} a)
+\begin{DoxyCompactList}\small\item\em Helper function to return a string of the action type in capital letters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} \mbox{\hyperlink{card__action__type_8h_ab12f4e398f4d3cf2dfc8267c9ee8ea44}{string\+\_\+to\+\_\+action}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Helper function to convert a string to the action type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{card__action__type_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}\index{card\_action\_type.h@{card\_action\_type.h}!CardActionType@{CardActionType}}
+\index{CardActionType@{CardActionType}!card\_action\_type.h@{card\_action\_type.h}}
+\doxysubsubsection{\texorpdfstring{CardActionType}{CardActionType}}
+{\footnotesize\ttfamily \label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7} 
+enum class \mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} \+: uint\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the action type of a card. For non-\/special cards \doxylink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}{Card\+Action\+Type\+::\+NONE} (uint 0). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!NONE@{NONE}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKIP@{SKIP}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!SKIP@{SKIP}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab85df04e922fe1dd3c1f0692faeaacef}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab85df04e922fe1dd3c1f0692faeaacef} 
+SKIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REVERSE@{REVERSE}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!REVERSE@{REVERSE}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a642e0b6684e6165e142c074f1cd8d55c}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a642e0b6684e6165e142c074f1cd8d55c} 
+REVERSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FANTASTIC\_FOUR@{FANTASTIC\_FOUR}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!FANTASTIC\_FOUR@{FANTASTIC\_FOUR}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a219b1ae465b92c8d5a52a7440de01688}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a219b1ae465b92c8d5a52a7440de01688} 
+FANTASTIC\+\_\+\+FOUR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUALITY@{EQUALITY}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!EQUALITY@{EQUALITY}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a22d77b4f36283fa15f20867ad3f2a30e}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a22d77b4f36283fa15f20867ad3f2a30e} 
+EQUALITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SECOND\_CHANCE@{SECOND\_CHANCE}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!SECOND\_CHANCE@{SECOND\_CHANCE}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a6d53a4f1bd026fb20739607d7fb7ef33}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7a6d53a4f1bd026fb20739607d7fb7ef33} 
+SECOND\+\_\+\+CHANCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END@{END}!card\_action\_type.h@{card\_action\_type.h}}\index{card\_action\_type.h@{card\_action\_type.h}!END@{END}}}\Hypertarget{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab1a326c06d88bf042f73d70f50197905}\label{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7ab1a326c06d88bf042f73d70f50197905} 
+END&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{card__action__type_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{card__action__type_8h_ab47c44156a36ed416392a752622d28ae}\index{card\_action\_type.h@{card\_action\_type.h}!action\_to\_string@{action\_to\_string}}
+\index{action\_to\_string@{action\_to\_string}!card\_action\_type.h@{card\_action\_type.h}}
+\doxysubsubsection{\texorpdfstring{action\_to\_string()}{action\_to\_string()}}
+{\footnotesize\ttfamily \label{card__action__type_8h_ab47c44156a36ed416392a752622d28ae} 
+std\+::string action\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to return a string of the action type in capital letters. 
+
+\Hypertarget{card__action__type_8h_ab12f4e398f4d3cf2dfc8267c9ee8ea44}\index{card\_action\_type.h@{card\_action\_type.h}!string\_to\_action@{string\_to\_action}}
+\index{string\_to\_action@{string\_to\_action}!card\_action\_type.h@{card\_action\_type.h}}
+\doxysubsubsection{\texorpdfstring{string\_to\_action()}{string\_to\_action()}}
+{\footnotesize\ttfamily \label{card__action__type_8h_ab12f4e398f4d3cf2dfc8267c9ee8ea44} 
+\mbox{\hyperlink{card__action__type_8h_a8be5f5ebbb6da7691c9699f6cd3747c7}{Card\+Action\+Type}} string\+\_\+to\+\_\+action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to convert a string to the action type. 
+

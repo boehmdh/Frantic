@@ -1,0 +1,60 @@
+\doxysection{event\+\_\+draw\+\_\+pile.\+h}
+\hypertarget{event__draw__pile_8h_source}{}\label{event__draw__pile_8h_source}\index{src/common/game\_state/cards/event\_draw\_pile.h@{src/common/game\_state/cards/event\_draw\_pile.h}}
+\mbox{\hyperlink{event__draw__pile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ daniel\ on\ 08.11.2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_EVENT\_DRAW\_PILE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FRANTIC\_EVENT\_DRAW\_PILE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__card_8h}{event\_card.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable_8h}{../../serialization/serializable.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{unique__serializable_8h}{../../serialization/unique\_serializable.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serializable__value_8h}{../../serialization/serializable\_value.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{../../game\_state/player/player.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../../../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }event\_draw\_pile\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\_serializable}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<event\_card*>\ \_event\_cards;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ Deserialization\ constructor}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}{event\_draw\_pile}}(std::string\ \textcolor{keywordtype}{id},\ std::vector<event\_card*>\&\ event\_cards);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ from\_diff\ constructor}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}{event\_draw\_pile}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ pile\ functions}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ shuffle();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}{event\_draw\_pile}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile_a13122f2369f281aa5753fa78d133d067}{event\_draw\_pile}}(std::vector<event\_card*>\&\ event\_cards);}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classevent__draw__pile_a10d66776d06fd24084ee1af451272b71}{\string~event\_draw\_pile}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classevent__draw__pile_ae514683993a37569c3d7b5069ce6acfd}{is\_empty}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classevent__draw__pile_a22fbfe555265042f2c1010fc25d4d0bc}{get\_nof\_cards}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ FRANTIC\_SERVER}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classevent__draw__pile_a2667b0e5fc2f689757095dc5b062f668}{setup\_game}}(std::string\&\ err);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classevent__card}{event\_card}}*\ \mbox{\hyperlink{classevent__draw__pile_a8a4fa16419e968ac533efadf178b1c69}{remove\_top}}(std::string\&\ err);}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classevent__draw__pile_ad9cdf255b794e25d8ce2c785f7244d16}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ event\_draw\_pile*\ \mbox{\hyperlink{classevent__draw__pile_a395cf90c4b717927930f8fa6210058c4}{from\_json}}(\textcolor{keyword}{const}\ rapidjson::Value\&\ json);}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_EVENT\_DRAW\_PILE\_H}}
+
+\end{DoxyCode}

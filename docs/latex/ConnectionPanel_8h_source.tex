@@ -1,0 +1,35 @@
+\doxysection{Connection\+Panel.\+h}
+\hypertarget{ConnectionPanel_8h_source}{}\label{ConnectionPanel_8h_source}\index{src/client/panels/ConnectionPanel.h@{src/client/panels/ConnectionPanel.h}}
+\mbox{\hyperlink{ConnectionPanel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TEST\_CONNECTIONPANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TEST\_CONNECTIONPANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <wx/statline.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <wx/stattext.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <wx/button.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InputField_8h}{../uiElements/InputField.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConnectionPanel_abc032283798f168176fc9af6fab9cbca}{ConnectionPanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classConnectionPanel_abc032283798f168176fc9af6fab9cbca}{ConnectionPanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ wxString\ \mbox{\hyperlink{classConnectionPanel_aae98ee379bc9ba0ad2b41793658b8064}{getServerAddress}}();}
+\DoxyCodeLine{00017\ \ \ \ \ wxString\ \mbox{\hyperlink{classConnectionPanel_ab0dc7af0934d4184aa04d220e0bd9719}{getServerPort}}();}
+\DoxyCodeLine{00018\ \ \ \ \ wxString\ \mbox{\hyperlink{classConnectionPanel_a166e8404b755b5bdf719356b8bd07071}{getPlayerName}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classInputField}{InputField}}*\ \_serverAddressField;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classInputField}{InputField}}*\ \_serverPortField;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classInputField}{InputField}}*\ \_playerNameField;}
+\DoxyCodeLine{00024\ \ \ \ \ uint\ labelWidth\ =\ 180;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//int\ fPx\ =\ 18;}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TEST\_CONNECTIONPANEL\_H}}
+
+\end{DoxyCode}

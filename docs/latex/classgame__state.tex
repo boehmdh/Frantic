@@ -1,0 +1,528 @@
+\doxysection{game\+\_\+state Class Reference}
+\hypertarget{classgame__state}{}\label{classgame__state}\index{game\_state@{game\_state}}
+
+
+{\ttfamily \#include $<$game\+\_\+state.\+h$>$}
+
+
+
+Inheritance diagram for game\+\_\+state\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classgame__state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for game\+\_\+state\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classgame__state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame__state_a0c10b830e222d726557c3c33685c595a}{game\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgame__state_a87557c624623fbee3acbf90786433b4a}{\texorpdfstring{$\sim$}{\string~}game\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_ae161c283e275a57d71834754d11e9e40}{is\+\_\+full}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the maximum number of players have connected to the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_aa0092c41779f38eba5e921e43b38559c}{is\+\_\+started}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the round has already started. According to the rules, joining the game is only allowed if the round has not started yet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a9b83de8a89e3bb506184492d22c3cf45}{is\+\_\+finished}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the game has finished. This occures after one player has exceeded the maximum of 140 points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a371d6a6d84395b90c15d84549b05d553}{is\+\_\+player\+\_\+in\+\_\+game}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}) const
+\begin{DoxyCompactList}\small\item\em Returns whether the player corresponding to the passed player pointer is part of the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a149a90d5f3c24a23263c6e553ffbf41c}{is\+\_\+allowed\+\_\+to\+\_\+play\+\_\+now}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}) const
+\begin{DoxyCompactList}\small\item\em Returns whether it is the passed player\textquotesingle{}s turn. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classgame__state_abcaccd551f938f961d12266e34c037d2}{get\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Returns a list of all players in default turn order. This order is unchanged if the play direction is inverted. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgame__state_a39d87c34fae95631cc6f72adcebed7ec}{get\+\_\+current\+\_\+turn\+\_\+idx}} () const
+\item 
+int \mbox{\hyperlink{classgame__state_a8640dc5a24ae185a4ded6f690511afe0}{get\+\_\+play\+\_\+direction}} () const
+\begin{DoxyCompactList}\small\item\em Returns either 1 (anticlockwise, default) or -\/1 (clockwise). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgame__state_ab3ef836a1b3a1e2bc9e429a018c72eca}{get\+\_\+round\+\_\+number}} () const
+\begin{DoxyCompactList}\small\item\em Returns the round index (zero-\/based). A round is defined as the interval from setting up the game until one player plays the last card. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{classgame__state_a362dab9ac0e4560603c87136eb1e565a}{get\+\_\+current\+\_\+player\+\_\+idx}} () const
+\begin{DoxyCompactList}\small\item\em Returns the index in std\+::vector$<$player\texorpdfstring{$\ast$}{*}$>$ of the player on turn. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a276b903556f20e587993f25b35093872}{get\+\_\+draw\+\_\+pile}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the draw pile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a701fa0c1b8ec5074500435a78639b944}{get\+\_\+discard\+\_\+pile}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the discard pile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classevent__draw__pile}{event\+\_\+draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a92655e6eacf360a7cdac0eaddc40fe62}{get\+\_\+event\+\_\+draw\+\_\+pile}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the event draw pile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classevent__discard__pile}{event\+\_\+discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a59d27599727ea70ac3161a00370f9850}{get\+\_\+event\+\_\+discard\+\_\+pile}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the event discard pile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a2d16f420a8aa651685461a5efb8bb600}{get\+\_\+current\+\_\+player}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the player on turn. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{classgame__state_a299c9532ff5bfb20804e5b1d20022a24}{get\+\_\+wish}} () const
+\item 
+int \mbox{\hyperlink{classgame__state_a15825f1af1e2b8493da19456ad3674ef}{get\+\_\+final\+\_\+turn}} () const
+\begin{DoxyCompactList}\small\item\em Function required for the special card \textquotesingle{}TIME BOMB\textquotesingle{}. Returns -\/1 unless the \textquotesingle{}Time bomb\textquotesingle{} is activated. Then the index of the final turn will be returned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a0f368697da71e0895d28b399fdebd027}{set\+\_\+draw\+\_\+pile}} (\mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*}draw)
+\begin{DoxyCompactList}\small\item\em Sets the draw pile (for unit testing). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a4d994866b32ad50652cac92b3aa74206}{set\+\_\+discard\+\_\+pile}} (\mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*}discard)
+\begin{DoxyCompactList}\small\item\em Sets the discard pile (for unit testing). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a511a4c7645766a57b3437c6604829540}{set\+\_\+current\+\_\+player\+\_\+idx}} (int idx)
+\begin{DoxyCompactList}\small\item\em Sets the current player index (for unit testing). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a212a5e517113b2460d9aa5220077fcee}{set\+\_\+wish}} (uint value)
+\begin{DoxyCompactList}\small\item\em Sets the current wish (for unit testing). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_ac2bd3ffefbea6387db73db8777228898}{reverse\+\_\+direction}} ()
+\begin{DoxyCompactList}\small\item\em Inverts the play direction (if the \textquotesingle{}EXCHANGE\textquotesingle{}/\textquotesingle{}REVERSE\textquotesingle{} card is played. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a431940fd63c9c8dbfea335f0c275c27b}{skip\+\_\+next\+\_\+player}} ()
+\begin{DoxyCompactList}\small\item\em Skips the next player on turn (if the \textquotesingle{}SKIP\textquotesingle{} card is played). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_ab520d4076c53f70a68bc19f355243a4d}{setup\+\_\+round}} (std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__state_a6ca6536eaec3404ff9b1ab39b8df4e67}{start\+\_\+game}} (std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__state_a734fc594d457aa4e6db5bc7467e6442d}{remove\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Removes a player from the game and reduces current\+\_\+player\+\_\+idx accordingly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a4a4fde0700a05c589a6b9c4dbcffac18}{add\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__state_a16151ae3c490c2fc39abd7b5f780e4d0}{draw\+\_\+card}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Returns true and draws a card if the player is allowed to do so. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a616ac79dbab9a17b753da42498ef30cc}{draw\+\_\+card\+\_\+action}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}})
+\begin{DoxyCompactList}\small\item\em Performs the action of drawing a card. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a07c9952d3fe7ccadcea67c90eae53194}{play\+\_\+card}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, const std\+::string \&card\+\_\+id, uint new\+\_\+wish, uint ff\+\_\+target, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Returns true if the player could play the card, otherwise false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame__state_a8696904d30789026e22b38b2b0e8e24a}{fold}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Passes the turn to the next player and returns true if the player is allowed to fold, otherwise false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a8285686ea7777682d8ebad25bc7db61e}{set\+\_\+time\+\_\+bomb}} ()
+\begin{DoxyCompactList}\small\item\em Sets the time bomb to end the current round in three turns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a59cee175e334c6eaaa62f9d9a52514ea}{update\+\_\+current\+\_\+player}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Ends the turn of the player currently on turn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_ad2e967638043670ebae93dd6ec32e91e}{wrap\+\_\+up\+\_\+round}} (std\+::string \&err)
+\begin{DoxyCompactList}\small\item\em Called upon termination of one round. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame__state_a888dbad669e3678a8d3bac3e3b60dfb0}{end\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Ends the game after a player has exceeded the limit of 140 points. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classgame__state_a54873cd18b46555915d150a6d8dd6f83}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Document\+::\+Allocator\+Type \&allocator) const override
+\begin{DoxyCompactList}\small\item\em For serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_afda021db3c4d16dfc6cd8cd6a7c2aad7}{get\+\_\+id}} () const
+\item 
+virtual void \mbox{\hyperlink{classunique__serializable_ac499b570113e74bfaab40a644bbb2c4c}{write\+\_\+into\+\_\+json}} (rapidjson\+::\+Value \&json, rapidjson\+::\+Memory\+Pool\+Allocator$<$ rapidjson\+::\+Crt\+Allocator $>$ \&allocator) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classserializable}{serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual rapidjson\+::\+Document \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\+\_\+json}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__state_a794d484961c92b5b737586ec5599963f}{from\+\_\+json}} (const rapidjson\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em For deserialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classunique__serializable_ab3831f96a970f41aed89df709414fea3}{unique\+\_\+serializable}} ()
+\item 
+\mbox{\hyperlink{classunique__serializable_a75d91d7e297030e7a9af490cd06e58ae}{unique\+\_\+serializable}} (std\+::string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classunique__serializable}{unique\+\_\+serializable}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classunique__serializable_a7d95a28fd25510504eedde50c0e3c95b}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the main class comprising the current game state and functions for any game action.
+
+As this class\textquotesingle{} field holds the game state, every player action involves invocation of one of the following methods. These comprise a check whether the respective action is valid and reject invalid requests. To facilitate serialization of attributes holding the game state, this class inherits from \doxylink{classunique__serializable}{unique\+\_\+serializable}. 
+
+\label{doc-constructors}
+\Hypertarget{classgame__state_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame__state_a0c10b830e222d726557c3c33685c595a}\index{game\_state@{game\_state}!game\_state@{game\_state}}
+\index{game\_state@{game\_state}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{game\_state()}{game\_state()}}
+{\footnotesize\ttfamily \label{classgame__state_a0c10b830e222d726557c3c33685c595a} 
+game\+\_\+state\+::game\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public constructor. 
+
+\Hypertarget{classgame__state_a87557c624623fbee3acbf90786433b4a}\index{game\_state@{game\_state}!````~game\_state@{\texorpdfstring{$\sim$}{\string~}game\_state}}
+\index{````~game\_state@{\texorpdfstring{$\sim$}{\string~}game\_state}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}game\_state()}{\string~game\_state()}}
+{\footnotesize\ttfamily \label{classgame__state_a87557c624623fbee3acbf90786433b4a} 
+game\+\_\+state\+::\texorpdfstring{$\sim$}{\string~}game\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Public destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classgame__state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame__state_a4a4fde0700a05c589a6b9c4dbcffac18}\index{game\_state@{game\_state}!add\_player@{add\_player}}
+\index{add\_player@{add\_player}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{add\_player()}{add\_player()}}
+{\footnotesize\ttfamily \label{classgame__state_a4a4fde0700a05c589a6b9c4dbcffac18} 
+bool game\+\_\+state\+::add\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+Adds a player to the game and returns true. Returns false, if the game has already started/finished or the maximum number of players has already been reached. \Hypertarget{classgame__state_a16151ae3c490c2fc39abd7b5f780e4d0}\index{game\_state@{game\_state}!draw\_card@{draw\_card}}
+\index{draw\_card@{draw\_card}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{draw\_card()}{draw\_card()}}
+{\footnotesize\ttfamily \label{classgame__state_a16151ae3c490c2fc39abd7b5f780e4d0} 
+bool game\+\_\+state\+::draw\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Returns true and draws a card if the player is allowed to do so. 
+
+This function checks whether the player is part of the game, it is his turn, the game has not finished and the player has already drawn a card in this turn. If one of these predicates apply the function returns false. Otherwise, by calling \doxylink{classgame__state_a616ac79dbab9a17b753da42498ef30cc}{draw\+\_\+card\+\_\+action(player\texorpdfstring{$\ast$}{*} player)} a card is drawn and the function returns true. \Hypertarget{classgame__state_a616ac79dbab9a17b753da42498ef30cc}\index{game\_state@{game\_state}!draw\_card\_action@{draw\_card\_action}}
+\index{draw\_card\_action@{draw\_card\_action}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{draw\_card\_action()}{draw\_card\_action()}}
+{\footnotesize\ttfamily \label{classgame__state_a616ac79dbab9a17b753da42498ef30cc} 
+void game\+\_\+state\+::draw\+\_\+card\+\_\+action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Performs the action of drawing a card. 
+
+Checks whether the draw pile is empty before drawing. If this applies, all cards from the discard pile except the top one are transferred to the draw pile and reshuffled. \Hypertarget{classgame__state_a888dbad669e3678a8d3bac3e3b60dfb0}\index{game\_state@{game\_state}!end\_game@{end\_game}}
+\index{end\_game@{end\_game}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{end\_game()}{end\_game()}}
+{\footnotesize\ttfamily \label{classgame__state_a888dbad669e3678a8d3bac3e3b60dfb0} 
+void game\+\_\+state\+::end\+\_\+game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ends the game after a player has exceeded the limit of 140 points. 
+
+\Hypertarget{classgame__state_a8696904d30789026e22b38b2b0e8e24a}\index{game\_state@{game\_state}!fold@{fold}}
+\index{fold@{fold}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{classgame__state_a8696904d30789026e22b38b2b0e8e24a} 
+bool game\+\_\+state\+::fold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Passes the turn to the next player and returns true if the player is allowed to fold, otherwise false. 
+
+Again, it is ensured the player is part of the game, it is his turn, the game has not finished yet. Moreover, it is checks that the player has already drawn a card in this turn. If all of these conditions apply, the update\+\_\+current\+\_\+player(err) is called and the method returns true. \Hypertarget{classgame__state_a794d484961c92b5b737586ec5599963f}\index{game\_state@{game\_state}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily \label{classgame__state_a794d484961c92b5b737586ec5599963f} 
+\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+For deserialization. 
+
+\Hypertarget{classgame__state_a2d16f420a8aa651685461a5efb8bb600}\index{game\_state@{game\_state}!get\_current\_player@{get\_current\_player}}
+\index{get\_current\_player@{get\_current\_player}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_current\_player()}{get\_current\_player()}}
+{\footnotesize\ttfamily \label{classgame__state_a2d16f420a8aa651685461a5efb8bb600} 
+\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::get\+\_\+current\+\_\+player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the player on turn. 
+
+\Hypertarget{classgame__state_a362dab9ac0e4560603c87136eb1e565a}\index{game\_state@{game\_state}!get\_current\_player\_idx@{get\_current\_player\_idx}}
+\index{get\_current\_player\_idx@{get\_current\_player\_idx}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_current\_player\_idx()}{get\_current\_player\_idx()}}
+{\footnotesize\ttfamily \label{classgame__state_a362dab9ac0e4560603c87136eb1e565a} 
+uint game\+\_\+state\+::get\+\_\+current\+\_\+player\+\_\+idx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the index in std\+::vector$<$player\texorpdfstring{$\ast$}{*}$>$ of the player on turn. 
+
+\Hypertarget{classgame__state_a39d87c34fae95631cc6f72adcebed7ec}\index{game\_state@{game\_state}!get\_current\_turn\_idx@{get\_current\_turn\_idx}}
+\index{get\_current\_turn\_idx@{get\_current\_turn\_idx}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_current\_turn\_idx()}{get\_current\_turn\_idx()}}
+{\footnotesize\ttfamily \label{classgame__state_a39d87c34fae95631cc6f72adcebed7ec} 
+int game\+\_\+state\+::get\+\_\+current\+\_\+turn\+\_\+idx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the turn index (zero-\/based). Required for the special card \textquotesingle{}Time bomb\textquotesingle{}. Incremented whenever as many players as are in the game have completed their turn. A player\textquotesingle{}s turn affected by the SKIP effect card is nevertheless counted as a completed turn. \Hypertarget{classgame__state_a701fa0c1b8ec5074500435a78639b944}\index{game\_state@{game\_state}!get\_discard\_pile@{get\_discard\_pile}}
+\index{get\_discard\_pile@{get\_discard\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_discard\_pile()}{get\_discard\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a701fa0c1b8ec5074500435a78639b944} 
+\mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::get\+\_\+discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the discard pile. 
+
+\Hypertarget{classgame__state_a276b903556f20e587993f25b35093872}\index{game\_state@{game\_state}!get\_draw\_pile@{get\_draw\_pile}}
+\index{get\_draw\_pile@{get\_draw\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_draw\_pile()}{get\_draw\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a276b903556f20e587993f25b35093872} 
+\mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::get\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the draw pile. 
+
+\Hypertarget{classgame__state_a59d27599727ea70ac3161a00370f9850}\index{game\_state@{game\_state}!get\_event\_discard\_pile@{get\_event\_discard\_pile}}
+\index{get\_event\_discard\_pile@{get\_event\_discard\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_event\_discard\_pile()}{get\_event\_discard\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a59d27599727ea70ac3161a00370f9850} 
+\mbox{\hyperlink{classevent__discard__pile}{event\+\_\+discard\+\_\+pile}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::get\+\_\+event\+\_\+discard\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the event discard pile. 
+
+\Hypertarget{classgame__state_a92655e6eacf360a7cdac0eaddc40fe62}\index{game\_state@{game\_state}!get\_event\_draw\_pile@{get\_event\_draw\_pile}}
+\index{get\_event\_draw\_pile@{get\_event\_draw\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_event\_draw\_pile()}{get\_event\_draw\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a92655e6eacf360a7cdac0eaddc40fe62} 
+\mbox{\hyperlink{classevent__draw__pile}{event\+\_\+draw\+\_\+pile}} \texorpdfstring{$\ast$}{*} game\+\_\+state\+::get\+\_\+event\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the event draw pile. 
+
+\Hypertarget{classgame__state_a15825f1af1e2b8493da19456ad3674ef}\index{game\_state@{game\_state}!get\_final\_turn@{get\_final\_turn}}
+\index{get\_final\_turn@{get\_final\_turn}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_final\_turn()}{get\_final\_turn()}}
+{\footnotesize\ttfamily \label{classgame__state_a15825f1af1e2b8493da19456ad3674ef} 
+int game\+\_\+state\+::get\+\_\+final\+\_\+turn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Function required for the special card \textquotesingle{}TIME BOMB\textquotesingle{}. Returns -\/1 unless the \textquotesingle{}Time bomb\textquotesingle{} is activated. Then the index of the final turn will be returned. 
+
+\Hypertarget{classgame__state_a8640dc5a24ae185a4ded6f690511afe0}\index{game\_state@{game\_state}!get\_play\_direction@{get\_play\_direction}}
+\index{get\_play\_direction@{get\_play\_direction}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_play\_direction()}{get\_play\_direction()}}
+{\footnotesize\ttfamily \label{classgame__state_a8640dc5a24ae185a4ded6f690511afe0} 
+int game\+\_\+state\+::get\+\_\+play\+\_\+direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns either 1 (anticlockwise, default) or -\/1 (clockwise). 
+
+\Hypertarget{classgame__state_abcaccd551f938f961d12266e34c037d2}\index{game\_state@{game\_state}!get\_players@{get\_players}}
+\index{get\_players@{get\_players}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_players()}{get\_players()}}
+{\footnotesize\ttfamily \label{classgame__state_abcaccd551f938f961d12266e34c037d2} 
+std\+::vector$<$ \mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*} $>$ \& game\+\_\+state\+::get\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a list of all players in default turn order. This order is unchanged if the play direction is inverted. 
+
+\Hypertarget{classgame__state_ab3ef836a1b3a1e2bc9e429a018c72eca}\index{game\_state@{game\_state}!get\_round\_number@{get\_round\_number}}
+\index{get\_round\_number@{get\_round\_number}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_round\_number()}{get\_round\_number()}}
+{\footnotesize\ttfamily \label{classgame__state_ab3ef836a1b3a1e2bc9e429a018c72eca} 
+int game\+\_\+state\+::get\+\_\+round\+\_\+number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the round index (zero-\/based). A round is defined as the interval from setting up the game until one player plays the last card. 
+
+\Hypertarget{classgame__state_a299c9532ff5bfb20804e5b1d20022a24}\index{game\_state@{game\_state}!get\_wish@{get\_wish}}
+\index{get\_wish@{get\_wish}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_wish()}{get\_wish()}}
+{\footnotesize\ttfamily \label{classgame__state_a299c9532ff5bfb20804e5b1d20022a24} 
+uint game\+\_\+state\+::get\+\_\+wish (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the current wish set by a Rainbow card. Either 1--9 for a number wish or 11--14 for a color wish; 11\+: blue, 12\+: green, 13\+: red, 14\+: yellow A value of 0 informs that there is currently no active wish. \Hypertarget{classgame__state_a149a90d5f3c24a23263c6e553ffbf41c}\index{game\_state@{game\_state}!is\_allowed\_to\_play\_now@{is\_allowed\_to\_play\_now}}
+\index{is\_allowed\_to\_play\_now@{is\_allowed\_to\_play\_now}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{is\_allowed\_to\_play\_now()}{is\_allowed\_to\_play\_now()}}
+{\footnotesize\ttfamily \label{classgame__state_a149a90d5f3c24a23263c6e553ffbf41c} 
+bool game\+\_\+state\+::is\+\_\+allowed\+\_\+to\+\_\+play\+\_\+now (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether it is the passed player\textquotesingle{}s turn. 
+
+\Hypertarget{classgame__state_a9b83de8a89e3bb506184492d22c3cf45}\index{game\_state@{game\_state}!is\_finished@{is\_finished}}
+\index{is\_finished@{is\_finished}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{is\_finished()}{is\_finished()}}
+{\footnotesize\ttfamily \label{classgame__state_a9b83de8a89e3bb506184492d22c3cf45} 
+bool game\+\_\+state\+::is\+\_\+finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the game has finished. This occures after one player has exceeded the maximum of 140 points. 
+
+\Hypertarget{classgame__state_ae161c283e275a57d71834754d11e9e40}\index{game\_state@{game\_state}!is\_full@{is\_full}}
+\index{is\_full@{is\_full}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{is\_full()}{is\_full()}}
+{\footnotesize\ttfamily \label{classgame__state_ae161c283e275a57d71834754d11e9e40} 
+bool game\+\_\+state\+::is\+\_\+full (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the maximum number of players have connected to the game. 
+
+\Hypertarget{classgame__state_a371d6a6d84395b90c15d84549b05d553}\index{game\_state@{game\_state}!is\_player\_in\_game@{is\_player\_in\_game}}
+\index{is\_player\_in\_game@{is\_player\_in\_game}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{is\_player\_in\_game()}{is\_player\_in\_game()}}
+{\footnotesize\ttfamily \label{classgame__state_a371d6a6d84395b90c15d84549b05d553} 
+bool game\+\_\+state\+::is\+\_\+player\+\_\+in\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the player corresponding to the passed player pointer is part of the game. 
+
+\Hypertarget{classgame__state_aa0092c41779f38eba5e921e43b38559c}\index{game\_state@{game\_state}!is\_started@{is\_started}}
+\index{is\_started@{is\_started}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{is\_started()}{is\_started()}}
+{\footnotesize\ttfamily \label{classgame__state_aa0092c41779f38eba5e921e43b38559c} 
+bool game\+\_\+state\+::is\+\_\+started (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the round has already started. According to the rules, joining the game is only allowed if the round has not started yet. 
+
+\Hypertarget{classgame__state_a07c9952d3fe7ccadcea67c90eae53194}\index{game\_state@{game\_state}!play\_card@{play\_card}}
+\index{play\_card@{play\_card}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{play\_card()}{play\_card()}}
+{\footnotesize\ttfamily \label{classgame__state_a07c9952d3fe7ccadcea67c90eae53194} 
+bool game\+\_\+state\+::play\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const std\+::string \&}]{card\+\_\+id}{, }\item[{uint}]{new\+\_\+wish}{, }\item[{uint}]{ff\+\_\+target}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Returns true if the player could play the card, otherwise false. 
+
+Again, it is ensured the player is part of the game, it is his turn, the game has not finished yet and the \doxylink{classFrantic}{Frantic} rules allow the card to be played on the top card on the discard pile. If one of these conditions fail, the method returns false. Otherwise, the card is played and the respective effects are executed. If a black card is played, the top card of the event draw pile is played on the event discard pile and the respective effect takes place. If the player just played his final card, the round is wrapped up. \Hypertarget{classgame__state_a734fc594d457aa4e6db5bc7467e6442d}\index{game\_state@{game\_state}!remove\_player@{remove\_player}}
+\index{remove\_player@{remove\_player}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{remove\_player()}{remove\_player()}}
+{\footnotesize\ttfamily \label{classgame__state_a734fc594d457aa4e6db5bc7467e6442d} 
+bool game\+\_\+state\+::remove\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Removes a player from the game and reduces current\+\_\+player\+\_\+idx accordingly. 
+
+\Hypertarget{classgame__state_ac2bd3ffefbea6387db73db8777228898}\index{game\_state@{game\_state}!reverse\_direction@{reverse\_direction}}
+\index{reverse\_direction@{reverse\_direction}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{reverse\_direction()}{reverse\_direction()}}
+{\footnotesize\ttfamily \label{classgame__state_ac2bd3ffefbea6387db73db8777228898} 
+void game\+\_\+state\+::reverse\+\_\+direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inverts the play direction (if the \textquotesingle{}EXCHANGE\textquotesingle{}/\textquotesingle{}REVERSE\textquotesingle{} card is played. 
+
+\Hypertarget{classgame__state_a511a4c7645766a57b3437c6604829540}\index{game\_state@{game\_state}!set\_current\_player\_idx@{set\_current\_player\_idx}}
+\index{set\_current\_player\_idx@{set\_current\_player\_idx}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{set\_current\_player\_idx()}{set\_current\_player\_idx()}}
+{\footnotesize\ttfamily \label{classgame__state_a511a4c7645766a57b3437c6604829540} 
+void game\+\_\+state\+::set\+\_\+current\+\_\+player\+\_\+idx (\begin{DoxyParamCaption}\item[{int}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current player index (for unit testing). 
+
+\Hypertarget{classgame__state_a4d994866b32ad50652cac92b3aa74206}\index{game\_state@{game\_state}!set\_discard\_pile@{set\_discard\_pile}}
+\index{set\_discard\_pile@{set\_discard\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{set\_discard\_pile()}{set\_discard\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a4d994866b32ad50652cac92b3aa74206} 
+void game\+\_\+state\+::set\+\_\+discard\+\_\+pile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdiscard__pile}{discard\+\_\+pile}} \texorpdfstring{$\ast$}{*}}]{discard}{}\end{DoxyParamCaption})}
+
+
+
+Sets the discard pile (for unit testing). 
+
+\Hypertarget{classgame__state_a0f368697da71e0895d28b399fdebd027}\index{game\_state@{game\_state}!set\_draw\_pile@{set\_draw\_pile}}
+\index{set\_draw\_pile@{set\_draw\_pile}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{set\_draw\_pile()}{set\_draw\_pile()}}
+{\footnotesize\ttfamily \label{classgame__state_a0f368697da71e0895d28b399fdebd027} 
+void game\+\_\+state\+::set\+\_\+draw\+\_\+pile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdraw__pile}{draw\+\_\+pile}} \texorpdfstring{$\ast$}{*}}]{draw}{}\end{DoxyParamCaption})}
+
+
+
+Sets the draw pile (for unit testing). 
+
+\Hypertarget{classgame__state_a8285686ea7777682d8ebad25bc7db61e}\index{game\_state@{game\_state}!set\_time\_bomb@{set\_time\_bomb}}
+\index{set\_time\_bomb@{set\_time\_bomb}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{set\_time\_bomb()}{set\_time\_bomb()}}
+{\footnotesize\ttfamily \label{classgame__state_a8285686ea7777682d8ebad25bc7db61e} 
+void game\+\_\+state\+::set\+\_\+time\+\_\+bomb (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the time bomb to end the current round in three turns. 
+
+Only called if the event card \textquotesingle{}TIME\+\_\+\+BOMB\textquotesingle{} is uncovered. Sets the final\+\_\+turn variable s.\+t. the game ends automatically after three turns have elapsed. \Hypertarget{classgame__state_a212a5e517113b2460d9aa5220077fcee}\index{game\_state@{game\_state}!set\_wish@{set\_wish}}
+\index{set\_wish@{set\_wish}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{set\_wish()}{set\_wish()}}
+{\footnotesize\ttfamily \label{classgame__state_a212a5e517113b2460d9aa5220077fcee} 
+void game\+\_\+state\+::set\+\_\+wish (\begin{DoxyParamCaption}\item[{uint}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current wish (for unit testing). 
+
+\Hypertarget{classgame__state_ab520d4076c53f70a68bc19f355243a4d}\index{game\_state@{game\_state}!setup\_round@{setup\_round}}
+\index{setup\_round@{setup\_round}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{setup\_round()}{setup\_round()}}
+{\footnotesize\ttfamily \label{classgame__state_ab520d4076c53f70a68bc19f355243a4d} 
+void game\+\_\+state\+::setup\+\_\+round (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+Initializes the game\+: Creates draw piles and event draw piles, distributes cards to the players and transfers one card to the discard pile. If this card has \doxylink{color_8h_a92015c32f0bd122d73cb95b58aa5583b}{Color} BLACK no event card is uncovered (unlike it was played by a client). \Hypertarget{classgame__state_a431940fd63c9c8dbfea335f0c275c27b}\index{game\_state@{game\_state}!skip\_next\_player@{skip\_next\_player}}
+\index{skip\_next\_player@{skip\_next\_player}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{skip\_next\_player()}{skip\_next\_player()}}
+{\footnotesize\ttfamily \label{classgame__state_a431940fd63c9c8dbfea335f0c275c27b} 
+void game\+\_\+state\+::skip\+\_\+next\+\_\+player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Skips the next player on turn (if the \textquotesingle{}SKIP\textquotesingle{} card is played). 
+
+\Hypertarget{classgame__state_a6ca6536eaec3404ff9b1ab39b8df4e67}\index{game\_state@{game\_state}!start\_game@{start\_game}}
+\index{start\_game@{start\_game}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{start\_game()}{start\_game()}}
+{\footnotesize\ttfamily \label{classgame__state_a6ca6536eaec3404ff9b1ab39b8df4e67} 
+bool game\+\_\+state\+::start\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+Returns true if the game could be started. Returns false and an according message in err if the game has already started or only one player joined the game. \Hypertarget{classgame__state_a59cee175e334c6eaaa62f9d9a52514ea}\index{game\_state@{game\_state}!update\_current\_player@{update\_current\_player}}
+\index{update\_current\_player@{update\_current\_player}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{update\_current\_player()}{update\_current\_player()}}
+{\footnotesize\ttfamily \label{classgame__state_a59cee175e334c6eaaa62f9d9a52514ea} 
+void game\+\_\+state\+::update\+\_\+current\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Ends the turn of the player currently on turn. 
+
+If the current\+\_\+turn\+\_\+idx equals the final\+\_\+turn\+\_\+idx (i.\+e. the time bomb \textquotesingle{}explodes\textquotesingle{}), the current round will be terminated. Also increments the current\+\_\+turn\+\_\+idx variable. \Hypertarget{classgame__state_ad2e967638043670ebae93dd6ec32e91e}\index{game\_state@{game\_state}!wrap\_up\_round@{wrap\_up\_round}}
+\index{wrap\_up\_round@{wrap\_up\_round}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{wrap\_up\_round()}{wrap\_up\_round()}}
+{\footnotesize\ttfamily \label{classgame__state_ad2e967638043670ebae93dd6ec32e91e} 
+void game\+\_\+state\+::wrap\+\_\+up\+\_\+round (\begin{DoxyParamCaption}\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+Called upon termination of one round. 
+
+Upon the end of a round, increments the player\textquotesingle{}s points according to their remaining hand. If one player exceeds the limit of 140 points after incrementing, \doxylink{classgame__state_a888dbad669e3678a8d3bac3e3b60dfb0}{end\+\_\+game()} is called and the game will be terminated immediately. Otherwise, the subsequent round will be set up. \Hypertarget{classgame__state_a54873cd18b46555915d150a6d8dd6f83}\index{game\_state@{game\_state}!write\_into\_json@{write\_into\_json}}
+\index{write\_into\_json@{write\_into\_json}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{write\_into\_json()}{write\_into\_json()}}
+{\footnotesize\ttfamily \label{classgame__state_a54873cd18b46555915d150a6d8dd6f83} 
+void game\+\_\+state\+::write\+\_\+into\+\_\+json (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Value \&}]{json}{, }\item[{rapidjson\+::\+Document\+::\+Allocator\+Type \&}]{allocator}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+For serialization. 
+
+
+
+Implements \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{serializable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/common/game\+\_\+state/\mbox{\hyperlink{game__state_8h}{game\+\_\+state.\+h}}\item 
+src/common/game\+\_\+state/\mbox{\hyperlink{game__state_8cpp}{game\+\_\+state.\+cpp}}\end{DoxyCompactItemize}

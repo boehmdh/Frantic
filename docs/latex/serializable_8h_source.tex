@@ -1,0 +1,30 @@
+\doxysection{serializable.\+h}
+\hypertarget{serializable_8h_source}{}\label{serializable_8h_source}\index{src/common/serialization/serializable.h@{src/common/serialization/serializable.h}}
+\mbox{\hyperlink{serializable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Manuel\ on\ 01.02.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ abstract\ class\ for\ a\ serializable\ object.}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FRANTIC\_SERIALIZABLE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FRANTIC\_SERIALIZABLE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../../rapidjson/include/rapidjson/document.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classserializable}{serializable}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ rapidjson::Document*\ \mbox{\hyperlink{classserializable_a3291407f057e1db734092cfc67618217}{to\_json}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ rapidjson::Document*\ json\ =\ \textcolor{keyword}{new}\ rapidjson::Document();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ json-\/>SetObject();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{write\_into\_json}}(*json,\ json-\/>GetAllocator());}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ json;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserializable_a48226f918068557c3673b72aa5c8157b}{write\_into\_json}}(rapidjson::Value\&\ json,\ rapidjson::Document::AllocatorType\&\ allocator)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FRANTIC\_SERIALIZABLE\_H}}
+
+\end{DoxyCode}

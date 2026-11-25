@@ -1,0 +1,129 @@
+\doxysection{game\+\_\+instance Class Reference}
+\hypertarget{classgame__instance}{}\label{classgame__instance}\index{game\_instance@{game\_instance}}
+
+
+{\ttfamily \#include $<$game\+\_\+instance.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame__instance_a2b1d00adf8c933a98698f972827e48b9}{game\+\_\+instance}} ()
+\item 
+\mbox{\hyperlink{classgame__instance_a1fa390603341beb15e09e5a4b03465c1}{\texorpdfstring{$\sim$}{\string~}game\+\_\+instance}} ()
+\item 
+std\+::string \mbox{\hyperlink{classgame__instance_a72cd93738171ffc856c3d77df5f967da}{get\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__instance_a852c73a12031d7fbd2095530df595c5c}{get\+\_\+game\+\_\+state}} ()
+\item 
+bool \mbox{\hyperlink{classgame__instance_a77d1f40b8727c74f278efe9168f26831}{is\+\_\+full}} ()
+\item 
+bool \mbox{\hyperlink{classgame__instance_a2c8a8be71f8c3016075cc08768ebbb64}{is\+\_\+started}} ()
+\item 
+bool \mbox{\hyperlink{classgame__instance_a5a080dfced3d2d1c697e36160b996a9c}{is\+\_\+finished}} ()
+\item 
+bool \mbox{\hyperlink{classgame__instance_aee2eedd24991ce59dbcf2ec4f6cae8ac}{start\+\_\+game}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__instance_a1176ce8464586487f9ae5676ca900e10}{try\+\_\+add\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}new\+\_\+player, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__instance_a2c6fed45a14273b09a9f202481fa62aa}{try\+\_\+remove\+\_\+player}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__instance_a6b68e5c49c90b67ff3371c41971022a5}{play\+\_\+card}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, const std\+::string \&card\+\_\+id, uint wish, uint ff\+\_\+target, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__instance_abcaa83e2ba98458b113b271284a0c02d}{draw\+\_\+card}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, \mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&drawn\+\_\+card, std\+::string \&err)
+\item 
+bool \mbox{\hyperlink{classgame__instance_a4b5f4a1f8e595a05a0bb224eba78161b}{fold}} (\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classplayer}{player}}, std\+::string \&err)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classgame__instance_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame__instance_a2b1d00adf8c933a98698f972827e48b9}\index{game\_instance@{game\_instance}!game\_instance@{game\_instance}}
+\index{game\_instance@{game\_instance}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{game\_instance()}{game\_instance()}}
+{\footnotesize\ttfamily \label{classgame__instance_a2b1d00adf8c933a98698f972827e48b9} 
+game\+\_\+instance\+::game\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a1fa390603341beb15e09e5a4b03465c1}\index{game\_instance@{game\_instance}!````~game\_instance@{\texorpdfstring{$\sim$}{\string~}game\_instance}}
+\index{````~game\_instance@{\texorpdfstring{$\sim$}{\string~}game\_instance}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}game\_instance()}{\string~game\_instance()}}
+{\footnotesize\ttfamily \label{classgame__instance_a1fa390603341beb15e09e5a4b03465c1} 
+game\+\_\+instance\+::\texorpdfstring{$\sim$}{\string~}game\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classgame__instance_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame__instance_abcaa83e2ba98458b113b271284a0c02d}\index{game\_instance@{game\_instance}!draw\_card@{draw\_card}}
+\index{draw\_card@{draw\_card}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{draw\_card()}{draw\_card()}}
+{\footnotesize\ttfamily \label{classgame__instance_abcaa83e2ba98458b113b271284a0c02d} 
+bool game\+\_\+instance\+::draw\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{classcard}{card}} \texorpdfstring{$\ast$}{*}\&}]{drawn\+\_\+card}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a4b5f4a1f8e595a05a0bb224eba78161b}\index{game\_instance@{game\_instance}!fold@{fold}}
+\index{fold@{fold}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{classgame__instance_a4b5f4a1f8e595a05a0bb224eba78161b} 
+bool game\+\_\+instance\+::fold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a852c73a12031d7fbd2095530df595c5c}\index{game\_instance@{game\_instance}!get\_game\_state@{get\_game\_state}}
+\index{get\_game\_state@{get\_game\_state}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{get\_game\_state()}{get\_game\_state()}}
+{\footnotesize\ttfamily \label{classgame__instance_a852c73a12031d7fbd2095530df595c5c} 
+\mbox{\hyperlink{classgame__state}{game\+\_\+state}} \texorpdfstring{$\ast$}{*} game\+\_\+instance\+::get\+\_\+game\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a72cd93738171ffc856c3d77df5f967da}\index{game\_instance@{game\_instance}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \label{classgame__instance_a72cd93738171ffc856c3d77df5f967da} 
+std\+::string game\+\_\+instance\+::get\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a5a080dfced3d2d1c697e36160b996a9c}\index{game\_instance@{game\_instance}!is\_finished@{is\_finished}}
+\index{is\_finished@{is\_finished}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{is\_finished()}{is\_finished()}}
+{\footnotesize\ttfamily \label{classgame__instance_a5a080dfced3d2d1c697e36160b996a9c} 
+bool game\+\_\+instance\+::is\+\_\+finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a77d1f40b8727c74f278efe9168f26831}\index{game\_instance@{game\_instance}!is\_full@{is\_full}}
+\index{is\_full@{is\_full}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{is\_full()}{is\_full()}}
+{\footnotesize\ttfamily \label{classgame__instance_a77d1f40b8727c74f278efe9168f26831} 
+bool game\+\_\+instance\+::is\+\_\+full (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a2c8a8be71f8c3016075cc08768ebbb64}\index{game\_instance@{game\_instance}!is\_started@{is\_started}}
+\index{is\_started@{is\_started}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{is\_started()}{is\_started()}}
+{\footnotesize\ttfamily \label{classgame__instance_a2c8a8be71f8c3016075cc08768ebbb64} 
+bool game\+\_\+instance\+::is\+\_\+started (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a6b68e5c49c90b67ff3371c41971022a5}\index{game\_instance@{game\_instance}!play\_card@{play\_card}}
+\index{play\_card@{play\_card}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{play\_card()}{play\_card()}}
+{\footnotesize\ttfamily \label{classgame__instance_a6b68e5c49c90b67ff3371c41971022a5} 
+bool game\+\_\+instance\+::play\+\_\+card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const std\+::string \&}]{card\+\_\+id}{, }\item[{uint}]{wish}{, }\item[{uint}]{ff\+\_\+target}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_aee2eedd24991ce59dbcf2ec4f6cae8ac}\index{game\_instance@{game\_instance}!start\_game@{start\_game}}
+\index{start\_game@{start\_game}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{start\_game()}{start\_game()}}
+{\footnotesize\ttfamily \label{classgame__instance_aee2eedd24991ce59dbcf2ec4f6cae8ac} 
+bool game\+\_\+instance\+::start\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a1176ce8464586487f9ae5676ca900e10}\index{game\_instance@{game\_instance}!try\_add\_player@{try\_add\_player}}
+\index{try\_add\_player@{try\_add\_player}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{try\_add\_player()}{try\_add\_player()}}
+{\footnotesize\ttfamily \label{classgame__instance_a1176ce8464586487f9ae5676ca900e10} 
+bool game\+\_\+instance\+::try\+\_\+add\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{new\+\_\+player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__instance_a2c6fed45a14273b09a9f202481fa62aa}\index{game\_instance@{game\_instance}!try\_remove\_player@{try\_remove\_player}}
+\index{try\_remove\_player@{try\_remove\_player}!game\_instance@{game\_instance}}
+\doxysubsubsection{\texorpdfstring{try\_remove\_player()}{try\_remove\_player()}}
+{\footnotesize\ttfamily \label{classgame__instance_a2c6fed45a14273b09a9f202481fa62aa} 
+bool game\+\_\+instance\+::try\+\_\+remove\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classplayer}{player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{std\+::string \&}]{err}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/server/\mbox{\hyperlink{game__instance_8h}{game\+\_\+instance.\+h}}\item 
+src/server/\mbox{\hyperlink{game__instance_8cpp}{game\+\_\+instance.\+cpp}}\end{DoxyCompactItemize}
